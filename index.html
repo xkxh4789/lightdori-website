@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="meta.title">LightDori — Patch, document, and sync lighting data</title>
+    <meta
+      name="description"
+      content="LightDori is a desktop workspace for lighting patch lists, print-ready PDFs, and Vectorworks exchange — built for production electricians and lighting designers."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Montserrat:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <header class="top">
+      <a class="top__brand" href="./index.html">LightDori</a>
+      <div class="top__right">
+        <nav class="top__nav" data-i18n-aria="nav.primary" aria-label="Primary">
+          <a href="#work" data-i18n="nav.work">Work</a>
+          <a href="#download" data-i18n="nav.download">Download</a>
+          <a href="./manual.html" data-i18n="nav.manual">Manual</a>
+          <a href="#beta" data-i18n="nav.beta">Beta</a>
+        </nav>
+        <div class="top__lang" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" class="top__lang-btn" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="top__lang-btn" data-lang="ko" aria-pressed="false">KR</button>
+        </div>
+      </div>
+    </header>
+
+    <main id="top">
+      <section class="hero" aria-label="Introduction">
+        <div class="hero__media" aria-hidden="true">
+          <div class="hero__slides">
+            <img class="hero__slide is-active" src="./assets/hero.png" alt="" />
+            <img class="hero__slide" src="./assets/hero1.png" alt="" />
+            <img class="hero__slide" src="./assets/hero2.png" alt="" />
+            <img class="hero__slide" src="./assets/hero3.png" alt="" />
+          </div>
+          <div class="hero__veil"></div>
+          <div class="hero__beam"></div>
+        </div>
+
+        <div class="hero__copy">
+          <div class="hero__panel">
+            <p class="hero__brand">LightDori</p>
+            <h1 class="hero__title" data-i18n="hero.title">Lighting data, ready before the call.</h1>
+            <p class="hero__lede" data-i18n="hero.lede">
+              Patch lists, print-ready PDFs, and Vectorworks sync in one desktop app.
+            </p>
+            <div class="hero__actions">
+              <a class="btn btn--solid" href="#download" data-i18n="hero.download">Download</a>
+              <a class="btn btn--ghost" href="#beta" data-i18n="hero.beta">Request beta</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="work" id="work">
+        <div class="work__intro">
+          <p class="eyebrow" data-i18n="work.eyebrow">Features</p>
+          <h2 data-i18n="work.title">Three jobs. One workspace.</h2>
+        </div>
+
+        <div class="work__stage">
+          <button
+            type="button"
+            class="work__nav work__nav--prev"
+            data-i18n-aria="work.prev"
+            aria-label="Previous feature"
+          >
+            <span aria-hidden="true">‹</span>
+          </button>
+
+          <div class="work__panel" aria-live="polite">
+            <article class="work__slide is-active" data-work-slide="0">
+              <figure class="work__figure">
+                <img
+                  src="./assets/sheet.png"
+                  alt="Patch sheet preview inside LightDori"
+                  data-i18n-alt="work.1.img.alt"
+                />
+              </figure>
+              <div class="work__copy">
+                <p class="work__count"><span data-work-current>01</span> / 03</p>
+                <h3 data-i18n="work.1.title">Patch documents</h3>
+                <p data-i18n="work.1.body">
+                  Build instrument schedules and export clean PDFs for the shop and the booth.
+                </p>
+              </div>
+            </article>
+
+            <article class="work__slide" data-work-slide="1" hidden>
+              <figure class="work__figure">
+                <img
+                  src="./assets/card-workflow.webp"
+                  alt="Workflow module visual"
+                  data-i18n-alt="work.2.img.alt"
+                />
+              </figure>
+              <div class="work__copy">
+                <p class="work__count"><span data-work-current>02</span> / 03</p>
+                <h3 data-i18n="work.2.title">Vectorworks sync</h3>
+                <p data-i18n="work.2.body">
+                  Exchange fixture data through a shared file so LD and Vectorworks stay aligned.
+                </p>
+              </div>
+            </article>
+
+            <article class="work__slide" data-work-slide="2" hidden>
+              <figure class="work__figure">
+                <img
+                  src="./assets/card-sheet.webp"
+                  alt="Sheet module visual"
+                  data-i18n-alt="work.3.img.alt"
+                />
+              </figure>
+              <div class="work__copy">
+                <p class="work__count"><span data-work-current>03</span> / 03</p>
+                <h3 data-i18n="work.3.title">Sheet workspace</h3>
+                <p data-i18n="work.3.body">
+                  Edit, sort, and export fixture sheets without jumping between spreadsheets and consoles.
+                </p>
+              </div>
+            </article>
+          </div>
+
+          <button
+            type="button"
+            class="work__nav work__nav--next"
+            data-i18n-aria="work.next"
+            aria-label="Next feature"
+          >
+            <span aria-hidden="true">›</span>
+          </button>
+        </div>
+      </section>
+
+      <section class="download" id="download">
+        <div class="download__inner">
+          <p class="eyebrow" data-i18n="download.eyebrow">Download</p>
+          <h2 data-i18n="download.title">Download for Windows and macOS.</h2>
+          <p class="download__lede" data-i18n="download.lede">
+            Desktop builds for theatre, tour, and the shop floor — ready to use offline.
+          </p>
+          <div class="download__actions">
+            <a
+              class="btn btn--ink-outline download__btn"
+              id="download-win"
+              href="#beta"
+              data-platform="windows"
+            >
+              <span class="download__brand" aria-hidden="true">
+                <svg class="download__logo" viewBox="0 0 24 24" focusable="false">
+                  <path fill="currentColor" d="M3 5.2 10.2 4.2v7.1H3zm8.4-1.3L21 2.5v8.8h-9.6zM3 12.7h7.2v7.1L3 18.7zm8.4 0H21v8.8l-9.6-1.4z" />
+                </svg>
+              </span>
+              <span class="download__copy">
+                <span class="download__name">Windows</span>
+                <span class="download__meta" data-i18n="download.win.meta">.exe installer</span>
+              </span>
+            </a>
+            <a
+              class="btn btn--ink-outline download__btn"
+              id="download-mac"
+              href="#beta"
+              data-platform="mac"
+            >
+              <span class="download__brand" aria-hidden="true">
+                <svg class="download__logo" viewBox="0 0 24 24" focusable="false">
+                  <path
+                    fill="currentColor"
+                    d="M16.7 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.7-2.8-.7-1.4 0-2.8.9-3.5 2.2-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7c1.2 0 1.9-1 2.6-2 .8-1.2 1.1-2.3 1.1-2.4-.02-.01-2.2-.8-2.2-3.6zM14.7 6.5c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1.1 1.7-.9 2.6 1 .1 1.9-.5 2.5-1.2z"
+                  />
+                </svg>
+              </span>
+              <span class="download__copy">
+                <span class="download__name">macOS</span>
+                <span class="download__meta" data-i18n="download.mac.meta">.dmg / .app</span>
+              </span>
+            </a>
+          </div>
+          <p class="download__note" id="download-note" hidden></p>
+        </div>
+      </section>
+
+      <section class="beta" id="beta">
+        <div class="beta__inner">
+          <p class="eyebrow" data-i18n="beta.eyebrow">Closed beta</p>
+          <h2 data-i18n="beta.title">Join the closed beta.</h2>
+          <p class="beta__lede" data-i18n="beta.lede">
+            We're inviting a small group of lighting designers, production electricians, and rental shops.
+            Tell us your workflow and OS — we'll send a build when a seat opens.
+          </p>
+
+          <form class="beta__form" id="beta-form">
+            <label>
+              <span data-i18n="beta.email">Email</span>
+              <input id="beta-email" type="email" name="email" placeholder="you@company.com" required />
+            </label>
+            <button class="btn btn--solid" type="submit" data-i18n="beta.submit">Request access</button>
+          </form>
+          <p class="beta__note">
+            <span data-i18n="beta.or">Or email us directly:</span>
+            <a href="mailto:hello@lightdori.app?subject=LightDori%20beta%20request">hello@lightdori.app</a>
+          </p>
+        </div>
+      </section>
+    </main>
+
+    <footer class="foot">
+      <span class="foot__brand">LightDori</span>
+      <span class="foot__meta">© <span id="year"></span> <span data-i18n="foot.rights">LightDori. All rights reserved.</span></span>
+    </footer>
+
+    <script src="./downloads.js"></script>
+    <script src="./i18n.js"></script>
+    <script>
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+
+      (function setupDownloads() {
+        var cfg = window.LIGHTDORI_DOWNLOADS || {};
+        var win = document.getElementById("download-win");
+        var mac = document.getElementById("download-mac");
+        var note = document.getElementById("download-note");
+        var winUrl = String(cfg.windows || "").trim();
+        var macUrl = String(cfg.mac || "").trim();
+        var ready = 0;
+
+        function wire(btn, url) {
+          if (!btn) return;
+          var ok = /^https?:\/\//i.test(url) || /^\.?\//.test(url);
+          if (url && ok) {
+            btn.href = url;
+            if (/^https?:\/\//i.test(url)) {
+              btn.removeAttribute("download");
+              btn.target = "_blank";
+              btn.rel = "noopener noreferrer";
+            } else {
+              btn.setAttribute("download", "");
+              btn.removeAttribute("target");
+            }
+            ready += 1;
+          } else {
+            btn.href = "#beta";
+            btn.removeAttribute("download");
+            btn.removeAttribute("target");
+          }
+        }
+
+        wire(win, winUrl);
+        wire(mac, macUrl);
+
+        window.__lightdoriDownloadReady = ready;
+        window.__lightdoriDownloadBadHash = /sha256:/i.test(winUrl) || /sha256:/i.test(macUrl);
+
+        window.lightdoriRefreshDownloadNotes = function (lang) {
+          if (!note) return;
+          var t = window.lightdoriT;
+          if (window.__lightdoriDownloadBadHash) {
+            note.hidden = false;
+            note.textContent = t("download.note.hash", lang);
+            return;
+          }
+          // Keep the public download section clean — no “one platform / beta” notices.
+          note.hidden = true;
+          note.textContent = "";
+        };
+      })();
+
+      window.lightdoriInitLang();
+
+      (function setupHeroSlider() {
+        var slides = document.querySelectorAll(".hero__slide");
+        if (slides.length < 2) return;
+        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+        var index = 0;
+        var fadeMs = 3200;
+        var holdMs = 7000;
+        var timer = null;
+
+        function goNext() {
+          slides[index].classList.remove("is-active");
+          index = (index + 1) % slides.length;
+          slides[index].classList.add("is-active");
+        }
+
+        function schedule() {
+          timer = window.setTimeout(function () {
+            goNext();
+            schedule();
+          }, holdMs + fadeMs);
+        }
+
+        schedule();
+      })();
+
+      (function setupWorkCarousel() {
+        var panel = document.querySelector(".work__panel");
+        if (!panel) return;
+        var slides = Array.prototype.slice.call(panel.querySelectorAll(".work__slide"));
+        if (slides.length < 2) return;
+        var prev = document.querySelector(".work__nav--prev");
+        var next = document.querySelector(".work__nav--next");
+        var index = 0;
+
+        function show(nextIndex) {
+          slides[index].classList.remove("is-active");
+          slides[index].hidden = true;
+          index = (nextIndex + slides.length) % slides.length;
+          slides[index].hidden = false;
+          slides[index].classList.add("is-active");
+        }
+
+        if (prev) {
+          prev.addEventListener("click", function () {
+            show(index - 1);
+          });
+        }
+        if (next) {
+          next.addEventListener("click", function () {
+            show(index + 1);
+          });
+        }
+
+        document.addEventListener("keydown", function (event) {
+          var work = document.getElementById("work");
+          if (!work) return;
+          var rect = work.getBoundingClientRect();
+          var inView = rect.top < window.innerHeight && rect.bottom > 0;
+          if (!inView) return;
+          if (event.key === "ArrowLeft") show(index - 1);
+          if (event.key === "ArrowRight") show(index + 1);
+        });
+      })();
+
+      document.getElementById("beta-form").addEventListener("submit", function (event) {
+        event.preventDefault();
+        var email = document.getElementById("beta-email").value.trim();
+        if (!email) return;
+        var lang = document.documentElement.getAttribute("data-lang") || "en";
+        var subject = encodeURIComponent(window.lightdoriT("beta.mail.subject", lang));
+        var body = encodeURIComponent(
+          window.lightdoriT("beta.mail.body", lang).replace("{email}", email)
+        );
+        window.location.href = "mailto:hello@lightdori.app?subject=" + subject + "&body=" + body;
+      });
+    </script>
+  </body>
+</html>

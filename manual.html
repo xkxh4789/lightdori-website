@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title data-i18n="manual.meta.title">Manual — LightDori</title>
+    <meta
+      name="description"
+      data-i18n-content="manual.meta.desc"
+      content="LightDori user manual: getting started, sheet workspace, patch documents, Vectorworks sync, and export workflows."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Montserrat:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body class="page-manual">
+    <header class="top">
+      <a class="top__brand" href="./index.html">LightDori</a>
+      <div class="top__right">
+        <nav class="top__nav" data-i18n-aria="nav.primary" aria-label="Primary">
+          <a href="./index.html#work" data-i18n="nav.work">Work</a>
+          <a href="./index.html#download" data-i18n="nav.download">Download</a>
+          <a href="./manual.html" aria-current="page" data-i18n="nav.manual">Manual</a>
+          <a href="./index.html#beta" data-i18n="nav.beta">Beta</a>
+        </nav>
+        <div class="top__lang" role="group" data-i18n-aria="lang.label" aria-label="Language">
+          <button type="button" class="top__lang-btn" data-lang="en" aria-pressed="true">EN</button>
+          <button type="button" class="top__lang-btn" data-lang="ko" aria-pressed="false">KR</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="manual">
+      <aside class="manual__toc" data-i18n-aria="manual.toc.aria" aria-label="Manual contents">
+        <p class="eyebrow" data-i18n="manual.toc.eyebrow">Contents</p>
+        <ol>
+          <li><a href="#overview" data-i18n="manual.toc.overview">Overview</a></li>
+          <li><a href="#start" data-i18n="manual.toc.start">Getting started</a></li>
+          <li><a href="#sheet" data-i18n="manual.toc.sheet">Sheet workspace</a></li>
+          <li><a href="#patch" data-i18n="manual.toc.patch">Patch documents</a></li>
+          <li><a href="#vw" data-i18n="manual.toc.vw">Vectorworks sync</a></li>
+          <li><a href="#export" data-i18n="manual.toc.export">Import &amp; export</a></li>
+          <li><a href="#console" data-i18n="manual.toc.console">Console connection</a></li>
+          <li><a href="#tips" data-i18n="manual.toc.tips">Tips &amp; troubleshooting</a></li>
+        </ol>
+      </aside>
+
+      <article class="manual__body">
+        <header class="manual__hero">
+          <p class="eyebrow" data-i18n="manual.hero.eyebrow">User manual</p>
+          <h1 data-i18n="manual.hero.title">LightDori guide</h1>
+          <p class="manual__lede" data-i18n="manual.hero.lede">
+            A practical walkthrough for patch lists, print-ready PDFs, and Vectorworks exchange.
+            Written for lighting designers, production electricians, and shop teams.
+          </p>
+        </header>
+
+        <section id="overview">
+          <h2 data-i18n="manual.overview.title">1. Overview</h2>
+          <p data-i18n="manual.overview.p1">
+            LightDori is a desktop workspace for lighting production data. Use it to build and edit
+            fixture sheets, export patch documents, and keep Vectorworks data in sync without living
+            inside spreadsheets.
+          </p>
+          <ul>
+            <li data-i18n-html="manual.overview.li1"><strong>Windows</strong> and <strong>macOS</strong> desktop builds</li>
+            <li data-i18n="manual.overview.li2">Offline-friendly for theatre, tour, and shop floors</li>
+            <li data-i18n="manual.overview.li3">Core loop: Sheet → Patch PDF → Vectorworks / console handoff</li>
+          </ul>
+        </section>
+
+        <section id="start">
+          <h2 data-i18n="manual.start.title">2. Getting started</h2>
+          <ol class="manual__steps">
+            <li data-i18n="manual.start.s1">Launch LightDori and sign in from the hub when prompted.</li>
+            <li data-i18n-html="manual.start.s2">Choose <strong>New File</strong> or open an existing project.</li>
+            <li data-i18n="manual.start.s3">
+              Pick a fixture start mode: blank sheet, import existing data, or sample data.
+            </li>
+            <li data-i18n="manual.start.s4">Open the Sheet workspace to begin editing channels, addresses, and types.</li>
+          </ol>
+          <p data-i18n="manual.start.p1">
+            Theme and app preferences can be previewed in Settings. Changes apply permanently only
+            after you save settings.
+          </p>
+        </section>
+
+        <section id="sheet">
+          <h2 data-i18n="manual.sheet.title">3. Sheet workspace</h2>
+          <p data-i18n="manual.sheet.p1">
+            The Sheet is the main fixture table. Edit mode lets you add, delete, duplicate, and
+            rearrange rows or columns.
+          </p>
+          <ul>
+            <li data-i18n-html="manual.sheet.li1"><strong>Edit</strong> — unlock cell editing and row tools</li>
+            <li data-i18n-html="manual.sheet.li2"><strong>Filter / Sort</strong> — focus positions or reorder before print</li>
+            <li data-i18n-html="manual.sheet.li3"><strong>Auto Universe</strong> — help assign DMX universes from addresses</li>
+            <li data-i18n-html="manual.sheet.li4"><strong>Export</strong> — CSV, XML, MVR, ASCII, and PDF document paths</li>
+          </ul>
+          <p data-i18n="manual.sheet.p2">
+            Common fields include Channel, Device Type, Universe / Address, Position, Color, and
+            UID. Keep UIDs stable when syncing with Vectorworks.
+          </p>
+        </section>
+
+        <section id="patch">
+          <h2 data-i18n="manual.patch.title">4. Patch documents</h2>
+          <p data-i18n="manual.patch.p1">
+            Patch Document builds a print-ready PDF (instrument schedule / patch list) from the
+            current sheet selection.
+          </p>
+          <ol class="manual__steps">
+            <li data-i18n="manual.patch.s1">Choose the columns to include and set title, notes, and date styles.</li>
+            <li data-i18n="manual.patch.s2">Preview the layout, then export PDF.</li>
+            <li data-i18n="manual.patch.s3">Exported PDFs can be collected in the PDF Store for later merge.</li>
+          </ol>
+          <p data-i18n="manual.patch.p2">
+            Use this for shop handouts, booth patch tables, and production meetings. Title fonts are
+            chosen for consistent Windows / macOS output.
+          </p>
+        </section>
+
+        <section id="vw">
+          <h2 data-i18n="manual.vw.title">5. Vectorworks sync</h2>
+          <p data-i18n="manual.vw.p1">
+            LightDori exchanges fixture data through a shared JSON file so LD and VW stay aligned.
+          </p>
+          <ul>
+            <li data-i18n-html="manual.vw.li1"><strong>Sync Now</strong> — write LightDori devices to the exchange file</li>
+            <li data-i18n-html="manual.vw.li2"><strong>Import</strong> — Merge updates matching fixtures; Overwrite replaces the sheet</li>
+            <li data-i18n-html="manual.vw.li3"><strong>Live sync</strong> — poll for VW exports and apply when available</li>
+          </ul>
+          <p data-i18n="manual.vw.p2">
+            If the exchange file is missing, export from Vectorworks first. Close the sync panel
+            when prompted so pending keystroke nudges can apply on Windows setups that use them.
+          </p>
+        </section>
+
+        <section id="export">
+          <h2 data-i18n="manual.export.title">6. Import &amp; export</h2>
+          <p data-i18n="manual.export.p1">Typical formats supported in the Sheet / file workflows:</p>
+          <ul>
+            <li data-i18n="manual.export.li1">CSV / Excel / JSON / XML</li>
+            <li data-i18n="manual.export.li2">MVR fixture packages</li>
+            <li data-i18n="manual.export.li3">ASCII (ASC) patch and cue imports</li>
+            <li data-i18n="manual.export.li4">Patch Document PDF and Magic Sheet PDF exports</li>
+          </ul>
+          <p data-i18n="manual.export.p2">
+            After import, verify Channel / Address collisions and Position filters before sending
+            anything to a console.
+          </p>
+        </section>
+
+        <section id="console">
+          <h2 data-i18n="manual.console.title">7. Console connection</h2>
+          <p data-i18n="manual.console.p1">
+            LightDori can connect to lighting consoles. Use the Eos OSC ports or MA Telnet login below.
+          </p>
+          <h3 data-i18n="manual.console.eos.title">Eos connection</h3>
+          <ol class="manual__steps">
+            <li data-i18n-html="manual.console.eos.s1">
+              Open <strong>Setup → System → Show Control → OSC</strong>.
+            </li>
+            <li data-i18n-html="manual.console.eos.s2">
+              Enable <strong>OSC RX</strong> and <strong>OSC TX</strong>.
+            </li>
+            <li data-i18n-html="manual.console.eos.s3">
+              Set <strong>OSC UDP RX Port</strong> to <strong>8000</strong>.
+            </li>
+            <li data-i18n-html="manual.console.eos.s4">
+              Set <strong>OSC UDP TX Port</strong> to <strong>8001</strong>.
+            </li>
+          </ol>
+          <figure class="manual__figure">
+            <img
+              src="./assets/eos-osc-ports.png"
+              alt="ETC Eos OSC settings with RX/TX enabled, RX port 8000, TX port 8001"
+              data-i18n-alt="manual.console.eos.img.alt"
+            />
+            <figcaption data-i18n="manual.console.eos.caption">
+              Eos OSC RX / TX enabled — UDP RX 8000, UDP TX 8001.
+            </figcaption>
+          </figure>
+
+          <h3 data-i18n="manual.console.ma.title">MA connection</h3>
+          <ol class="manual__steps">
+            <li data-i18n-html="manual.console.ma.s1">
+              Open <strong>Setup → Console → Global Settings</strong>.
+            </li>
+            <li data-i18n-html="manual.console.ma.s2">
+              Set <strong>Telnet</strong> to <strong>Login Enabled</strong>.
+            </li>
+          </ol>
+          <figure class="manual__figure">
+            <img
+              src="./assets/ma-telnet-login.png"
+              alt="grandMA Setup Console Global Settings with Telnet Login Enabled"
+              data-i18n-alt="manual.console.ma.img.alt"
+            />
+            <figcaption data-i18n="manual.console.ma.caption">
+              MA Global Settings — Telnet set to Login Enabled.
+            </figcaption>
+          </figure>
+        </section>
+
+        <section id="tips">
+          <h2 data-i18n="manual.tips.title">8. Tips &amp; troubleshooting</h2>
+          <ul>
+            <li data-i18n="manual.tips.li1">After UI changes, fully quit and relaunch so the WebUI rebuild is loaded.</li>
+            <li data-i18n="manual.tips.li2">macOS builds need a Mac venv and Node for packaging — do not copy a Windows venv.</li>
+            <li data-i18n="manual.tips.li3">If PDF titles look different across machines, use the latest build with shared sans fonts.</li>
+            <li data-i18n="manual.tips.li4">Display scaling changes (125% / 150%) may need an app restart.</li>
+            <li data-i18n-html="manual.tips.li5">Questions: <a href="mailto:hello@lightdori.app">hello@lightdori.app</a></li>
+          </ul>
+        </section>
+      </article>
+    </main>
+
+    <footer class="foot">
+      <a class="foot__brand" href="./index.html">LightDori</a>
+      <span class="foot__meta">© <span id="year"></span> <span data-i18n="foot.rights">LightDori. All rights reserved.</span></span>
+    </footer>
+
+    <script src="./i18n.js"></script>
+    <script>
+      document.getElementById("year").textContent = String(new Date().getFullYear());
+      window.lightdoriInitLang();
+    </script>
+  </body>
+</html>
