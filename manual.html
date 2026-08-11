@@ -7,7 +7,7 @@
     <meta
       name="description"
       data-i18n-content="manual.meta.desc"
-      content="LightDori user manual: getting started, sheet workspace, patch documents, Vectorworks sync, and export workflows."
+      content="LightDori user manual: quick start, the Sheet workspace, patch document PDFs, Magic Sheet, cue sheets, Vectorworks sync, console connections, and troubleshooting."
     />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,15 +38,28 @@
       <aside class="manual__toc" data-i18n-aria="manual.toc.aria" aria-label="Manual contents">
         <p class="eyebrow" data-i18n="manual.toc.eyebrow">Contents</p>
         <ol>
-          <li><a href="#overview" data-i18n="manual.toc.overview">Overview</a></li>
+          <li><a href="#quickstart" data-i18n="manual.toc.quickstart">Quick start</a></li>
+          <li><a href="#overview" data-i18n="manual.toc.overview">What LightDori does</a></li>
           <li><a href="#start" data-i18n="manual.toc.start">Getting started</a></li>
           <li><a href="#sheet" data-i18n="manual.toc.sheet">Sheet workspace</a></li>
-          <li><a href="#patch" data-i18n="manual.toc.patch">Patch documents</a></li>
+          <li><a href="#patch" data-i18n="manual.toc.patch">Patch document PDF</a></li>
+          <li><a href="#magic" data-i18n="manual.toc.magic">Magic Sheet</a></li>
+          <li><a href="#cue" data-i18n="manual.toc.cue">Script &amp; cue sheet</a></li>
+          <li><a href="#mood" data-i18n="manual.toc.mood">Moodboard</a></li>
+          <li><a href="#library" data-i18n="manual.toc.library">Colour, gobo &amp; fixture libraries</a></li>
+          <li><a href="#workflow" data-i18n="manual.toc.workflow">Workflow &amp; PDF Store</a></li>
           <li><a href="#vw" data-i18n="manual.toc.vw">Vectorworks sync</a></li>
-          <li><a href="#export" data-i18n="manual.toc.export">Import &amp; export</a></li>
           <li><a href="#console" data-i18n="manual.toc.console">Console connection</a></li>
-          <li><a href="#tips" data-i18n="manual.toc.tips">Tips &amp; troubleshooting</a></li>
+          <li><a href="#export" data-i18n="manual.toc.export">Import &amp; export</a></li>
+          <li><a href="#settings" data-i18n="manual.toc.settings">Settings</a></li>
+          <li><a href="#account" data-i18n="manual.toc.account">Account &amp; collaboration</a></li>
+          <li><a href="#tips" data-i18n="manual.toc.tips">Troubleshooting</a></li>
         </ol>
+        <p class="manual__toc-tools">
+          <button type="button" class="manual__toc-toggle" id="toc-toggle" data-i18n="manual.toc.collapseAll">
+            Collapse all
+          </button>
+        </p>
       </aside>
 
       <article class="manual__body">
@@ -54,169 +67,1227 @@
           <p class="eyebrow" data-i18n="manual.hero.eyebrow">User manual</p>
           <h1 data-i18n="manual.hero.title">LightDori guide</h1>
           <p class="manual__lede" data-i18n="manual.hero.lede">
-            A practical walkthrough for patch lists, print-ready PDFs, and Vectorworks exchange.
-            Written for lighting designers, production electricians, and shop teams.
+            Everything from your first patch list to console handoff. Written for lighting
+            designers, production electricians, and shop teams — no prior LightDori experience
+            assumed.
           </p>
         </header>
 
-        <section id="overview">
-          <h2 data-i18n="manual.overview.title">1. Overview</h2>
-          <p data-i18n="manual.overview.p1">
-            LightDori is a desktop workspace for lighting production data. Use it to build and edit
-            fixture sheets, export patch documents, and keep Vectorworks data in sync without living
-            inside spreadsheets.
-          </p>
-          <ul>
-            <li data-i18n-html="manual.overview.li1"><strong>Windows</strong> and <strong>macOS</strong> desktop builds</li>
-            <li data-i18n="manual.overview.li2">Offline-friendly for theatre, tour, and shop floors</li>
-            <li data-i18n="manual.overview.li3">Core loop: Sheet → Patch PDF → Vectorworks / console handoff</li>
-          </ul>
-        </section>
+        <!-- 1. Quick start -->
+        <details class="manual__section" id="quickstart" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.quickstart.title">1. Quick start</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="manual.quickstart.lead">
+              If you only have five minutes, do these six things. Every step is explained in
+              detail further down the page.
+            </p>
+            <ol class="manual__quick">
+              <li data-i18n-html="manual.quickstart.s1">
+                <strong>Sign in.</strong> Launch LightDori and enter your account email and
+                password. Tick <em>Remember me</em> so you skip this next time.
+              </li>
+              <li data-i18n-html="manual.quickstart.s2">
+                <strong>Create a project.</strong> On the start hub press <em>NEW FILE</em> and
+                follow the five-step guide. Pick <em>Use sample data</em> if you just want to look
+                around.
+              </li>
+              <li data-i18n-html="manual.quickstart.s3">
+                <strong>Open the Sheet.</strong> From the home cards choose <em>Sheet</em>. This
+                table is where every fixture lives.
+              </li>
+              <li data-i18n-html="manual.quickstart.s4">
+                <strong>Get your fixtures in.</strong> Drag a CSV, Excel, or MVR file onto the
+                window, or press <em>Edit</em> then <em>Add fixture</em> to type them by hand.
+              </li>
+              <li data-i18n-html="manual.quickstart.s5">
+                <strong>Patch them.</strong> Use <em>Auto universe</em> to assign a block of
+                addresses at once, then open <em>Universe map</em> to check nothing collides.
+              </li>
+              <li data-i18n-html="manual.quickstart.s6">
+                <strong>Print the paperwork.</strong> Tick the rows you want, choose
+                <em>Export → Patch document PDF</em>, select the <em>Instrument Schedule</em>
+                preset, and press <em>Export PDF</em>.
+              </li>
+            </ol>
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n-html="manual.quickstart.tip">
+                Save early and often with <kbd>Ctrl</kbd> + <kbd>S</kbd> (<kbd>Cmd</kbd> +
+                <kbd>S</kbd> on macOS). Projects are saved as a single <code>.ld</code> file you
+                can email or drop on a USB stick.
+              </p>
+            </div>
+          </div>
+        </details>
 
-        <section id="start">
-          <h2 data-i18n="manual.start.title">2. Getting started</h2>
-          <ol class="manual__steps">
-            <li data-i18n="manual.start.s1">Launch LightDori and sign in from the hub when prompted.</li>
-            <li data-i18n-html="manual.start.s2">Choose <strong>New File</strong> or open an existing project.</li>
-            <li data-i18n="manual.start.s3">
-              Pick a fixture start mode: blank sheet, import existing data, or sample data.
-            </li>
-            <li data-i18n="manual.start.s4">Open the Sheet workspace to begin editing channels, addresses, and types.</li>
-          </ol>
-          <p data-i18n="manual.start.p1">
-            Theme and app preferences can be previewed in Settings. Changes apply permanently only
-            after you save settings.
-          </p>
-        </section>
+        <!-- 2. Overview -->
+        <details class="manual__section" id="overview" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.overview.title">2. What LightDori does</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p data-i18n="manual.overview.p1">
+              LightDori is a desktop workspace for lighting production data. Instead of juggling a
+              spreadsheet, a drawing file, and a console show file, you keep one fixture list and
+              let LightDori produce the paperwork and the exports each department needs.
+            </p>
+            <p data-i18n="manual.overview.p2">
+              It runs on Windows and macOS, works offline, and is built for theatre, touring, and
+              rental shop workflows.
+            </p>
 
-        <section id="sheet">
-          <h2 data-i18n="manual.sheet.title">3. Sheet workspace</h2>
-          <p data-i18n="manual.sheet.p1">
-            The Sheet is the main fixture table. Edit mode lets you add, delete, duplicate, and
-            rearrange rows or columns.
-          </p>
-          <ul>
-            <li data-i18n-html="manual.sheet.li1"><strong>Edit</strong> — unlock cell editing and row tools</li>
-            <li data-i18n-html="manual.sheet.li2"><strong>Filter / Sort</strong> — focus positions or reorder before print</li>
-            <li data-i18n-html="manual.sheet.li3"><strong>Auto Universe</strong> — help assign DMX universes from addresses</li>
-            <li data-i18n-html="manual.sheet.li4"><strong>Export</strong> — CSV, XML, MVR, ASCII, and PDF document paths</li>
-          </ul>
-          <p data-i18n="manual.sheet.p2">
-            Common fields include Channel, Device Type, Universe / Address, Position, Color, and
-            UID. Keep UIDs stable when syncing with Vectorworks.
-          </p>
-        </section>
+            <h3 data-i18n="manual.overview.h1">The core loop</h3>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.overview.loop1">
+                Build or import your fixture list in the <strong>Sheet</strong>.
+              </li>
+              <li data-i18n-html="manual.overview.loop2">
+                Assign universes and addresses, and check for conflicts.
+              </li>
+              <li data-i18n-html="manual.overview.loop3">
+                Export a <strong>patch document PDF</strong> for the shop and the booth.
+              </li>
+              <li data-i18n-html="manual.overview.loop4">
+                Hand the data off to <strong>Vectorworks</strong> or a lighting
+                <strong>console</strong>.
+              </li>
+            </ol>
 
-        <section id="patch">
-          <h2 data-i18n="manual.patch.title">4. Patch documents</h2>
-          <p data-i18n="manual.patch.p1">
-            Patch Document builds a print-ready PDF (instrument schedule / patch list) from the
-            current sheet selection.
-          </p>
-          <ol class="manual__steps">
-            <li data-i18n="manual.patch.s1">Choose the columns to include and set title, notes, and date styles.</li>
-            <li data-i18n="manual.patch.s2">Preview the layout, then export PDF.</li>
-            <li data-i18n="manual.patch.s3">Exported PDFs can be collected in the PDF Store for later merge.</li>
-          </ol>
-          <p data-i18n="manual.patch.p2">
-            Use this for shop handouts, booth patch tables, and production meetings. Title fonts are
-            chosen for consistent Windows / macOS output.
-          </p>
-        </section>
+            <h3 data-i18n="manual.overview.h2">What is in the app</h3>
+            <ul>
+              <li data-i18n-html="manual.overview.mod1">
+                <strong>Sheet</strong> — the fixture table: channels, addresses, types, positions,
+                colours.
+              </li>
+              <li data-i18n-html="manual.overview.mod2">
+                <strong>Magic Sheet</strong> — a visual channel layout you can print or use at the
+                console.
+              </li>
+              <li data-i18n-html="manual.overview.mod3">
+                <strong>Script / Cue Sheet</strong> — mark cues against an imported script and
+                build a cue or scene breakdown.
+              </li>
+              <li data-i18n-html="manual.overview.mod4">
+                <strong>Moodboard</strong> — a free canvas for references, notes, and looks.
+              </li>
+              <li data-i18n-html="manual.overview.mod5">
+                <strong>Colour, Gobo, GDTF, Cable, Calendar</strong> — reference libraries and
+                planning tools.
+              </li>
+              <li data-i18n-html="manual.overview.mod6">
+                <strong>Workflow &amp; PDF Store</strong> — collect every PDF you export and merge
+                them into one package.
+              </li>
+              <li data-i18n-html="manual.overview.mod7">
+                <strong>Console</strong> — connect to ETC Eos or grandMA to exchange patch and cue
+                data.
+              </li>
+            </ul>
+          </div>
+        </details>
 
-        <section id="vw">
-          <h2 data-i18n="manual.vw.title">5. Vectorworks sync</h2>
-          <p data-i18n="manual.vw.p1">
-            LightDori exchanges fixture data through a shared JSON file so LD and VW stay aligned.
-          </p>
-          <ul>
-            <li data-i18n-html="manual.vw.li1"><strong>Sync Now</strong> — write LightDori devices to the exchange file</li>
-            <li data-i18n-html="manual.vw.li2"><strong>Import</strong> — Merge updates matching fixtures; Overwrite replaces the sheet</li>
-            <li data-i18n-html="manual.vw.li3"><strong>Live sync</strong> — poll for VW exports and apply when available</li>
-          </ul>
-          <p data-i18n="manual.vw.p2">
-            If the exchange file is missing, export from Vectorworks first. Close the sync panel
-            when prompted so pending keystroke nudges can apply on Windows setups that use them.
-          </p>
-        </section>
+        <!-- 3. Getting started -->
+        <details class="manual__section" id="start" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.start.title">3. Getting started</h2>
+          </summary>
+          <div class="manual__section-body">
+            <h3 data-i18n="manual.start.h1">Signing in</h3>
+            <p data-i18n-html="manual.start.p1">
+              LightDori asks for your account the first time you launch it. Enter your email and
+              password and press <strong>Sign In</strong>. If you do not have an account yet,
+              switch to the <strong>SIGN UP</strong> tab and create one with your name, email, and
+              a password.
+            </p>
+            <p data-i18n-html="manual.start.p2">
+              Tick <strong>Remember me</strong> to stay signed in on that computer. Your licence is
+              checked online, but LightDori keeps working offline for about a week after the last
+              successful check.
+            </p>
 
-        <section id="export">
-          <h2 data-i18n="manual.export.title">6. Import &amp; export</h2>
-          <p data-i18n="manual.export.p1">Typical formats supported in the Sheet / file workflows:</p>
-          <ul>
-            <li data-i18n="manual.export.li1">CSV / Excel / JSON / XML</li>
-            <li data-i18n="manual.export.li2">MVR fixture packages</li>
-            <li data-i18n="manual.export.li3">ASCII (ASC) patch and cue imports</li>
-            <li data-i18n="manual.export.li4">Patch Document PDF and Magic Sheet PDF exports</li>
-          </ul>
-          <p data-i18n="manual.export.p2">
-            After import, verify Channel / Address collisions and Position filters before sending
-            anything to a console.
-          </p>
-        </section>
+            <h3 data-i18n="manual.start.h2">The start hub</h3>
+            <p data-i18n="manual.start.p3">
+              After signing in you land on the hub. It has three large cards:
+            </p>
+            <ul>
+              <li data-i18n-html="manual.start.hub1">
+                <strong>CONTINUE WORK</strong> — reopens the project you used most recently.
+              </li>
+              <li data-i18n-html="manual.start.hub2">
+                <strong>OPEN FILE</strong> — browse for an existing <code>.ld</code> project or a
+                data file.
+              </li>
+              <li data-i18n-html="manual.start.hub3">
+                <strong>NEW FILE</strong> — starts the new project guide described below.
+              </li>
+            </ul>
+            <p data-i18n-html="manual.start.p4">
+              The right-hand side shows <strong>News</strong> from us and your three most
+              <strong>Recent</strong> files. Click a recent file to jump straight back into it.
+            </p>
 
-        <section id="console">
-          <h2 data-i18n="manual.console.title">7. Console connection</h2>
-          <p data-i18n="manual.console.p1">
-            LightDori can connect to lighting consoles. Use the Eos OSC ports or MA Telnet login below.
-          </p>
-          <h3 data-i18n="manual.console.eos.title">Eos connection</h3>
-          <ol class="manual__steps">
-            <li data-i18n-html="manual.console.eos.s1">
-              Open <strong>Setup → System → Show Control → OSC</strong>.
-            </li>
-            <li data-i18n-html="manual.console.eos.s2">
-              Enable <strong>OSC RX</strong> and <strong>OSC TX</strong>.
-            </li>
-            <li data-i18n-html="manual.console.eos.s3">
-              Set <strong>OSC UDP RX Port</strong> to <strong>8000</strong>.
-            </li>
-            <li data-i18n-html="manual.console.eos.s4">
-              Set <strong>OSC UDP TX Port</strong> to <strong>8001</strong>.
-            </li>
-          </ol>
-          <figure class="manual__figure">
-            <img
-              src="./assets/eos-osc-ports.png"
-              alt="ETC Eos OSC settings with RX/TX enabled, RX port 8000, TX port 8001"
-              data-i18n-alt="manual.console.eos.img.alt"
-            />
-            <figcaption data-i18n="manual.console.eos.caption">
-              Eos OSC RX / TX enabled — UDP RX 8000, UDP TX 8001.
-            </figcaption>
-          </figure>
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/hub.png"
+                alt="LightDori start hub with Continue work, Open file, and New file cards"
+                data-i18n-alt="manual.start.shot1.alt"
+              />
+              <figcaption data-i18n="manual.start.shot1.cap">
+                The start hub — recent files and news sit beside the three main actions.
+              </figcaption>
+            </figure>
 
-          <h3 data-i18n="manual.console.ma.title">MA connection</h3>
-          <ol class="manual__steps">
-            <li data-i18n-html="manual.console.ma.s1">
-              Open <strong>Setup → Console → Global Settings</strong>.
-            </li>
-            <li data-i18n-html="manual.console.ma.s2">
-              Set <strong>Telnet</strong> to <strong>Login Enabled</strong>.
-            </li>
-          </ol>
-          <figure class="manual__figure">
-            <img
-              src="./assets/ma-telnet-login.png"
-              alt="grandMA Setup Console Global Settings with Telnet Login Enabled"
-              data-i18n-alt="manual.console.ma.img.alt"
-            />
-            <figcaption data-i18n="manual.console.ma.caption">
-              MA Global Settings — Telnet set to Login Enabled.
-            </figcaption>
-          </figure>
-        </section>
+            <h3 data-i18n="manual.start.h3">Creating a new project</h3>
+            <p data-i18n-html="manual.start.p5">
+              <strong>NEW FILE</strong> opens a five-step guide. You can press <em>Skip</em> at any
+              point and fill the details in later.
+            </p>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.start.g1">
+                <strong>Name the project</strong> — the show or event name.
+              </li>
+              <li data-i18n-html="manual.start.g2">
+                <strong>Set the venue info</strong> — venue name, stage size (black box through to
+                festival), expected channel count, and optionally a floor plan in PDF, DXF, or
+                image form.
+              </li>
+              <li data-i18n-html="manual.start.g3">
+                <strong>Choose fixture setup</strong> — <em>Start blank</em>,
+                <em>Import fixture data</em>, or <em>Use sample data</em>.
+              </li>
+              <li data-i18n-html="manual.start.g4">
+                <strong>Pick starting panels</strong> — which workspaces open with the project:
+                Sheet, Magic Sheet, Scripts / Cue Sheet, Moodboard.
+              </li>
+              <li data-i18n-html="manual.start.g5">
+                <strong>Ready to start</strong> — a summary. Press <em>Start project</em>.
+              </li>
+            </ol>
 
-        <section id="tips">
-          <h2 data-i18n="manual.tips.title">8. Tips &amp; troubleshooting</h2>
-          <ul>
-            <li data-i18n="manual.tips.li1">After UI changes, fully quit and relaunch so the WebUI rebuild is loaded.</li>
-            <li data-i18n="manual.tips.li2">macOS builds need a Mac venv and Node for packaging — do not copy a Windows venv.</li>
-            <li data-i18n="manual.tips.li3">If PDF titles look different across machines, use the latest build with shared sans fonts.</li>
-            <li data-i18n="manual.tips.li4">Display scaling changes (125% / 150%) may need an app restart.</li>
-            <li data-i18n-html="manual.tips.li5">Questions: <a href="mailto:hello@lightdori.app">hello@lightdori.app</a></li>
-          </ul>
-        </section>
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n="manual.start.tip1">
+                None of these choices lock you in. Stage size and channel count only set sensible
+                defaults, and you can open any panel later.
+              </p>
+            </div>
+
+            <h3 data-i18n="manual.start.h4">Finding your way around</h3>
+            <p data-i18n="manual.start.p6">
+              The workspace has two navigation layers. Large cards in the middle open the main
+              modules — Sheet, Scripts / Cue Sheet, Moodboard, Magic Sheet — with smaller cards
+              beside them for Colour, Gobo, GDTF, Cable, Calendar, and Workflow.
+            </p>
+            <p data-i18n="manual.start.p7">
+              The narrow rail down the left side stays available everywhere:
+            </p>
+            <ul>
+              <li data-i18n-html="manual.start.nav1">
+                <strong>Home</strong>, <strong>Help</strong>, <strong>Alerts</strong> — return to
+                the cards, read help for the panel you are in, and see warnings about your data.
+              </li>
+              <li data-i18n-html="manual.start.nav2">
+                <strong>Collab</strong>, <strong>Profile</strong>, <strong>Settings</strong> —
+                shared sessions, your account, and app preferences.
+              </li>
+              <li data-i18n-html="manual.start.nav3">
+                <strong>Console</strong>, <strong>Store</strong> — the console link and the PDF
+                Store.
+              </li>
+              <li data-i18n-html="manual.start.nav4">
+                <strong>Snap</strong>, <strong>Album</strong> — drag a rectangle to capture part of
+                the screen, then find those captures in the album.
+              </li>
+            </ul>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/workspace-home.png"
+                alt="LightDori workspace home cards with the left navigation rail"
+                data-i18n-alt="manual.start.shot2.alt"
+              />
+              <figcaption data-i18n="manual.start.shot2.cap">
+                Workspace home — module cards in the centre, the utility rail on the left.
+              </figcaption>
+            </figure>
+
+            <h3 data-i18n="manual.start.h5">Saving your work</h3>
+            <p data-i18n-html="manual.start.p8">
+              Projects are saved as a single <code>.ld</code> file. Use <kbd>Ctrl</kbd> +
+              <kbd>O</kbd> to open, <kbd>Ctrl</kbd> + <kbd>S</kbd> to save, and <kbd>Ctrl</kbd> +
+              <kbd>Shift</kbd> + <kbd>S</kbd> to save a copy. On macOS use <kbd>Cmd</kbd> instead of
+              <kbd>Ctrl</kbd>. An asterisk in the title bar means you have unsaved changes.
+            </p>
+            <div class="manual__note manual__note--warn">
+              <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
+              <p data-i18n-html="manual.start.warn1">
+                There is an <em>Auto save</em> preference in Settings, but do not rely on it as
+                your only safety net — save manually before big edits, imports, and exports.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 4. Sheet -->
+        <details class="manual__section" id="sheet" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.sheet.title">4. Sheet workspace</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="manual.sheet.lead">
+              The Sheet is the fixture table at the heart of the app. Everything else — the patch
+              PDF, the magic sheet, the Vectorworks exchange, the console push — reads from it.
+            </p>
+            <p data-i18n="manual.sheet.p1">
+              Columns are not fixed. They come from whatever file you imported, so a sheet from an
+              MVR looks different from one built out of a shop spreadsheet. Typical columns are
+              Channel, Purpose, Position, Unit Number, Instrument or Device Type, Universe,
+              Address, Dimmer, Circuit, Colour, and Gobo.
+            </p>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/sheet-toolbar.png"
+                alt="Sheet workspace showing the fixture table and its toolbar"
+                data-i18n-alt="manual.sheet.shot1.alt"
+              />
+              <figcaption data-i18n="manual.sheet.shot1.cap">
+                The Sheet toolbar — search, filter, sort, edit, and export all live here.
+              </figcaption>
+            </figure>
+
+            <h3 data-i18n="manual.sheet.h1">The toolbar</h3>
+            <ul>
+              <li data-i18n-html="manual.sheet.t1">
+                <strong>Search</strong> — type to narrow the table as you go; press
+                <kbd>Enter</kbd> to apply immediately.
+              </li>
+              <li data-i18n-html="manual.sheet.t2">
+                <strong>Filter</strong> — show only rows where one column contains a piece of text.
+              </li>
+              <li data-i18n-html="manual.sheet.t3">
+                <strong>Sort</strong> — reorder the table by any column, A→Z or Z→A.
+              </li>
+              <li data-i18n-html="manual.sheet.t4">
+                <strong>Edit</strong> — unlocks the table. Adding, deleting, and cell editing only
+                work while this is on; press it again to finish.
+              </li>
+              <li data-i18n-html="manual.sheet.t5">
+                <strong>Add fixture</strong> / <strong>Delete selected rows</strong> — available in
+                edit mode.
+              </li>
+              <li data-i18n-html="manual.sheet.t6">
+                <strong>Undo</strong> / <strong>Redo</strong> — step back and forward through sheet
+                changes.
+              </li>
+              <li data-i18n-html="manual.sheet.t7">
+                <strong>Universe map</strong> — a 512-channel grid per universe showing what is
+                used, free, or double-patched.
+              </li>
+              <li data-i18n-html="manual.sheet.t8">
+                <strong>Auto universe</strong> — assign universes and addresses to many fixtures at
+                once.
+              </li>
+              <li data-i18n-html="manual.sheet.t9">
+                <strong>Fixture type summary</strong> — a side panel counting how many of each
+                fixture type you have.
+              </li>
+              <li data-i18n-html="manual.sheet.t10">
+                <strong>Vectorworks</strong> — opens the sync panel described in section 11.
+              </li>
+              <li data-i18n-html="manual.sheet.t11">
+                <strong>Export</strong> — data file, patch document PDF, XML, or MVR.
+              </li>
+            </ul>
+
+            <h3 data-i18n="manual.sheet.h2">Selecting and editing</h3>
+            <ul>
+              <li data-i18n-html="manual.sheet.e1">
+                <strong>Select a row</strong> by clicking it. Hold <kbd>Ctrl</kbd> (<kbd>Cmd</kbd>
+                on macOS) to add rows one at a time, or <kbd>Shift</kbd> to select a range.
+              </li>
+              <li data-i18n-html="manual.sheet.e2">
+                <strong>Tick the checkbox</strong> at the start of a row to include it in an
+                export. The checkbox in the header ticks everything currently visible — which is
+                why filtering first makes exporting much easier.
+              </li>
+              <li data-i18n-html="manual.sheet.e3">
+                <strong>Edit a cell</strong> by turning on <em>Edit</em> and double-clicking it.
+                <kbd>Enter</kbd> commits your change, <kbd>Esc</kbd> cancels it.
+              </li>
+              <li data-i18n-html="manual.sheet.e4">
+                <strong>Colour and gobo cells</strong> open a picker on double-click instead of a
+                text box, so you choose from the real gel and gobo libraries.
+              </li>
+              <li data-i18n-html="manual.sheet.e5">
+                <strong>Reorder columns</strong> by dragging their headers, and
+                <strong>sort</strong> by clicking a header.
+              </li>
+            </ul>
+
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n-html="manual.sheet.tip1">
+                Selecting a row and ticking a row are two different things. Selection is for
+                editing and Auto universe; the tick decides what ends up in your export.
+              </p>
+            </div>
+
+            <h3 data-i18n="manual.sheet.h3">Adding fixtures by hand</h3>
+            <p data-i18n-html="manual.sheet.p2">
+              Turn on <strong>Edit</strong>, press <strong>Add fixture</strong>, and fill in the
+              fields you care about. The dialog covers far more than the basics — purpose,
+              position, unit number, dimmer, circuit number and name, system, DMX footprint, field
+              and beam angle, wattage, weight, frame size, gobos and gobo rotation, plus six
+              free-form user fields. Leave anything you do not need blank.
+            </p>
+
+            <h3 data-i18n="manual.sheet.h4">Patching with Auto universe</h3>
+            <p data-i18n="manual.sheet.p3">
+              Auto universe fills in a run of addresses for you instead of typing them one by one.
+            </p>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.sheet.au1">
+                Choose a <strong>Target</strong>: the rows you selected, everything currently
+                visible, only unpatched rows, or the whole sheet.
+              </li>
+              <li data-i18n-html="manual.sheet.au2">
+                Set the <strong>Start universe</strong> and <strong>Start address</strong> (1–512).
+              </li>
+              <li data-i18n-html="manual.sheet.au3">
+                Set an <strong>Offset</strong> if you want to leave gaps between fixtures.
+              </li>
+              <li data-i18n-html="manual.sheet.au4">Press <strong>Apply</strong>.</li>
+            </ol>
+            <p data-i18n-html="manual.sheet.p4">
+              Then open <strong>Universe map</strong> and check the summary at the top of each
+              universe tab. It counts used and free channels and flags conflicts, and hovering any
+              square tells you which channel it is.
+            </p>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/universe-map.png"
+                alt="Universe map dialog with a 512-channel grid and conflict summary"
+                data-i18n-alt="manual.sheet.shot2.alt"
+              />
+              <figcaption data-i18n="manual.sheet.shot2.cap">
+                The universe map — check this before you send anything to a console.
+              </figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <!-- 5. Patch document -->
+        <details class="manual__section" id="patch" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.patch.title">5. Patch document PDF</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="manual.patch.lead">
+              This is the paperwork the shop and the booth actually hold — an instrument schedule
+              or patch list, laid out for print.
+            </p>
+
+            <h3 data-i18n="manual.patch.h1">Making one</h3>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.patch.s1">
+                In the Sheet, tick the rows you want. Filter first if you only need one position.
+              </li>
+              <li data-i18n-html="manual.patch.s2">
+                Choose <strong>Export → Patch document PDF</strong>.
+              </li>
+              <li data-i18n-html="manual.patch.s3">
+                Pick your columns. <strong>Select all</strong> and <strong>Clear</strong> work on
+                the whole list, and <strong>Up</strong> / <strong>Down</strong> set the order they
+                print in.
+              </li>
+              <li data-i18n-html="manual.patch.s4">
+                Or skip that and set <strong>Schedule preset</strong> to
+                <strong>Instrument Schedule</strong>, which selects and titles the standard columns
+                for you.
+              </li>
+              <li data-i18n-html="manual.patch.s5">
+                Set the page up, fill in the header block, then press
+                <strong>Update preview</strong> to see it.
+              </li>
+              <li data-i18n-html="manual.patch.s6">Press <strong>Export PDF</strong>.</li>
+            </ol>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/patch-document.png"
+                alt="Patch document workspace with column settings on the left and a live preview"
+                data-i18n-alt="manual.patch.shot1.alt"
+              />
+              <figcaption data-i18n="manual.patch.shot1.cap">
+                Settings on the left, live preview on the right.
+              </figcaption>
+            </figure>
+
+            <h3 data-i18n="manual.patch.h2">Page and layout options</h3>
+            <ul>
+              <li data-i18n-html="manual.patch.o1">
+                <strong>Paper size</strong> — A4, Letter, A3, or Legal.
+              </li>
+              <li data-i18n-html="manual.patch.o2">
+                <strong>Orientation</strong> — portrait or landscape. Wide schedules read much
+                better in landscape.
+              </li>
+              <li data-i18n-html="manual.patch.o3">
+                <strong>Table style</strong> — Simple, Modern, or Minimal.
+              </li>
+              <li data-i18n-html="manual.patch.o4">
+                <strong>Row separator</strong> — draw a heavier line every few rows so eyes do not
+                slip across the page.
+              </li>
+              <li data-i18n-html="manual.patch.o5">
+                <strong>Font size</strong> — 7 to 14 pt. Drop it to fit more columns on one page.
+              </li>
+            </ul>
+
+            <h3 data-i18n="manual.patch.h3">The header block</h3>
+            <p data-i18n-html="manual.patch.p1">
+              Set a <strong>Title</strong> (it defaults to “Lighting Device Patch List”), a
+              <strong>Date</strong>, and a <strong>Note</strong> for revision or department
+              information. You can add a <strong>Logo</strong>, and switch the whole header block
+              or the total-count <strong>Summary line</strong> off if you want a bare table.
+            </p>
+
+            <h3 data-i18n="manual.patch.h4">How the instrument schedule is organised</h3>
+            <p data-i18n-html="manual.patch.p2">
+              With the <strong>Instrument Schedule</strong> preset, fixtures are grouped by
+              <strong>Position</strong> and sorted by <strong>Unit Number</strong> within each
+              group. Every group gets its own heading and a repeated column header row, so a page
+              torn out of the middle still makes sense. Fixtures with no position are collected
+              under “(No Position)”.
+            </p>
+
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n-html="manual.patch.tip1">
+                The preview only refreshes when you press <strong>Update preview</strong>. If it
+                says <em>Pending</em>, what you are looking at is out of date.
+              </p>
+            </div>
+            <p data-i18n-html="manual.patch.p3">
+              Exported PDFs are collected in the <strong>PDF Store</strong> — see section 10 for
+              downloading and merging them.
+            </p>
+          </div>
+        </details>
+
+        <!-- 6. Magic Sheet -->
+        <details class="manual__section" id="magic" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.magic.title">6. Magic Sheet</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="manual.magic.lead">
+              A magic sheet is a picture of your rig rather than a table — groups of channel
+              bubbles laid out the way you think about the stage.
+            </p>
+            <p data-i18n-html="manual.magic.p1">
+              LightDori builds a first draft from your fixture data automatically. Change
+              <strong>Group by</strong> in the sidebar to organise cells by Purpose, Position,
+              Colour, Instrument, or Focus.
+            </p>
+
+            <h3 data-i18n="manual.magic.h1">Moving around the canvas</h3>
+            <ul>
+              <li data-i18n-html="manual.magic.c1">
+                <strong>Pan</strong> by dragging empty canvas.
+              </li>
+              <li data-i18n-html="manual.magic.c2">
+                <strong>Zoom</strong> with the mouse wheel, or the zoom controls in the corner.
+              </li>
+              <li data-i18n-html="manual.magic.c3">
+                <strong>Select a cell</strong> with a single click; <strong>double-click</strong>
+                to open it for detailed editing. <kbd>Esc</kbd> closes it again.
+              </li>
+              <li data-i18n-html="manual.magic.c4">
+                <strong>Move bubbles</strong> by dragging them, or drag across the canvas to
+                box-select several at once.
+              </li>
+            </ul>
+
+            <h3 data-i18n="manual.magic.h2">Styling cells and bubbles</h3>
+            <p data-i18n-html="manual.magic.p2">
+              With a cell selected you can rename it, set its header colour, change the bubble
+              scale and the slot grid, and drop in a background image (a plan or section works
+              well) with an opacity slider. The direction pad points teardrop bubbles the way the
+              fixtures actually face, and <strong>Auto direction from position</strong> guesses
+              that from your position names.
+            </p>
+            <p data-i18n="manual.magic.p3">
+              Select a single bubble to change its channel number, or override its scale and
+              direction independently of the rest of the cell. Reorder cells by dragging them in
+              the sidebar list.
+            </p>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/magic-sheet.png"
+                alt="Magic Sheet canvas with grouped channel bubbles and the settings sidebar"
+                data-i18n-alt="manual.magic.shot1.alt"
+              />
+              <figcaption data-i18n="manual.magic.shot1.cap">
+                Channel bubbles grouped into cells, with layout settings on the right.
+              </figcaption>
+            </figure>
+
+            <h3 data-i18n="manual.magic.h3">Exporting</h3>
+            <p data-i18n-html="manual.magic.p4">
+              <strong>Export PNG</strong> gives you a flat image for a console or a chat message.
+              <strong>Export PDF</strong> opens a separate print layout where you choose which
+              cards appear, how many columns and rows fit on a page, paper size, margins, and
+              whether to print a header block and fixture details. Press
+              <strong>Update preview</strong>, then <strong>Export PDF</strong>.
+            </p>
+          </div>
+        </details>
+
+        <!-- 7. Script & cue sheet -->
+        <details class="manual__section" id="cue" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.cue.title">7. Script &amp; cue sheet</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="manual.cue.lead">
+              Put the script on one side and your cues on the other, and mark cues where they
+              actually happen.
+            </p>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.cue.s1">
+                Import or replace the script from the script tools.
+              </li>
+              <li data-i18n-html="manual.cue.s2">
+                Click a page to place a cue marker; click the marker again to remove it. Zoom in
+                and out, or collapse pages, to work at a comfortable size.
+              </li>
+              <li data-i18n-html="manual.cue.s3">
+                Add cues, scenes, and acts in the table beside it, and turn on
+                <strong>Edit</strong> to change numbers, names, and timing. Undo and redo are
+                available throughout.
+              </li>
+              <li data-i18n-html="manual.cue.s4">
+                Switch between the <strong>cue sheet</strong> and a
+                <strong>scene breakdown</strong>, and between table and card views, depending on
+                whether you are working or presenting.
+              </li>
+              <li data-i18n-html="manual.cue.s5">
+                Use <strong>Sync markers</strong> after editing the script so markers stay on the
+                right pages.
+              </li>
+            </ol>
+            <p data-i18n-html="manual.cue.p1">
+              <strong>Export cue document</strong> produces a PDF in the same layout tool as the
+              patch document. <strong>Export cue data</strong> writes an ETC ASCII
+              (<code>.asc</code>) file you can load into an Eos-family console.
+            </p>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/cue-sheet.png"
+                alt="Script pages beside a cue table with cue markers"
+                data-i18n-alt="manual.cue.shot1.alt"
+              />
+              <figcaption data-i18n="manual.cue.shot1.cap">
+                Script on the left, cue table on the right.
+              </figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <!-- 8. Moodboard -->
+        <details class="manual__section" id="mood" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.mood.title">8. Moodboard</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p data-i18n="manual.mood.p1">
+              A free canvas for the visual side of the conversation: references, colour ideas,
+              sketches, and notes you want to show a director or a designer.
+            </p>
+            <p data-i18n-html="manual.mood.p2">
+              The toolbar covers <strong>Select</strong>, <strong>Add images</strong>,
+              <strong>Text</strong>, <strong>Draw</strong>, <strong>Shape</strong>, and a
+              <strong>Colour circle</strong> for gel ideas, plus page settings, undo, redo, and
+              remove. Right-click an object to bring it forward or send it backward.
+            </p>
+            <p data-i18n-html="manual.mood.p3">
+              Hold <kbd>Space</kbd> to pan, <kbd>Delete</kbd> to remove the selection, and use
+              <kbd>Ctrl</kbd> + <kbd>C</kbd> / <kbd>V</kbd> / <kbd>Z</kbd> / <kbd>Y</kbd> for copy,
+              paste, undo, and redo. Export the board as PNG or PDF when you are done.
+            </p>
+          </div>
+        </details>
+
+        <!-- 9. Libraries -->
+        <details class="manual__section" id="library" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.library.title">9. Colour, gobo &amp; fixture libraries</h2>
+          </summary>
+          <div class="manual__section-body">
+            <h3 data-i18n="manual.library.h1">Colour</h3>
+            <p data-i18n-html="manual.library.p1">
+              Search LEE and ROSCO gels by code, name, or hex value, or switch to
+              <strong>In use</strong> to see only the colours already in your rig. Opening a swatch
+              shows its technical data and similar colours from other brands — useful when a shop
+              is out of stock and you need a substitute.
+            </p>
+
+            <h3 data-i18n="manual.library.h2">Gobo</h3>
+            <p data-i18n="manual.library.p2">
+              Browse gobo folders, preview the patterns, and assign them to slots on your fixtures.
+              Assigned gobos appear as thumbnails in the sheet and print in your patch document.
+            </p>
+
+            <h3 data-i18n="manual.library.h3">GDTF</h3>
+            <p data-i18n-html="manual.library.p3">
+              Look through the GDTF catalogue or your own local files to check modes, channel
+              layouts, and 3D models before you commit to a fixture. You can also create and save
+              your own <code>.gdtf</code> definitions.
+            </p>
+
+            <h3 data-i18n="manual.library.h4">Cable</h3>
+            <p data-i18n="manual.library.p4">
+              Plan power and DMX runs on a routing canvas. Filter by all, power, or DMX, place
+              devices, connect them, and read off the totals as you go.
+            </p>
+
+            <h3 data-i18n="manual.library.h5">Calendar</h3>
+            <p data-i18n="manual.library.p5">
+              A simple month view for load-in, focus, tech, and strike dates attached to the
+              project.
+            </p>
+          </div>
+        </details>
+
+        <!-- 10. Workflow & PDF Store -->
+        <details class="manual__section" id="workflow" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.workflow.title">10. Workflow &amp; PDF Store</h2>
+          </summary>
+          <div class="manual__section-body">
+            <h3 data-i18n="manual.workflow.h1">PDF Store</h3>
+            <p data-i18n-html="manual.workflow.p1">
+              Every PDF you export is collected in the <strong>Store</strong> on the left rail
+              rather than dropped straight into a folder. Open it to see thumbnails of everything
+              you have produced for this project.
+            </p>
+            <ul>
+              <li data-i18n-html="manual.workflow.s1">
+                <strong>Click a thumbnail</strong> to page through the document, download it, or
+                delete it.
+              </li>
+              <li data-i18n-html="manual.workflow.s2">
+                <strong>Double-click the name</strong> to rename it — worth doing before you send a
+                package out.
+              </li>
+              <li data-i18n-html="manual.workflow.s3">
+                <strong>Merge</strong> combines documents into one file. Press
+                <em>Merge</em>, click the PDFs in the order you want them, then <em>Confirm</em>.
+                You need at least two.
+              </li>
+            </ul>
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n="manual.workflow.tip1">
+                This is how you build one production pack: instrument schedule, magic sheet, cue
+                sheet, and moodboard merged into a single PDF to send out.
+              </p>
+            </div>
+
+            <h3 data-i18n="manual.workflow.h2">Workflow</h3>
+            <p data-i18n-html="manual.workflow.p2">
+              The Workflow canvas is a map of your paperwork. Each node stands for a document —
+              patch, magic sheet, cue sheet, moodboard, floor plan, colour, export — and shows
+              whether a PDF has been produced yet, so you can see at a glance what is still
+              missing. Double-click a node to jump to the workspace that makes it, and merge by
+              workflow order when everything is ready.
+            </p>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/pdf-store.png"
+                alt="PDF Store panel showing exported document thumbnails"
+                data-i18n-alt="manual.workflow.shot1.alt"
+              />
+              <figcaption data-i18n="manual.workflow.shot1.cap">
+                Everything you have exported for this project, ready to merge.
+              </figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <!-- 11. Vectorworks -->
+        <details class="manual__section" id="vw" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.vw.title">11. Vectorworks sync</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="manual.vw.lead">
+              LightDori and Vectorworks pass fixture data back and forth through one shared file,
+              so the drawing and the paperwork stop drifting apart.
+            </p>
+
+            <h3 data-i18n="manual.vw.h1">Where the exchange file lives</h3>
+            <div class="manual__table-wrap">
+              <table class="manual__table">
+                <thead>
+                  <tr>
+                    <th data-i18n="manual.vw.tbl.os">System</th>
+                    <th data-i18n="manual.vw.tbl.path">Exchange file</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Windows</td>
+                    <td><code>%USERPROFILE%\Documents\LightDoriExchange\ld_vw_exchange.json</code></td>
+                  </tr>
+                  <tr>
+                    <td>macOS</td>
+                    <td><code>~/Documents/LightDoriExchange/ld_vw_exchange.json</code></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p data-i18n="manual.vw.p1">
+              Both applications read and write that one file. Nothing goes over the internet, and
+              you do not need the two programs on the same screen.
+            </p>
+
+            <h3 data-i18n="manual.vw.h2">Sending your sheet to Vectorworks</h3>
+            <p data-i18n-html="manual.vw.p2">
+              Open the <strong>Vectorworks</strong> panel from the Sheet toolbar and press
+              <strong>Sync Now</strong>. LightDori writes every fixture to the exchange file and
+              confirms how many devices it sent. The Vectorworks side picks the change up and
+              updates the drawing.
+            </p>
+
+            <h3 data-i18n="manual.vw.h3">Bringing Vectorworks changes back</h3>
+            <p data-i18n-html="manual.vw.p3">
+              Export from Vectorworks first, then press <strong>Import to LightDori</strong>. You
+              will be asked how to apply it:
+            </p>
+            <ul>
+              <li data-i18n-html="manual.vw.i1">
+                <strong>Merge</strong> — matches fixtures already in your sheet, updates them, and
+                adds anything new. This is the safe choice and what you want almost every time.
+              </li>
+              <li data-i18n-html="manual.vw.i2">
+                <strong>Overwrite</strong> — throws away the current sheet and replaces it with
+                whatever Vectorworks sent. Only use this when you want the drawing to win outright.
+              </li>
+            </ul>
+
+            <h3 data-i18n="manual.vw.h4">Live sync</h3>
+            <p data-i18n-html="manual.vw.p4">
+              Turning <strong>Live sync</strong> on keeps both sides watching the exchange file:
+              edits in the sheet are pushed out a moment after you make them, and changes coming
+              from Vectorworks are merged in automatically. Leave it off when you want to review
+              every change by hand.
+            </p>
+
+            <div class="manual__note manual__note--warn">
+              <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
+              <p data-i18n-html="manual.vw.warn1">
+                Matching works on a hidden unique ID that each fixture carries. Fixtures arriving
+                from Vectorworks without one are skipped silently, so if a handful of fixtures
+                never appear, that is the first thing to check.
+              </p>
+            </div>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/vw-sync.png"
+                alt="Vectorworks sync panel with Sync Now, Import, and Live sync controls"
+                data-i18n-alt="manual.vw.shot1.alt"
+              />
+              <figcaption data-i18n="manual.vw.shot1.cap">
+                The sync panel lists the fixtures waiting on the Vectorworks side.
+              </figcaption>
+            </figure>
+
+            <h3 data-i18n="manual.vw.h5">When it does not work</h3>
+            <ul>
+              <li data-i18n-html="manual.vw.e1">
+                <strong>“Exchange file not found”</strong> — nothing has been written yet. Export
+                from Vectorworks, or press <em>Sync Now</em> once from LightDori.
+              </li>
+              <li data-i18n-html="manual.vw.e2">
+                <strong>Fixtures missing after import</strong> — those fixtures had no unique ID.
+                Re-export them from Vectorworks.
+              </li>
+              <li data-i18n-html="manual.vw.e3">
+                <strong>Vectorworks does not refresh</strong> — on Windows LightDori nudges it with
+                <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd>, which needs
+                Vectorworks open. On macOS, refresh from the Vectorworks side yourself.
+              </li>
+            </ul>
+          </div>
+        </details>
+
+        <!-- 12. Console -->
+        <details class="manual__section" id="console" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.console.title">12. Console connection</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="manual.console.lead">
+              Connect over the network to pull a patch off the console, push one to it, or read the
+              cue list — no USB stick walk to the booth.
+            </p>
+
+            <h3 data-i18n="manual.console.h1">Supported consoles</h3>
+            <div class="manual__table-wrap">
+              <table class="manual__table">
+                <thead>
+                  <tr>
+                    <th data-i18n="manual.console.tbl.console">Console</th>
+                    <th data-i18n="manual.console.tbl.proto">Protocol</th>
+                    <th data-i18n="manual.console.tbl.ports">Default ports</th>
+                    <th data-i18n="manual.console.tbl.notes">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>ETC Eos / Ion / Nomad</td>
+                    <td>OSC</td>
+                    <td>8000 / 8001</td>
+                    <td data-i18n="manual.console.tbl.n1">Pull patch and cue data</td>
+                  </tr>
+                  <tr>
+                    <td>grandMA2</td>
+                    <td>Telnet</td>
+                    <td>30000</td>
+                    <td data-i18n="manual.console.tbl.n2">Pull and push patch</td>
+                  </tr>
+                  <tr>
+                    <td>grandMA3</td>
+                    <td>OSC</td>
+                    <td>8000 / 8001</td>
+                    <td data-i18n="manual.console.tbl.n3">Limited — patch pull not available</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+
+            <h3 data-i18n="manual.console.eos.title">Setting up an Eos console</h3>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.console.eos.s1">
+                Open <strong>Setup → System → Show Control → OSC</strong>.
+              </li>
+              <li data-i18n-html="manual.console.eos.s2">
+                Enable <strong>OSC RX</strong> and <strong>OSC TX</strong>.
+              </li>
+              <li data-i18n-html="manual.console.eos.s3">
+                Set <strong>OSC UDP RX Port</strong> to <strong>8000</strong>.
+              </li>
+              <li data-i18n-html="manual.console.eos.s4">
+                Set <strong>OSC UDP TX Port</strong> to <strong>8001</strong>.
+              </li>
+              <li data-i18n-html="manual.console.eos.s5">
+                Note the console's IP address — you will type it into LightDori.
+              </li>
+            </ol>
+            <figure class="manual__figure">
+              <img
+                src="./assets/eos-osc-ports.png"
+                alt="ETC Eos OSC settings with RX/TX enabled, RX port 8000, TX port 8001"
+                data-i18n-alt="manual.console.eos.img.alt"
+              />
+              <figcaption data-i18n="manual.console.eos.caption">
+                Eos OSC RX / TX enabled — UDP RX 8000, UDP TX 8001.
+              </figcaption>
+            </figure>
+
+            <h3 data-i18n="manual.console.ma.title">Setting up a grandMA console</h3>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.console.ma.s1">
+                Open <strong>Setup → Console → Global Settings</strong>.
+              </li>
+              <li data-i18n-html="manual.console.ma.s2">
+                Set <strong>Telnet</strong> to <strong>Login Enabled</strong>.
+              </li>
+            </ol>
+            <figure class="manual__figure">
+              <img
+                src="./assets/ma-telnet-login.png"
+                alt="grandMA Setup Console Global Settings with Telnet Login Enabled"
+                data-i18n-alt="manual.console.ma.img.alt"
+              />
+              <figcaption data-i18n="manual.console.ma.caption">
+                MA Global Settings — Telnet set to Login Enabled.
+              </figcaption>
+            </figure>
+
+            <h3 data-i18n="manual.console.h2">Connecting from LightDori</h3>
+            <ol class="manual__steps">
+              <li data-i18n-html="manual.console.c1">
+                Open <strong>Console</strong> from the left rail.
+              </li>
+              <li data-i18n-html="manual.console.c2">
+                Choose the console type, type its IP address, and leave the ports at their defaults
+                unless your setup says otherwise.
+              </li>
+              <li data-i18n-html="manual.console.c3">Press <strong>Connect</strong>.</li>
+            </ol>
+            <p data-i18n-html="manual.console.p1">
+              Once connected, the <strong>Patch</strong> tab pulls the patch off the console or
+              sends yours to it, the <strong>Cue Sheet</strong> tab lists sequences and cues, and
+              the <strong>Command</strong> tab lets you type raw console commands and watch the
+              replies.
+            </p>
+
+            <div class="manual__note manual__note--warn">
+              <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
+              <p data-i18n-html="manual.console.warn1">
+                Pushing a patch <em>to</em> an Eos console is not supported yet — pull from Eos, and
+                use the ASCII (<code>.asc</code>) export to go the other way. On grandMA3, reading
+                the patch is not available either.
+              </p>
+            </div>
+
+            <h3 data-i18n="manual.console.h3">When it will not connect</h3>
+            <ul>
+              <li data-i18n-html="manual.console.e1">
+                <strong>Eos does not answer</strong> — the console is off, the IP is wrong, or Show
+                Control OSC is not enabled. Check you are on the same network.
+              </li>
+              <li data-i18n-html="manual.console.e2">
+                <strong>grandMA2 refuses the connection</strong> — Telnet is not set to
+                <em>Login Enabled</em>, onPC is not running, or a firewall is blocking port 30000.
+              </li>
+              <li data-i18n-html="manual.console.e3">
+                <strong>Patch sync times out</strong> — the connection dropped, or the console is
+                busy. Reconnect and try again.
+              </li>
+            </ul>
+
+            <figure class="manual__shot">
+              <img
+                src="./assets/manual/console-panel.png"
+                alt="Console panel with connection settings and the patch tab"
+                data-i18n-alt="manual.console.shot1.alt"
+              />
+              <figcaption data-i18n="manual.console.shot1.cap">
+                Connection settings sit above the Patch, Cue Sheet, and Command tabs.
+              </figcaption>
+            </figure>
+          </div>
+        </details>
+
+        <!-- 13. Import & export -->
+        <details class="manual__section" id="export" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.export.title">13. Import &amp; export</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p data-i18n-html="manual.export.p1">
+              The quickest way to import is to drag a file onto the LightDori window. Everything is
+              also available from <strong>File → Import</strong> and <strong>File → Export</strong>.
+            </p>
+
+            <h3 data-i18n="manual.export.h1">What you can bring in</h3>
+            <ul>
+              <li data-i18n-html="manual.export.i1">
+                <strong>CSV, Excel</strong> (<code>.xlsx</code>, <code>.xls</code>,
+                <code>.xlsm</code>) — shop lists and spreadsheets. Only the first worksheet is read.
+              </li>
+              <li data-i18n-html="manual.export.i2">
+                <strong>JSON, XML</strong> — including grandMA2 XML and LightDori's own exports.
+              </li>
+              <li data-i18n-html="manual.export.i3">
+                <strong>MVR</strong> — fixture packages from Vectorworks and other MVR-capable
+                tools, with their GDTF definitions.
+              </li>
+              <li data-i18n-html="manual.export.i4">
+                <strong>ASCII</strong> (<code>.asc</code>) — ETC Eos show files. LightDori asks
+                whether you want the patch, the cue data, or both.
+              </li>
+              <li data-i18n-html="manual.export.i5">
+                <strong>LightDori project</strong> (<code>.ld</code>) — a whole project.
+              </li>
+            </ul>
+            <p data-i18n-html="manual.export.p2">
+              Common column names are tidied up on the way in — a <code>Patch</code> column written
+              as <code>1.001</code> is split into universe and address, and names like
+              <code>FixtureType</code> and <code>Ch ID</code> are mapped onto LightDori's fields.
+            </p>
+
+            <h3 data-i18n="manual.export.h2">What you can send out</h3>
+            <ul>
+              <li data-i18n-html="manual.export.o1">
+                <strong>CSV, Excel, XML, plain text</strong> — for spreadsheets and other software.
+              </li>
+              <li data-i18n-html="manual.export.o2">
+                <strong>MVR</strong> — back to Vectorworks and friends. If the sheet came from an
+                MVR, the original 3D and GDTF assets are preserved.
+              </li>
+              <li data-i18n-html="manual.export.o3">
+                <strong>ASCII</strong> (<code>.asc</code>) — a cue sheet for an Eos-family console.
+              </li>
+              <li data-i18n-html="manual.export.o4">
+                <strong>PDF</strong> — patch documents, magic sheets, cue documents, and moodboards.
+              </li>
+            </ul>
+
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n-html="manual.export.tip1">
+                Exports only include <strong>ticked</strong> rows, and you pick the columns each
+                time. If an export comes out empty, no rows were ticked.
+              </p>
+            </div>
+            <p data-i18n="manual.export.p3">
+              After any import, check the universe map for address collisions before you send the
+              data to a console.
+            </p>
+          </div>
+        </details>
+
+        <!-- 14. Settings -->
+        <details class="manual__section" id="settings" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.settings.title">14. Settings</h2>
+          </summary>
+          <div class="manual__section-body">
+            <p data-i18n-html="manual.settings.p1">
+              Open <strong>Settings</strong> from the left rail.
+            </p>
+            <ul>
+              <li data-i18n-html="manual.settings.s1">
+                <strong>Theme</strong> — light or dark. The change previews straight away.
+              </li>
+              <li data-i18n-html="manual.settings.s2">
+                <strong>Auto save</strong> and its interval — 1 to 60 minutes.
+              </li>
+              <li data-i18n-html="manual.settings.s3">
+                <strong>Show tooltips</strong> — the little labels on toolbar icons.
+              </li>
+              <li data-i18n-html="manual.settings.s4">
+                <strong>Confirm before deleting</strong> — worth leaving on.
+              </li>
+              <li data-i18n-html="manual.settings.s5">
+                <strong>Remember window size and position</strong> — reopen where you left off.
+              </li>
+            </ul>
+            <div class="manual__note manual__note--warn">
+              <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
+              <p data-i18n-html="manual.settings.warn1">
+                Nothing sticks until you press <strong>Save settings</strong>. Closing the panel
+                without saving puts the theme back the way it was.
+              </p>
+            </div>
+          </div>
+        </details>
+
+        <!-- 15. Account -->
+        <details class="manual__section" id="account" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.account.title">15. Account &amp; collaboration</h2>
+          </summary>
+          <div class="manual__section-body">
+            <h3 data-i18n="manual.account.h1">Your account</h3>
+            <p data-i18n-html="manual.account.p1">
+              Open <strong>Profile</strong> from the left rail to change your display name and
+              photo, and to see your account status and licence expiry. <strong>Log out</strong> is
+              here too.
+            </p>
+
+            <h3 data-i18n="manual.account.h2">Licence</h3>
+            <p data-i18n-html="manual.account.p2">
+              Licence keys look like <code>ABCD-1234-EFGH-5678</code>. Your licence is confirmed
+              online when you sign in; if you are away from the internet, LightDori keeps running on
+              the last successful check for about a week.
+            </p>
+
+            <h3 data-i18n="manual.account.h3">Working with other people</h3>
+            <p data-i18n-html="manual.account.p3">
+              <strong>Collab</strong> on the left rail creates shared sessions and invites people by
+              email. Each person is an owner, an editor, or a viewer, and viewers can look but not
+              save. While a session is active the project is stored with the session rather than as
+              a local file, and you can restore an earlier version from its history.
+            </p>
+          </div>
+        </details>
+
+        <!-- 16. Troubleshooting -->
+        <details class="manual__section" id="tips" open>
+          <summary class="manual__summary">
+            <h2 data-i18n="manual.tips.title">16. Troubleshooting</h2>
+          </summary>
+          <div class="manual__section-body">
+            <h3 data-i18n="manual.tips.h1">Fixtures and patching</h3>
+            <ul>
+              <li data-i18n-html="manual.tips.a1">
+                <strong>An export came out empty.</strong> No rows were ticked. Tick rows, or use
+                the header checkbox to tick everything visible.
+              </li>
+              <li data-i18n-html="manual.tips.a2">
+                <strong>A CSV would not open.</strong> Re-save it as UTF-8 or Excel format. Korean
+                encodings are handled, but unusual ones may not be.
+              </li>
+              <li data-i18n-html="manual.tips.a3">
+                <strong>An MVR failed to import.</strong> The archive is incomplete. Re-export it
+                from the original software.
+              </li>
+              <li data-i18n-html="manual.tips.a4">
+                <strong>Two fixtures share an address.</strong> Open the universe map — conflicts
+                are flagged in the summary for each universe.
+              </li>
+            </ul>
+
+            <h3 data-i18n="manual.tips.h2">Sync and consoles</h3>
+            <ul>
+              <li data-i18n-html="manual.tips.b1">
+                <strong>Vectorworks import brought nothing back.</strong> Export from Vectorworks
+                first — the exchange file has to exist before LightDori can read it.
+              </li>
+              <li data-i18n-html="manual.tips.b2">
+                <strong>Some fixtures never arrive.</strong> They are missing their unique ID.
+                Re-export them from Vectorworks.
+              </li>
+              <li data-i18n-html="manual.tips.b3">
+                <strong>The console will not connect.</strong> Check both machines are on the same
+                network, the IP is right, and OSC or Telnet is enabled on the console.
+              </li>
+            </ul>
+
+            <h3 data-i18n="manual.tips.h3">Printing and display</h3>
+            <ul>
+              <li data-i18n-html="manual.tips.c1">
+                <strong>The preview looks wrong.</strong> Press <em>Update preview</em> — it does
+                not refresh on its own.
+              </li>
+              <li data-i18n-html="manual.tips.c2">
+                <strong>Columns run off the page.</strong> Switch to landscape, drop the font size,
+                or print fewer columns.
+              </li>
+              <li data-i18n-html="manual.tips.c3">
+                <strong>The interface looks the wrong size.</strong> Restart LightDori after
+                changing your display scaling (125%, 150%, and so on).
+              </li>
+              <li data-i18n-html="manual.tips.c4">
+                <strong>Something looks stale after an update.</strong> Quit LightDori completely
+                and open it again.
+              </li>
+            </ul>
+
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.help">Still stuck?</span>
+              <p data-i18n-html="manual.tips.contact">
+                Email <a href="mailto:hello@lightdori.app">hello@lightdori.app</a> with your
+                operating system, what you were doing, and the exact wording of any message you
+                saw. Screenshots help a lot.
+              </p>
+            </div>
+          </div>
+        </details>
       </article>
     </main>
 
@@ -229,6 +1300,123 @@
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
       window.lightdoriInitLang();
+
+      (function setupScreenshotSlots() {
+        var figures = Array.prototype.slice.call(document.querySelectorAll(".manual__shot"));
+        if (!figures.length) return;
+
+        function label(fig) {
+          var img = fig.querySelector("img");
+          var lang = document.documentElement.getAttribute("data-lang") || "en";
+          var prefix = window.lightdoriT("manual.shot.missing", lang);
+          var src = img ? img.getAttribute("src") : "";
+          fig.setAttribute("data-shot-label", prefix + "\n" + src);
+        }
+
+        figures.forEach(function (fig) {
+          var img = fig.querySelector("img");
+          if (!img) return;
+          function markMissing() {
+            fig.classList.add("is-missing");
+            label(fig);
+          }
+          img.addEventListener("error", markMissing);
+          if (img.complete && img.naturalWidth === 0) markMissing();
+        });
+
+        document.addEventListener("lightdori:langchange", function () {
+          figures.forEach(function (fig) {
+            if (fig.classList.contains("is-missing")) label(fig);
+          });
+        });
+      })();
+
+      (function setupSections() {
+        var sections = Array.prototype.slice.call(document.querySelectorAll(".manual__section"));
+        var toggle = document.getElementById("toc-toggle");
+        if (!sections.length || !toggle) return;
+
+        function syncToggleLabel() {
+          var lang = document.documentElement.getAttribute("data-lang") || "en";
+          var anyOpen = sections.some(function (s) {
+            return s.open;
+          });
+          toggle.setAttribute(
+            "data-i18n",
+            anyOpen ? "manual.toc.collapseAll" : "manual.toc.expandAll"
+          );
+          toggle.textContent = window.lightdoriT(
+            anyOpen ? "manual.toc.collapseAll" : "manual.toc.expandAll",
+            lang
+          );
+        }
+
+        toggle.addEventListener("click", function () {
+          var anyOpen = sections.some(function (s) {
+            return s.open;
+          });
+          sections.forEach(function (s) {
+            s.open = !anyOpen;
+          });
+          syncToggleLabel();
+        });
+
+        sections.forEach(function (s) {
+          s.addEventListener("toggle", syncToggleLabel);
+        });
+
+        document.addEventListener("lightdori:langchange", syncToggleLabel);
+        syncToggleLabel();
+
+        // A collapsed section still owns its anchor, so open it before jumping there.
+        function revealHash(hash) {
+          if (!hash) return;
+          var target = document.querySelector(hash);
+          if (target && target.classList.contains("manual__section")) target.open = true;
+        }
+
+        document.querySelectorAll('.manual__toc a[href^="#"]').forEach(function (link) {
+          link.addEventListener("click", function () {
+            revealHash(link.getAttribute("href"));
+          });
+        });
+
+        window.addEventListener("hashchange", function () {
+          revealHash(window.location.hash);
+        });
+        revealHash(window.location.hash);
+      })();
+
+      (function setupTocHighlight() {
+        var links = Array.prototype.slice.call(document.querySelectorAll('.manual__toc a[href^="#"]'));
+        if (!links.length || !("IntersectionObserver" in window)) return;
+
+        var byId = {};
+        links.forEach(function (link) {
+          byId[link.getAttribute("href").slice(1)] = link;
+        });
+
+        var visible = {};
+        var observer = new IntersectionObserver(
+          function (entries) {
+            entries.forEach(function (entry) {
+              visible[entry.target.id] = entry.isIntersecting;
+            });
+            var activeId = Object.keys(byId).filter(function (id) {
+              return visible[id];
+            })[0];
+            links.forEach(function (link) {
+              link.classList.toggle("is-active", link === byId[activeId]);
+            });
+          },
+          { rootMargin: "-25% 0px -60% 0px", threshold: 0 }
+        );
+
+        Object.keys(byId).forEach(function (id) {
+          var el = document.getElementById(id);
+          if (el) observer.observe(el);
+        });
+      })();
     </script>
   </body>
 </html>
