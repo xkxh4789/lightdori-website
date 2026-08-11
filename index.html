@@ -15,6 +15,34 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./styles.css" />
+    <script>
+      // Fresh visits should start at the hero — not restored scroll / autofill focus on #beta.
+      (function () {
+        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        if (!location.hash) {
+          window.scrollTo(0, 0);
+          document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+              var active = document.activeElement;
+              if (active && active !== document.body && typeof active.blur === "function") {
+                var inBeta = active.closest && active.closest("#beta");
+                if (inBeta) active.blur();
+              }
+              window.scrollTo(0, 0);
+            },
+            { once: true }
+          );
+          window.addEventListener(
+            "load",
+            function () {
+              if (!location.hash) window.scrollTo(0, 0);
+            },
+            { once: true }
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <header class="top">
@@ -205,7 +233,14 @@
           <form class="beta__form" id="beta-form">
             <label>
               <span data-i18n="beta.email">Email</span>
-              <input id="beta-email" type="email" name="email" placeholder="you@company.com" required />
+              <input
+                id="beta-email"
+                type="email"
+                name="email"
+                placeholder="you@company.com"
+                autocomplete="email"
+                required
+              />
             </label>
             <button class="btn btn--solid" type="submit" data-i18n="beta.submit">Request access</button>
           </form>
