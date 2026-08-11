@@ -541,6 +541,13 @@ html[data-lang="ko"] .eyebrow {
   text-align: left;
 }
 
+.download__btn.is-disabled {
+  border-style: dashed;
+  opacity: 0.45;
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
 .download__brand {
   display: inline-flex;
   align-items: center;
@@ -963,48 +970,6 @@ html[data-lang="ko"] .eyebrow {
 .manual__lead {
   max-width: 62ch;
   font-size: 1.02rem;
-}
-
-/* Manual — quick start */
-.manual__quick {
-  counter-reset: quickstep;
-  display: grid;
-  gap: 12px;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  max-width: none;
-}
-
-.manual__quick li {
-  counter-increment: quickstep;
-  position: relative;
-  padding: 16px 18px 16px 58px;
-  background: #fff;
-  border: 1px solid var(--line);
-}
-
-.manual__quick li + li {
-  margin-top: 0;
-}
-
-.manual__quick li::before {
-  content: counter(quickstep, decimal-leading-zero);
-  position: absolute;
-  top: 15px;
-  left: 18px;
-  font-family: var(--font-display);
-  font-size: 14px;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-  color: var(--amber);
-}
-
-.manual__quick strong {
-  display: block;
-  margin-bottom: 4px;
-  font-family: var(--font-display);
-  letter-spacing: -0.01em;
 }
 
 /* Manual — callouts */

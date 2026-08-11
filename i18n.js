@@ -36,7 +36,7 @@ window.LIGHTDORI_I18N = {
     "download.lede":
       "Desktop builds for theatre, tour, and the shop floor — ready to use offline.",
     "download.win.meta": ".exe installer",
-    "download.mac.meta": ".dmg / .app",
+    "download.mac.meta": "Coming soon",
     "download.note.none": "",
     "download.note.one": "",
     "download.note.both": "",
@@ -91,7 +91,7 @@ window.LIGHTDORI_I18N = {
     "download.lede":
       "극장, 투어, 샵에서도 오프라인으로 쓸 수 있는 데스크톱 빌드입니다.",
     "download.win.meta": ".exe 설치 파일",
-    "download.mac.meta": ".dmg / .app",
+    "download.mac.meta": "준비 중",
     "download.note.none": "",
     "download.note.one": "",
     "download.note.both": "",
@@ -110,11 +110,10 @@ window.LIGHTDORI_I18N = {
     "lang.label": "언어",
     "manual.meta.title": "매뉴얼 — LightDori",
     "manual.meta.desc":
-      "LightDori 사용자 매뉴얼: 빠른 시작, 시트 워크스페이스, 패치 문서 PDF, 매직시트, 큐시트, Vectorworks 연동, 콘솔 연결, 문제 해결.",
+      "LightDori 사용자 매뉴얼: 시트 워크스페이스, 패치 문서 PDF, 매직시트, 큐시트, Vectorworks 연동, 콘솔 연결, 문제 해결.",
 
     "manual.toc.aria": "매뉴얼 목차",
     "manual.toc.eyebrow": "목차",
-    "manual.toc.quickstart": "빠른 시작",
     "manual.toc.overview": "LightDori로 할 수 있는 일",
     "manual.toc.start": "시작하기",
     "manual.toc.sheet": "시트 워크스페이스",
@@ -143,25 +142,7 @@ window.LIGHTDORI_I18N = {
     "manual.hero.lede":
       "첫 패치 리스트부터 콘솔 인수인계까지 전부 담았습니다. 조명 디자이너, 프로덕션 일렉트리션, 샵 팀을 위해 썼고, LightDori를 처음 쓴다고 가정합니다.",
 
-    "manual.quickstart.title": "1. 빠른 시작",
-    "manual.quickstart.lead":
-      "시간이 5분뿐이라면 아래 여섯 가지만 하세요. 각 단계는 아래에서 자세히 설명합니다.",
-    "manual.quickstart.s1":
-      "<strong>로그인합니다.</strong> LightDori를 실행하고 계정 이메일과 비밀번호를 입력하세요. <em>Remember me</em>를 켜 두면 다음부터는 건너뜁니다.",
-    "manual.quickstart.s2":
-      "<strong>프로젝트를 만듭니다.</strong> 시작 허브에서 <em>NEW FILE</em>을 누르고 다섯 단계 안내를 따라가세요. 먼저 둘러보고 싶다면 <em>Use sample data</em>를 고르면 됩니다.",
-    "manual.quickstart.s3":
-      "<strong>시트를 엽니다.</strong> 홈 카드에서 <em>Sheet</em>를 선택하세요. 모든 기구가 이 표에 들어 있습니다.",
-    "manual.quickstart.s4":
-      "<strong>기구를 채웁니다.</strong> CSV·엑셀·MVR 파일을 창에 끌어다 놓거나, <em>Edit</em>을 켜고 <em>Add fixture</em>로 직접 입력하세요.",
-    "manual.quickstart.s5":
-      "<strong>패치합니다.</strong> <em>Auto universe</em>로 주소를 한 번에 배정한 다음, <em>Universe map</em>에서 충돌이 없는지 확인하세요.",
-    "manual.quickstart.s6":
-      "<strong>서류를 뽑습니다.</strong> 원하는 행을 체크하고 <em>Export → Patch document PDF</em>를 선택한 뒤, <em>Instrument Schedule</em> 프리셋을 고르고 <em>Export PDF</em>를 누르세요.",
-    "manual.quickstart.tip":
-      "<kbd>Ctrl</kbd> + <kbd>S</kbd>(macOS는 <kbd>Cmd</kbd> + <kbd>S</kbd>)로 자주 저장하세요. 프로젝트는 <code>.ld</code> 파일 하나로 저장되어 메일로 보내거나 USB에 담기 좋습니다.",
-
-    "manual.overview.title": "2. LightDori로 할 수 있는 일",
+    "manual.overview.title": "1. LightDori로 할 수 있는 일",
     "manual.overview.p1":
       "LightDori는 조명 프로덕션 데이터를 다루는 데스크톱 워크스페이스입니다. 스프레드시트와 도면 파일, 콘솔 쇼 파일을 따로 관리하는 대신, 기구 목록 하나만 유지하면 각 파트에 필요한 서류와 파일은 LightDori가 만들어 줍니다.",
     "manual.overview.p2":
@@ -189,7 +170,7 @@ window.LIGHTDORI_I18N = {
     "manual.overview.mod7":
       "<strong>콘솔</strong> — ETC Eos나 grandMA에 연결해 패치·큐 데이터를 주고받습니다.",
 
-    "manual.start.title": "3. 시작하기",
+    "manual.start.title": "2. 시작하기",
     "manual.start.h1": "로그인",
     "manual.start.p1":
       "처음 실행하면 계정을 묻습니다. 이메일과 비밀번호를 입력하고 <strong>Sign In</strong>을 누르세요. 계정이 없다면 <strong>SIGN UP</strong> 탭에서 이름·이메일·비밀번호로 만들 수 있습니다.",
@@ -241,7 +222,7 @@ window.LIGHTDORI_I18N = {
     "manual.start.warn1":
       "설정에 <em>Auto save</em> 항목이 있지만, 이것만 믿지 마세요. 큰 편집이나 가져오기·내보내기 전에는 직접 저장하시길 권합니다.",
 
-    "manual.sheet.title": "4. 시트 워크스페이스",
+    "manual.sheet.title": "3. 시트 워크스페이스",
     "manual.sheet.lead":
       "시트는 앱의 중심이 되는 기구 표입니다. 패치 PDF, 매직시트, Vectorworks 교환, 콘솔 전송까지 전부 이 표를 읽어 갑니다.",
     "manual.sheet.p1":
@@ -266,7 +247,7 @@ window.LIGHTDORI_I18N = {
       "<strong>Auto universe</strong> — 여러 기구의 유니버스와 주소를 한 번에 배정합니다.",
     "manual.sheet.t9":
       "<strong>Fixture type summary</strong> — 기구 타입별 수량을 세어 옆 패널에 보여 줍니다.",
-    "manual.sheet.t10": "<strong>Vectorworks</strong> — 11장에서 설명하는 연동 패널을 엽니다.",
+    "manual.sheet.t10": "<strong>Vectorworks</strong> — 10장에서 설명하는 연동 패널을 엽니다.",
     "manual.sheet.t11":
       "<strong>Export</strong> — 데이터 파일, 패치 문서 PDF, XML, MVR로 내보냅니다.",
     "manual.sheet.h2": "선택과 편집",
@@ -300,7 +281,7 @@ window.LIGHTDORI_I18N = {
     "manual.sheet.shot2.cap":
       "유니버스 맵 — 콘솔로 보내기 전에 반드시 확인하세요.",
 
-    "manual.patch.title": "5. 패치 문서 PDF",
+    "manual.patch.title": "4. 패치 문서 PDF",
     "manual.patch.lead":
       "샵과 부스에서 실제로 들고 다니는 서류입니다. 기구 스케줄이나 패치 리스트를 인쇄용으로 정리해 줍니다.",
     "manual.patch.h1": "만드는 순서",
@@ -334,9 +315,9 @@ window.LIGHTDORI_I18N = {
     "manual.patch.tip1":
       "미리보기는 <strong>Update preview</strong>를 눌러야 갱신됩니다. <em>Pending</em>이라고 표시되면 지금 보고 있는 화면은 옛날 것입니다.",
     "manual.patch.p3":
-      "내보낸 PDF는 <strong>PDF 보관함</strong>에 모입니다. 내려받기와 병합은 10장을 보세요.",
+      "내보낸 PDF는 <strong>PDF 보관함</strong>에 모입니다. 내려받기와 병합은 9장을 보세요.",
 
-    "manual.magic.title": "6. 매직시트",
+    "manual.magic.title": "5. 매직시트",
     "manual.magic.lead":
       "매직시트는 표가 아니라 리그의 그림입니다. 무대를 떠올리는 방식 그대로 채널 버블을 묶어 배치합니다.",
     "manual.magic.p1":
@@ -360,7 +341,7 @@ window.LIGHTDORI_I18N = {
     "manual.magic.p4":
       "<strong>Export PNG</strong>는 콘솔이나 메신저에 바로 쓸 이미지를 만듭니다. <strong>Export PDF</strong>는 별도의 인쇄 화면을 열어 어떤 카드를 넣을지, 한 페이지에 몇 열·몇 행을 넣을지, 용지와 여백, 머리글과 기구 정보를 인쇄할지 정하게 해 줍니다. <strong>Update preview</strong> 후 <strong>Export PDF</strong>를 누르세요.",
 
-    "manual.cue.title": "7. 대본 & 큐시트",
+    "manual.cue.title": "6. 대본 & 큐시트",
     "manual.cue.lead":
       "한쪽에는 대본, 다른 쪽에는 큐를 두고, 큐가 실제로 나가는 자리에 표시합니다.",
     "manual.cue.s1": "대본 도구에서 대본을 가져오거나 교체합니다.",
@@ -377,7 +358,7 @@ window.LIGHTDORI_I18N = {
     "manual.cue.shot1.alt": "큐 마커가 찍힌 대본 페이지와 옆의 큐 표",
     "manual.cue.shot1.cap": "왼쪽에 대본, 오른쪽에 큐 표.",
 
-    "manual.mood.title": "8. 무드보드",
+    "manual.mood.title": "7. 무드보드",
     "manual.mood.p1":
       "연출이나 디자이너에게 보여 줄 레퍼런스, 색 아이디어, 스케치, 메모를 자유롭게 붙이는 캔버스입니다.",
     "manual.mood.p2":
@@ -385,7 +366,7 @@ window.LIGHTDORI_I18N = {
     "manual.mood.p3":
       "<kbd>Space</kbd>를 누른 채로 화면을 이동하고, <kbd>Delete</kbd>로 선택한 것을 지우며, <kbd>Ctrl</kbd> + <kbd>C</kbd> / <kbd>V</kbd> / <kbd>Z</kbd> / <kbd>Y</kbd>로 복사·붙여넣기·되돌리기·다시 실행을 씁니다. 다 되면 PNG나 PDF로 내보내세요.",
 
-    "manual.library.title": "9. 색지·고보·기구 라이브러리",
+    "manual.library.title": "8. 색지·고보·기구 라이브러리",
     "manual.library.h1": "색지",
     "manual.library.p1":
       "LEE와 ROSCO 색지를 번호, 이름, 헥스 값으로 검색하거나 <strong>In use</strong>로 바꿔 지금 리그에 쓰는 색만 볼 수 있습니다. 색지를 열면 기술 데이터와 다른 브랜드의 비슷한 색을 함께 보여 주므로, 샵에 재고가 없을 때 대체품을 찾기 좋습니다.",
@@ -402,7 +383,7 @@ window.LIGHTDORI_I18N = {
     "manual.library.p5":
       "로드인, 포커스, 테크, 스트라이크 일정을 프로젝트에 붙여 두는 간단한 월 단위 달력입니다.",
 
-    "manual.workflow.title": "10. 워크플로 & PDF 보관함",
+    "manual.workflow.title": "9. 워크플로 & PDF 보관함",
     "manual.workflow.h1": "PDF 보관함",
     "manual.workflow.p1":
       "내보낸 PDF는 바로 폴더로 떨어지지 않고 왼쪽 막대의 <strong>Store</strong>에 모입니다. 열어 보면 이 프로젝트에서 만든 문서가 모두 썸네일로 보입니다.",
@@ -421,7 +402,7 @@ window.LIGHTDORI_I18N = {
     "manual.workflow.shot1.cap":
       "이 프로젝트에서 내보낸 문서 전체 — 바로 병합할 수 있습니다.",
 
-    "manual.vw.title": "11. Vectorworks 연동",
+    "manual.vw.title": "10. Vectorworks 연동",
     "manual.vw.lead":
       "LightDori와 Vectorworks는 공유 파일 하나로 기구 데이터를 주고받습니다. 도면과 서류가 따로 노는 일이 없어집니다.",
     "manual.vw.h1": "교환 파일 위치",
@@ -455,7 +436,7 @@ window.LIGHTDORI_I18N = {
     "manual.vw.e3":
       "<strong>Vectorworks가 갱신되지 않음</strong> — Windows에서는 LightDori가 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>U</kbd>로 알려 주므로 Vectorworks가 실행 중이어야 합니다. macOS에서는 Vectorworks 쪽에서 직접 새로 고치세요.",
 
-    "manual.console.title": "12. 콘솔 연결",
+    "manual.console.title": "11. 콘솔 연결",
     "manual.console.lead":
       "네트워크로 연결해 콘솔의 패치를 가져오거나 내 패치를 보내고, 큐 리스트를 읽어 옵니다. USB를 들고 부스까지 갈 일이 없습니다.",
     "manual.console.h1": "지원 콘솔",
@@ -505,7 +486,7 @@ window.LIGHTDORI_I18N = {
     "manual.console.shot1.cap":
       "Patch, Cue Sheet, Command 탭 위에 연결 설정이 있습니다.",
 
-    "manual.export.title": "13. 가져오기 & 내보내기",
+    "manual.export.title": "12. 가져오기 & 내보내기",
     "manual.export.p1":
       "가장 빠른 방법은 파일을 LightDori 창에 끌어다 놓는 것입니다. <strong>File → Import</strong>와 <strong>File → Export</strong> 메뉴에도 모두 있습니다.",
     "manual.export.h1": "가져올 수 있는 것",
@@ -534,7 +515,7 @@ window.LIGHTDORI_I18N = {
     "manual.export.p3":
       "가져오기가 끝나면 콘솔로 보내기 전에 유니버스 맵에서 주소 충돌을 확인하세요.",
 
-    "manual.settings.title": "14. 설정",
+    "manual.settings.title": "13. 설정",
     "manual.settings.p1": "왼쪽 막대에서 <strong>Settings</strong>를 엽니다.",
     "manual.settings.s1":
       "<strong>테마</strong> — 밝게 또는 어둡게. 바꾸면 바로 미리보기가 적용됩니다.",
@@ -546,7 +527,7 @@ window.LIGHTDORI_I18N = {
     "manual.settings.warn1":
       "<strong>Save settings</strong>를 눌러야 저장됩니다. 저장하지 않고 패널을 닫으면 테마가 원래대로 돌아갑니다.",
 
-    "manual.account.title": "15. 계정 & 협업",
+    "manual.account.title": "14. 계정 & 협업",
     "manual.account.h1": "내 계정",
     "manual.account.p1":
       "왼쪽 막대의 <strong>Profile</strong>에서 표시 이름과 사진을 바꾸고, 계정 상태와 라이선스 만료일을 확인할 수 있습니다. <strong>로그아웃</strong>도 여기 있습니다.",
@@ -557,7 +538,7 @@ window.LIGHTDORI_I18N = {
     "manual.account.p3":
       "왼쪽 막대의 <strong>Collab</strong>에서 공유 세션을 만들고 이메일로 초대합니다. 참여자는 소유자·편집자·뷰어 중 하나이며, 뷰어는 볼 수만 있고 저장할 수 없습니다. 세션이 열려 있는 동안에는 프로젝트가 로컬 파일이 아니라 세션에 저장되고, 기록에서 이전 버전으로 되돌릴 수 있습니다.",
 
-    "manual.tips.title": "16. 문제 해결",
+    "manual.tips.title": "15. 문제 해결",
     "manual.tips.h1": "기구와 패치",
     "manual.tips.a1":
       "<strong>내보낸 파일이 비어 있어요.</strong> 체크한 행이 없습니다. 행을 체크하거나 머리글 체크박스로 보이는 행을 전부 체크하세요.",
@@ -584,7 +565,7 @@ window.LIGHTDORI_I18N = {
     "manual.tips.c4":
       "<strong>업데이트 후에도 예전 화면이 보여요.</strong> LightDori를 완전히 종료했다가 다시 여세요.",
     "manual.tips.contact":
-      '<a href="mailto:hello@lightdori.app">hello@lightdori.app</a>으로 사용 중인 운영체제, 무엇을 하던 중이었는지, 화면에 뜬 메시지의 정확한 문구를 적어 보내 주세요. 스크린샷이 있으면 큰 도움이 됩니다.',
+      '<a href="mailto:xkxh4789@gmail.com">xkxh4789@gmail.com</a>으로 사용 중인 운영체제, 무엇을 하던 중이었는지, 화면에 뜬 메시지의 정확한 문구를 적어 보내 주세요. 스크린샷이 있으면 큰 도움이 됩니다.',
   },
 };
 

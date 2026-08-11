@@ -44,7 +44,7 @@ Empty URL → that button goes to the beta section.
 
 ## Notes
 
-- Contact: `hello@lightdori.app` (change in HTML when ready)
+- Contact: `xkxh4789@gmail.com`
 - Pages: `index.html`, `manual.html`
 - Images: `assets/`
 - Beta form uses mailto (no backend)

@@ -195,12 +195,11 @@
                 <span class="download__meta" data-i18n="download.win.meta">.exe installer</span>
               </span>
             </a>
+            <!-- macOS build is on hold: put the URL back in downloads.js to re-enable. -->
             <a
-              class="btn btn--ink-outline download__btn"
+              class="btn btn--ink-outline download__btn is-disabled"
               id="download-mac"
-              href="https://github.com/xkxh4789/Lightdori-release/releases/download/v0.1.0/LightDori_Setup_1.0.0.dmg"
-              target="_blank"
-              rel="noopener noreferrer"
+              aria-disabled="true"
               data-platform="mac"
             >
               <span class="download__brand" aria-hidden="true">
@@ -213,7 +212,7 @@
               </span>
               <span class="download__copy">
                 <span class="download__name">macOS</span>
-                <span class="download__meta" data-i18n="download.mac.meta">.dmg / .app</span>
+                <span class="download__meta" data-i18n="download.mac.meta">Coming soon</span>
               </span>
             </a>
           </div>
@@ -246,7 +245,7 @@
           </form>
           <p class="beta__note">
             <span data-i18n="beta.or">Or email us directly:</span>
-            <a href="mailto:hello@lightdori.app?subject=LightDori%20beta%20request">hello@lightdori.app</a>
+            <a href="mailto:xkxh4789@gmail.com?subject=LightDori%20beta%20request">xkxh4789@gmail.com</a>
           </p>
         </div>
       </section>
@@ -275,6 +274,8 @@
           if (!btn) return;
           var ok = /^https?:\/\//i.test(url) || /^\.?\//.test(url);
           if (url && ok) {
+            btn.classList.remove("is-disabled");
+            btn.removeAttribute("aria-disabled");
             btn.href = url;
             if (/^https?:\/\//i.test(url)) {
               btn.removeAttribute("download");
@@ -292,8 +293,24 @@
           }
         }
 
+        // A platform with no URL is on hold: leave the button inert rather than
+        // sending people to the beta form as if it were a download.
+        function hold(btn) {
+          if (!btn) return;
+          btn.classList.add("is-disabled");
+          btn.setAttribute("aria-disabled", "true");
+          btn.removeAttribute("href");
+          btn.removeAttribute("download");
+          btn.removeAttribute("target");
+          btn.removeAttribute("rel");
+        }
+
         wire(win, winUrl);
-        wire(mac, macUrl);
+        if (macUrl) {
+          wire(mac, macUrl);
+        } else {
+          hold(mac);
+        }
 
         window.__lightdoriDownloadReady = ready;
         window.__lightdoriDownloadBadHash = /sha256:/i.test(winUrl) || /sha256:/i.test(macUrl);
@@ -388,7 +405,7 @@
         var body = encodeURIComponent(
           window.lightdoriT("beta.mail.body", lang).replace("{email}", email)
         );
-        window.location.href = "mailto:hello@lightdori.app?subject=" + subject + "&body=" + body;
+        window.location.href = "mailto:xkxh4789@gmail.com?subject=" + subject + "&body=" + body;
       });
     </script>
   </body>
