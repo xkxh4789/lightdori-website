@@ -36,7 +36,7 @@ window.LIGHTDORI_I18N = {
     "download.lede":
       "Desktop builds for theatre, tour, and the shop floor — ready to use offline.",
     "download.win.meta": ".exe installer",
-    "download.mac.meta": "Coming soon",
+    "download.mac.meta": ".dmg / .app",
     "download.note.none": "",
     "download.note.one": "",
     "download.note.both": "",
@@ -91,7 +91,7 @@ window.LIGHTDORI_I18N = {
     "download.lede":
       "극장, 투어, 샵에서도 오프라인으로 쓸 수 있는 데스크톱 빌드입니다.",
     "download.win.meta": ".exe 설치 파일",
-    "download.mac.meta": "준비 중",
+    "download.mac.meta": ".dmg / .app",
     "download.note.none": "",
     "download.note.one": "",
     "download.note.both": "",

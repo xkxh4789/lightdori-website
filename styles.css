@@ -541,13 +541,6 @@ html[data-lang="ko"] .eyebrow {
   text-align: left;
 }
 
-.download__btn.is-disabled {
-  border-style: dashed;
-  opacity: 0.45;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
 .download__brand {
   display: inline-flex;
   align-items: center;

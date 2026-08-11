@@ -195,11 +195,12 @@
                 <span class="download__meta" data-i18n="download.win.meta">.exe installer</span>
               </span>
             </a>
-            <!-- macOS build is on hold: put the URL back in downloads.js to re-enable. -->
             <a
-              class="btn btn--ink-outline download__btn is-disabled"
+              class="btn btn--ink-outline download__btn"
               id="download-mac"
-              aria-disabled="true"
+              href="https://github.com/xkxh4789/Lightdori-release/releases/download/v0.1.0/LightDori_Setup_1.0.0.dmg"
+              target="_blank"
+              rel="noopener noreferrer"
               data-platform="mac"
             >
               <span class="download__brand" aria-hidden="true">
@@ -212,7 +213,7 @@
               </span>
               <span class="download__copy">
                 <span class="download__name">macOS</span>
-                <span class="download__meta" data-i18n="download.mac.meta">Coming soon</span>
+                <span class="download__meta" data-i18n="download.mac.meta">.dmg / .app</span>
               </span>
             </a>
           </div>
@@ -274,8 +275,6 @@
           if (!btn) return;
           var ok = /^https?:\/\//i.test(url) || /^\.?\//.test(url);
           if (url && ok) {
-            btn.classList.remove("is-disabled");
-            btn.removeAttribute("aria-disabled");
             btn.href = url;
             if (/^https?:\/\//i.test(url)) {
               btn.removeAttribute("download");
@@ -293,24 +292,8 @@
           }
         }
 
-        // A platform with no URL is on hold: leave the button inert rather than
-        // sending people to the beta form as if it were a download.
-        function hold(btn) {
-          if (!btn) return;
-          btn.classList.add("is-disabled");
-          btn.setAttribute("aria-disabled", "true");
-          btn.removeAttribute("href");
-          btn.removeAttribute("download");
-          btn.removeAttribute("target");
-          btn.removeAttribute("rel");
-        }
-
         wire(win, winUrl);
-        if (macUrl) {
-          wire(mac, macUrl);
-        } else {
-          hold(mac);
-        }
+        wire(mac, macUrl);
 
         window.__lightdoriDownloadReady = ready;
         window.__lightdoriDownloadBadHash = /sha256:/i.test(winUrl) || /sha256:/i.test(macUrl);
