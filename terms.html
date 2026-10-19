@@ -9,21 +9,19 @@
       data-i18n-content="terms.meta.desc"
       content="The terms that apply when you download, install, and use LightDori, including licence, beta status, and liability."
     />
+    <link rel="icon" href="./assets/app-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Montserrat:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./styles.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="./styles.css?v=20261020d" />
   </head>
   <body class="page-legal">
-    <header class="top">
-      <a class="top__brand" href="./index.html">LightDori</a>
+    <header class="top" id="top">
+      <a class="top__brand" href="./index.html"><img src="./assets/app-icon.png" alt="" />LightDori</a>
       <div class="top__right">
         <nav class="top__nav" data-i18n-aria="nav.primary" aria-label="Primary">
-          <a href="./index.html#work" data-i18n="nav.work">Work</a>
-          <a href="./index.html#download" data-i18n="nav.download">Download</a>
+          <a href="./index.html#features" data-i18n="nav.features">Features</a>
+          <a href="./index.html#workflow" data-i18n="nav.workflow">Workflow</a>
           <a href="./manual.html" data-i18n="nav.manual">Manual</a>
           <a href="./index.html#beta" data-i18n="nav.beta">Beta</a>
         </nav>
@@ -31,6 +29,7 @@
           <button type="button" class="top__lang-btn" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" class="top__lang-btn" data-lang="ko" aria-pressed="false">KR</button>
         </div>
+        <a class="btn top__cta" href="./index.html#download" data-i18n="nav.download">Download</a>
       </div>
     </header>
 
@@ -134,15 +133,17 @@
     </main>
 
     <footer class="foot">
-      <span class="foot__brand">LightDori</span>
+      <span class="foot__brand"><img src="./assets/app-icon.png" alt="" />LightDori</span>
+      <span>© <span id="year"></span> LightDori</span>
       <nav class="foot__links" data-i18n-aria="foot.legal.aria" aria-label="Legal">
+        <a href="./manual.html" data-i18n="nav.manual">Manual</a>
         <a href="./privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
         <a href="./terms.html" data-i18n="foot.terms">Terms of Service</a>
+        <a href="mailto:xkxh4789@gmail.com" data-i18n="foot.contact">Contact</a>
       </nav>
-      <span class="foot__meta">© <span id="year"></span> <span data-i18n="foot.rights">LightDori. All rights reserved.</span></span>
     </footer>
 
-    <script src="./i18n.js"></script>
+    <script src="./i18n.js?v=20261020c"></script>
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
       window.lightdoriInitLang();

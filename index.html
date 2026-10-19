@@ -3,54 +3,32 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title data-i18n="meta.title">LightDori — Patch, document, and sync lighting data</title>
+    <title data-i18n="meta.title">LightDori — Lighting data, ready before the call</title>
     <meta
       name="description"
-      content="LightDori is a desktop workspace for lighting patch lists, print-ready PDFs, and Vectorworks exchange — built for production electricians and lighting designers."
+      data-i18n-content="meta.desc"
+      content="LightDori is a desktop workspace for lighting patch sheets, print-ready paperwork, magic sheets and live Vectorworks sync — built for lighting designers and production electricians."
     />
+    <link rel="icon" href="./assets/app-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600&family=Montserrat:wght@700;800&family=Noto+Sans+KR:wght@400;500;700&family=Syne:wght@600;700;800&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css" />
+    <link rel="stylesheet" href="./styles.css?v=20261020d" />
     <script>
-      // Fresh visits should start at the hero — not restored scroll / autofill focus on #beta.
-      (function () {
-        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
-        if (!location.hash) {
-          window.scrollTo(0, 0);
-          document.addEventListener(
-            "DOMContentLoaded",
-            function () {
-              var active = document.activeElement;
-              if (active && active !== document.body && typeof active.blur === "function") {
-                var inBeta = active.closest && active.closest("#beta");
-                if (inBeta) active.blur();
-              }
-              window.scrollTo(0, 0);
-            },
-            { once: true }
-          );
-          window.addEventListener(
-            "load",
-            function () {
-              if (!location.hash) window.scrollTo(0, 0);
-            },
-            { once: true }
-          );
-        }
-      })();
+      if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+      if (location.search.indexOf("static") !== -1) document.documentElement.classList.add("is-static");
     </script>
   </head>
   <body>
-    <header class="top">
-      <a class="top__brand" href="./index.html">LightDori</a>
+    <header class="top" id="top">
+      <a class="top__brand" href="./index.html"><img src="./assets/app-icon.png" alt="" />LightDori</a>
       <div class="top__right">
         <nav class="top__nav" data-i18n-aria="nav.primary" aria-label="Primary">
-          <a href="#work" data-i18n="nav.work">Work</a>
-          <a href="#download" data-i18n="nav.download">Download</a>
+          <a href="#features" data-i18n="nav.features">Features</a>
+          <a href="#workflow" data-i18n="nav.workflow">Workflow</a>
           <a href="./manual.html" data-i18n="nav.manual">Manual</a>
           <a href="#beta" data-i18n="nav.beta">Beta</a>
         </nav>
@@ -58,329 +36,329 @@
           <button type="button" class="top__lang-btn" data-lang="en" aria-pressed="true">EN</button>
           <button type="button" class="top__lang-btn" data-lang="ko" aria-pressed="false">KR</button>
         </div>
+        <a class="btn top__cta" href="#download" data-i18n="nav.download">Download</a>
       </div>
     </header>
 
-    <main id="top">
-      <section class="hero" aria-label="Introduction">
-        <div class="hero__media" aria-hidden="true">
-          <div class="hero__slides">
-            <img class="hero__slide is-active" src="./assets/hero.png" alt="" />
-            <img class="hero__slide" src="./assets/hero1.png" alt="" />
-            <img class="hero__slide" src="./assets/hero2.png" alt="" />
-            <img class="hero__slide" src="./assets/hero3.png" alt="" />
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero__copy">
+          <p class="eyebrow" data-i18n="hero.eyebrow">Desktop app · Windows &amp; macOS</p>
+          <h1 id="hero-title">
+            <span style="color:inherit" data-i18n="hero.title1">Lighting data,</span>
+            <span data-i18n="hero.title2">ready before</span>
+            <span data-i18n="hero.title3">the call.</span>
+          </h1>
+          <p class="hero__lede" data-i18n="hero.lede">
+            Patch sheets, paperwork and magic sheets that print the way designers draw them — kept in step with Vectorworks while you work.
+          </p>
+          <div class="hero__actions">
+            <a class="btn" href="#download">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <span data-i18n="hero.download">Download LightDori</span>
+            </a>
+            <a class="btn btn--line" href="#features" data-i18n="hero.more">See what it does</a>
           </div>
-          <div class="hero__veil"></div>
-          <div class="hero__beam"></div>
+          <p class="hero__works"><span data-i18n="hero.works">Works with</span><b>Vectorworks</b><b>ETC Eos</b><b>grandMA</b><b>GDTF</b><b>MVR</b><b>CSV · Excel</b></p>
         </div>
 
-        <div class="hero__copy">
-          <div class="hero__panel">
-            <p class="hero__brand">LightDori</p>
-            <h1 class="hero__title" data-i18n="hero.title">Lighting data, ready before the call.</h1>
-            <p class="hero__lede" data-i18n="hero.lede">
-              Patch lists, print-ready PDFs, and Vectorworks sync in one desktop app.
-            </p>
-            <div class="hero__actions">
-              <a class="btn btn--solid" href="#download" data-i18n="hero.download">Download</a>
-              <a class="btn btn--ghost" href="#beta" data-i18n="hero.beta">Request beta</a>
+        <div class="reel" id="reel" aria-roledescription="carousel" data-i18n-aria="reel.aria" aria-label="LightDori screens">
+          <div class="reel__frame">
+            <div class="reel__bar"><img src="./assets/app-icon.png" alt="" />LightDori<span id="reel-label">Sheet</span></div>
+            <div class="reel__view">
+              <div class="reel__track" id="reel-track">
+                <img src="./assets/shots/sheet.webp" alt="The Sheet with a show's fixtures" data-i18n-alt="reel.1.alt" />
+                <img src="./assets/shots/magic-sheet.webp" alt="A magic sheet laid out on the stage plan" data-i18n-alt="reel.2.alt" loading="lazy" />
+                <img src="./assets/shots/patch-document.webp" alt="A channel hookup in the Patch Document" data-i18n-alt="reel.3.alt" loading="lazy" />
+                <img src="./assets/shots/cue-sheet.webp" alt="Cue markers on a script with the cue sheet beside it" data-i18n-alt="reel.4.alt" loading="lazy" />
+                <img src="./assets/shots/vw-sync.webp" alt="The Vectorworks sync panel" data-i18n-alt="reel.5.alt" loading="lazy" />
+                <img src="./assets/shots/error-checking.webp" alt="Error checking over the Sheet" data-i18n-alt="reel.6.alt" loading="lazy" />
+              </div>
             </div>
+          </div>
+          <div class="reel__dots" role="tablist">
+            <button type="button" class="is-on"><span data-i18n="reel.1">Sheet</span></button>
+            <button type="button"><span data-i18n="reel.2">Magic Sheet</span></button>
+            <button type="button"><span data-i18n="reel.3">Patch Document</span></button>
+            <button type="button"><span data-i18n="reel.4">Script &amp; cues</span></button>
+            <button type="button"><span data-i18n="reel.5">Vectorworks</span></button>
+            <button type="button"><span data-i18n="reel.6">Error checking</span></button>
           </div>
         </div>
       </section>
 
-      <section class="work" id="work">
-        <div class="work__intro">
-          <p class="eyebrow" data-i18n="work.eyebrow">Features</p>
-          <h2 data-i18n="work.title">Three jobs. One workspace.</h2>
+      <section class="product" aria-label="Screens">
+        <div class="switch" role="tablist">
+          <button type="button" class="is-on" data-shot="0" data-i18n="product.1.tab">Sheet</button>
+          <button type="button" data-shot="1" data-i18n="product.2.tab">Patch Document</button>
+          <button type="button" data-shot="2" data-i18n="product.3.tab">Magic Sheet</button>
         </div>
+        <div class="window reveal">
+          <div class="window__bar"><img src="./assets/app-icon.png" alt="" />LightDori<i></i></div>
+          <div class="window__screen">
+            <img class="is-on" src="./assets/shots/sheet.webp" alt="" loading="lazy" />
+            <img src="./assets/shots/patch-document.webp" alt="" loading="lazy" />
+            <img src="./assets/shots/magic-sheet.webp" alt="" loading="lazy" />
+          </div>
+        </div>
+        <div class="product__caption">
+          <div class="is-on" data-cap="0"><b data-i18n="product.1.tab">Sheet</b><span data-i18n="product.1.body">Every fixture in one fast table: edit, filter, check for errors, compare revisions.</span></div>
+          <div data-cap="1"><b data-i18n="product.2.tab">Patch Document</b><span data-i18n="product.2.body">Channel and dimmer hookups, instrument schedules, focus charts — print-ready PDFs.</span></div>
+          <div data-cap="2"><b data-i18n="product.3.tab">Magic Sheet</b><span data-i18n="product.3.body">One cell per system, channels placed on the plan from your focus areas.</span></div>
+        </div>
+      </section>
 
-        <div class="work__stage">
-          <button
-            type="button"
-            class="work__nav work__nav--prev"
-            data-i18n-aria="work.prev"
-            aria-label="Previous feature"
-          >
-            <span aria-hidden="true">‹</span>
-          </button>
-
-          <div class="work__panel" aria-live="polite">
-            <article class="work__slide is-active" data-work-slide="0">
-              <figure class="work__figure">
-                <img
-                  src="./assets/sheet.png"
-                  alt="Patch sheet preview inside LightDori"
-                  data-i18n-alt="work.1.img.alt"
-                />
-              </figure>
-              <div class="work__copy">
-                <p class="work__count"><span data-work-current>01</span> / 03</p>
-                <h3 data-i18n="work.1.title">Patch documents</h3>
-                <p data-i18n="work.1.body">
-                  Build instrument schedules and export clean PDFs for the shop and the booth.
-                </p>
+      <section class="section" id="features">
+        <div class="wrap">
+          <div class="section__head reveal">
+            <div>
+              <p class="eyebrow" data-i18n="features.eyebrow">Features</p>
+              <h2 data-i18n-html="features.title">Everything the paperwork needs.<br />Nothing it doesn't.</h2>
+            </div>
+            <p data-i18n="features.lede">LightDori replaces the spreadsheet, the PDF layout file and the magic sheet drawing with one workspace that reads the same data.</p>
+          </div>
+          <div class="bento">
+            <article class="tile t-a reveal">
+              <p class="eyebrow" data-i18n="f.sheet.eyebrow">Sheet</p>
+              <h3 data-i18n="f.sheet.title">A patch you can trust at 2 a.m.</h3>
+              <p data-i18n="f.sheet.body">Duplicate channels, address overflow and missing positions are flagged as you type. Revision Compare shows what changed since the last cue-to-cue.</p>
+              <div class="tile__shot"><img src="./assets/shots/sheet.webp" alt="" loading="lazy" /></div>
+            </article>
+            <article class="tile t-b reveal">
+              <p class="eyebrow" data-i18n="f.docs.eyebrow">Documents</p>
+              <h3 data-i18n="f.docs.title">Paperwork presets</h3>
+              <p data-i18n="f.docs.body">Three print styles, header blocks from your credits, zebra rows when you want them.</p>
+              <div class="chips" style="margin-top:6px"><span>Channel Hookup</span><span>Instrument Schedule</span><span class="is-new">Dimmer Hookup</span><span class="is-new">Address Hookup</span><span class="is-new">Focus Chart</span></div>
+              <div class="tile__shot tile__shot--doc"><img src="./assets/shots/patch-document.webp" alt="" loading="lazy" /></div>
+            </article>
+            <article class="tile t-c reveal">
+              <p class="eyebrow" data-i18n="f.magic.eyebrow">Magic Sheet</p>
+              <h3 data-i18n="f.magic.title">Drawn from the data</h3>
+              <p data-i18n="f.magic.body">Gel-coloured systems on your ground plan, bubbles pointing where the light goes.</p>
+              <div class="tile__shot"><img src="./assets/shots/magic-sheet.webp" alt="" loading="lazy" /></div>
+            </article>
+            <article class="tile t-d reveal">
+              <p class="eyebrow" data-i18n="f.script.eyebrow">Script</p>
+              <h3 data-i18n="f.script.title">Cues on the page</h3>
+              <p data-i18n="f.script.body">Mark LX, sound and follow-spot cues on the script; the cue sheet follows.</p>
+              <div class="flags" aria-hidden="true">
+                <i style="top:18px"></i><i style="top:34px;right:60px"></i><i style="top:50px"></i><i style="top:66px;right:90px"></i><i style="top:82px"></i><i style="top:98px;right:40px"></i>
+                <b style="top:28px;background:#2f6fde">Q 12</b><b style="top:60px;background:#16a34a">SQ 4</b><b style="top:92px;background:#d97706">FS 2</b>
               </div>
             </article>
-
-            <article class="work__slide" data-work-slide="1" hidden>
-              <figure class="work__figure">
-                <img
-                  src="./assets/card-workflow.webp"
-                  alt="Workflow module visual"
-                  data-i18n-alt="work.2.img.alt"
-                />
-              </figure>
-              <div class="work__copy">
-                <p class="work__count"><span data-work-current>02</span> / 03</p>
-                <h3 data-i18n="work.2.title">Vectorworks sync</h3>
-                <p data-i18n="work.2.body">
-                  Exchange fixture data through a shared file so LD and Vectorworks stay aligned.
-                </p>
-              </div>
+            <article class="tile t-e tile--dark reveal">
+              <p class="eyebrow" data-i18n="f.console.eyebrow">Console link</p>
+              <h3 data-i18n="f.console.title">Talks to the desk</h3>
+              <p data-i18n="f.console.body">Send patch and focus data to ETC Eos over OSC or grandMA over Telnet.</p>
+              <div class="console" aria-hidden="true">/eos/chan/101/param/pan<br />&nbsp;&nbsp;<em>→ 214.2</em><br />/eos/patch/101 1/001 <em>ok</em></div>
             </article>
-
-            <article class="work__slide" data-work-slide="2" hidden>
-              <figure class="work__figure">
-                <img
-                  src="./assets/card-sheet.webp"
-                  alt="Sheet module visual"
-                  data-i18n-alt="work.3.img.alt"
-                />
-              </figure>
-              <div class="work__copy">
-                <p class="work__count"><span data-work-current>03</span> / 03</p>
-                <h3 data-i18n="work.3.title">Sheet workspace</h3>
-                <p data-i18n="work.3.body">
-                  Edit, sort, and export fixture sheets without jumping between spreadsheets and consoles.
-                </p>
+            <article class="tile t-f reveal">
+              <p class="eyebrow" data-i18n="f.dmx.eyebrow">DMX</p>
+              <h3 data-i18n="f.dmx.title">Universe map and auto patch</h3>
+              <p data-i18n="f.dmx.body">See every universe at a glance, find conflicts, and patch a selection from a start address in one step.</p>
+              <div class="umap" aria-hidden="true" id="umap"></div>
+              <div class="chips" style="margin-top:12px"><span data-i18n="f.dmx.c1">Universe map</span><span data-i18n="f.dmx.c2">Auto universe</span><span data-i18n="f.dmx.c3">Conflicts</span><span data-i18n="f.dmx.c4">Footprints</span></div>
+            </article>
+            <article class="tile t-g reveal">
+              <p class="eyebrow" data-i18n="f.mood.eyebrow">Moodboard</p>
+              <h3 data-i18n="f.mood.title">References, linked to scenes</h3>
+              <p data-i18n="f.mood.body">Build boards per scene, pull gels from a photo and match them to the nearest Lee or Rosco filter.</p>
+              <div class="mood" aria-hidden="true">
+                <i style="background:linear-gradient(160deg,#1e3a5f,#0b1320 60%,#c2410c)"></i><i style="background:linear-gradient(200deg,#fde68a,#b45309 70%,#3f1d0b)"></i><i style="background:linear-gradient(180deg,#7dd3fc,#1d4ed8 65%,#0b0b0c)"></i>
+                <span><b style="background:#5C9AD8"></b>L201</span><span><b style="background:#F6C089"></b>R09</span><span><b style="background:#2F6FC2"></b>R80</span>
               </div>
+              <div class="chips" style="margin-top:12px"><span data-i18n="f.mood.c1">Pages per scene</span><span data-i18n="f.mood.c2">Photo → gel</span><span data-i18n="f.mood.c3">PDF to the Store</span></div>
             </article>
           </div>
+        </div>
+      </section>
 
-          <button
-            type="button"
-            class="work__nav work__nav--next"
-            data-i18n-aria="work.next"
-            aria-label="Next feature"
-          >
-            <span aria-hidden="true">›</span>
-          </button>
+      <section class="section" id="workflow" style="padding-top:40px">
+        <div class="wrap">
+          <div class="section__head reveal">
+            <div>
+              <p class="eyebrow" data-i18n="workflow.eyebrow">Workflow</p>
+              <h2 data-i18n-html="workflow.title">From the plot<br />to the booth.</h2>
+            </div>
+            <p data-i18n="workflow.lede">Bring the data in once. Everything downstream reads it.</p>
+          </div>
+          <div class="flow reveal">
+            <div><b>01</b><h3 data-i18n="workflow.1.title">Import</h3><p data-i18n="workflow.1.body">Vectorworks, MVR, CSV or Excel. Existing sheets merge instead of splitting columns.</p></div>
+            <div><b>02</b><h3 data-i18n="workflow.2.title">Patch &amp; check</h3><p data-i18n="workflow.2.body">Edit in the Sheet, auto-patch universes, clear the error list.</p></div>
+            <div><b>03</b><h3 data-i18n="workflow.3.title">Document</h3><p data-i18n="workflow.3.body">Hookups, schedules and magic sheets, exported straight to your PDF Store.</p></div>
+            <div><b>04</b><h3 data-i18n="workflow.4.title">Hand off</h3><p data-i18n="workflow.4.body">Send to the console, compare revisions, keep Vectorworks in step.</p></div>
+          </div>
         </div>
       </section>
 
       <section class="download" id="download">
-        <div class="download__inner">
-          <p class="eyebrow" data-i18n="download.eyebrow">Download</p>
-          <h2 data-i18n="download.title">Download for Windows and macOS.</h2>
-          <p class="download__lede" data-i18n="download.lede">
-            Desktop builds for theatre, tour, and the shop floor — ready to use offline.
-          </p>
-          <div class="download__actions">
-            <a
-              class="btn btn--ink-outline download__btn"
-              id="download-win"
-              href="https://github.com/xkxh4789/Lightdori-release/releases/download/v0.1.0/LightDori_Setup_1.0_win64.exe"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-platform="windows"
-            >
-              <span class="download__brand" aria-hidden="true">
-                <svg class="download__logo" viewBox="0 0 24 24" focusable="false">
-                  <path fill="currentColor" d="M3 5.2 10.2 4.2v7.1H3zm8.4-1.3L21 2.5v8.8h-9.6zM3 12.7h7.2v7.1L3 18.7zm8.4 0H21v8.8l-9.6-1.4z" />
-                </svg>
-              </span>
-              <span class="download__copy">
-                <span class="download__name">Windows</span>
-                <span class="download__meta" data-i18n="download.win.meta">.exe installer</span>
-              </span>
+        <div class="wrap">
+          <div class="section__head reveal">
+            <div>
+              <p class="eyebrow" data-i18n="download.eyebrow">Download</p>
+              <h2 data-i18n="download.title">Get LightDori.</h2>
+            </div>
+            <p data-i18n="download.lede">Desktop builds for the theatre, the tour and the shop floor. Works offline; your shows stay on your machine.</p>
+          </div>
+          <div class="os reveal">
+            <a id="download-win" href="#beta" data-platform="windows">
+              <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5.2 10.2 4.2v7.1H3zm8.4-1.3L21 2.5v8.8h-9.6zM3 12.7h7.2v7.1L3 18.7zm8.4 0H21v8.8l-9.6-1.4z"/></svg></span>
+              <div><strong>Windows</strong><span data-i18n="download.win.meta">Installer · .exe · 64-bit</span></div>
+              <em aria-hidden="true">↓</em>
             </a>
-            <a
-              class="btn btn--ink-outline download__btn"
-              id="download-mac"
-              href="https://github.com/xkxh4789/Lightdori-release/releases/download/v0.1.0/LightDori_Setup_1.0.0.dmg"
-              target="_blank"
-              rel="noopener noreferrer"
-              data-platform="mac"
-            >
-              <span class="download__brand" aria-hidden="true">
-                <svg class="download__logo" viewBox="0 0 24 24" focusable="false">
-                  <path
-                    fill="currentColor"
-                    d="M16.7 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.7-2.8-.7-1.4 0-2.8.9-3.5 2.2-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7c1.2 0 1.9-1 2.6-2 .8-1.2 1.1-2.3 1.1-2.4-.02-.01-2.2-.8-2.2-3.6zM14.7 6.5c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1.1 1.7-.9 2.6 1 .1 1.9-.5 2.5-1.2z"
-                  />
-                </svg>
-              </span>
-              <span class="download__copy">
-                <span class="download__name">macOS</span>
-                <span class="download__meta" data-i18n="download.mac.meta">.dmg / .app</span>
-              </span>
+            <a id="download-mac" href="#beta" data-platform="mac">
+              <span class="ic"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M16.7 12.6c0-2.1 1.7-3.1 1.8-3.2-1-1.4-2.5-1.6-3-1.7-1.3-.1-2.5.8-3.1.8-.7 0-1.7-.7-2.8-.7-1.4 0-2.8.9-3.5 2.2-1.5 2.6-.4 6.4 1.1 8.5.7 1 1.6 2.2 2.7 2.1 1.1 0 1.5-.7 2.8-.7s1.7.7 2.8.7c1.2 0 1.9-1 2.6-2 .8-1.2 1.1-2.3 1.1-2.4-.02-.01-2.2-.8-2.2-3.6zM14.7 6.5c.6-.7 1-1.7.9-2.7-.9 0-1.9.6-2.5 1.3-.6.6-1.1 1.7-.9 2.6 1 .1 1.9-.5 2.5-1.2z"/></svg></span>
+              <div><strong>macOS</strong><span data-i18n="download.mac.meta">Disk image · .dmg</span></div>
+              <em aria-hidden="true">↓</em>
             </a>
           </div>
           <p class="download__note" id="download-note" hidden></p>
+          <p class="download__meta"><a href="./manual.html" data-i18n="download.manual">Read the manual</a><a href="./privacy.html" data-i18n="foot.privacy">Privacy Policy</a><a href="./terms.html" data-i18n="foot.terms">Terms of Service</a></p>
         </div>
       </section>
 
-      <section class="beta" id="beta">
-        <div class="beta__inner">
-          <p class="eyebrow" data-i18n="beta.eyebrow">Closed beta</p>
-          <h2 data-i18n="beta.title">Join the closed beta.</h2>
-          <p class="beta__lede" data-i18n="beta.lede">
-            We're inviting a small group of lighting designers, production electricians, and rental shops.
-            Tell us your workflow and OS — we'll send a build when a seat opens.
-          </p>
-
-          <form class="beta__form" id="beta-form">
-            <label>
-              <span data-i18n="beta.email">Email</span>
-              <input
-                id="beta-email"
-                type="email"
-                name="email"
-                placeholder="you@company.com"
-                autocomplete="email"
-                required
-              />
-            </label>
-            <button class="btn btn--solid" type="submit" data-i18n="beta.submit">Request access</button>
-          </form>
-          <p class="beta__note">
-            <span data-i18n="beta.or">Or email us directly:</span>
-            <a href="mailto:xkxh4789@gmail.com?subject=LightDori%20beta%20request">xkxh4789@gmail.com</a>
-          </p>
+      <section class="section" id="beta">
+        <div class="wrap beta reveal">
+          <div>
+            <p class="eyebrow" data-i18n="beta.eyebrow">Closed beta</p>
+            <h2 data-i18n-html="beta.title">Built with the people<br />who call the shows.</h2>
+          </div>
+          <div>
+            <form class="beta__form" id="beta-form">
+              <input id="beta-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required data-i18n-aria="beta.email" aria-label="Email" />
+              <button class="btn" type="submit" data-i18n="beta.submit">Request access</button>
+            </form>
+            <p class="beta__note">
+              <span data-i18n="beta.lede">Lighting designers, production electricians and rental shops. We'll send a build when a seat opens.</span>
+              <span data-i18n="beta.or">Or email us:</span>
+              <a href="mailto:xkxh4789@gmail.com?subject=LightDori%20beta%20request">xkxh4789@gmail.com</a>
+            </p>
+          </div>
         </div>
       </section>
     </main>
 
     <footer class="foot">
-      <span class="foot__brand">LightDori</span>
+      <span class="foot__brand"><img src="./assets/app-icon.png" alt="" />LightDori</span>
+      <span>© <span id="year"></span> LightDori</span>
       <nav class="foot__links" data-i18n-aria="foot.legal.aria" aria-label="Legal">
+        <a href="./manual.html" data-i18n="nav.manual">Manual</a>
         <a href="./privacy.html" data-i18n="foot.privacy">Privacy Policy</a>
         <a href="./terms.html" data-i18n="foot.terms">Terms of Service</a>
+        <a href="mailto:xkxh4789@gmail.com" data-i18n="foot.contact">Contact</a>
       </nav>
-      <span class="foot__meta">© <span id="year"></span> <span data-i18n="foot.rights">LightDori. All rights reserved.</span></span>
     </footer>
 
-    <script src="./downloads.js?v=20260730"></script>
-    <script src="./i18n.js"></script>
+    <script src="./downloads.js?v=20261020"></script>
+    <script src="./i18n.js?v=20261020c"></script>
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
+      var isStatic = document.documentElement.classList.contains("is-static");
 
+      // header shadow once the page scrolls
+      (function () {
+        var header = document.getElementById("top");
+        var onScroll = function () { header.classList.toggle("is-scrolled", window.scrollY > 10); };
+        window.addEventListener("scroll", onScroll, { passive: true });
+        onScroll();
+      })();
+
+      // sections rise in as they enter the screen
+      (function () {
+        var nodes = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window) || isStatic) {
+          nodes.forEach(function (n) { n.classList.add("is-in"); });
+          return;
+        }
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (e) {
+            if (e.isIntersecting) { e.target.classList.add("is-in"); io.unobserve(e.target); }
+          });
+        }, { threshold: 0.12 });
+        nodes.forEach(function (n) { io.observe(n); });
+      })();
+
+      // download links from downloads.js (an empty link sends people to the beta form)
       (function setupDownloads() {
         var cfg = window.LIGHTDORI_DOWNLOADS || {};
-        var win = document.getElementById("download-win");
-        var mac = document.getElementById("download-mac");
         var note = document.getElementById("download-note");
-        var winUrl = String(cfg.windows || "").trim();
-        var macUrl = String(cfg.mac || "").trim();
-        var ready = 0;
-
-        function wire(btn, url) {
-          if (!btn) return;
-          var ok = /^https?:\/\//i.test(url) || /^\.?\//.test(url);
-          if (url && ok) {
+        var bad = false;
+        [["download-win", cfg.windows], ["download-mac", cfg.mac]].forEach(function (pair) {
+          var btn = document.getElementById(pair[0]);
+          var url = String(pair[1] || "").trim();
+          if (/sha256:/i.test(url)) bad = true;
+          if (btn && /^https?:\/\//i.test(url)) {
             btn.href = url;
-            if (/^https?:\/\//i.test(url)) {
-              btn.removeAttribute("download");
-              btn.target = "_blank";
-              btn.rel = "noopener noreferrer";
-            } else {
-              btn.setAttribute("download", "");
-              btn.removeAttribute("target");
-            }
-            ready += 1;
-          } else {
-            btn.href = "#beta";
-            btn.removeAttribute("download");
-            btn.removeAttribute("target");
+            btn.target = "_blank";
+            btn.rel = "noopener noreferrer";
           }
-        }
-
-        wire(win, winUrl);
-        wire(mac, macUrl);
-
-        window.__lightdoriDownloadReady = ready;
-        window.__lightdoriDownloadBadHash = /sha256:/i.test(winUrl) || /sha256:/i.test(macUrl);
-
+        });
         window.lightdoriRefreshDownloadNotes = function (lang) {
           if (!note) return;
-          var t = window.lightdoriT;
-          if (window.__lightdoriDownloadBadHash) {
-            note.hidden = false;
-            note.textContent = t("download.note.hash", lang);
-            return;
-          }
-          // Keep the public download section clean — no “one platform / beta” notices.
-          note.hidden = true;
-          note.textContent = "";
+          note.hidden = !bad;
+          note.textContent = bad ? window.lightdoriT("download.note.hash", lang) : "";
         };
       })();
 
       window.lightdoriInitLang();
 
-      (function setupHeroSlider() {
-        var slides = document.querySelectorAll(".hero__slide");
-        if (slides.length < 2) return;
-        if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-
-        var index = 0;
-        var fadeMs = 3200;
-        var holdMs = 7000;
-        var timer = null;
-
-        function goNext() {
-          slides[index].classList.remove("is-active");
-          index = (index + 1) % slides.length;
-          slides[index].classList.add("is-active");
+      // hero reel: the app's screens slide past
+      (function setupReel() {
+        var reel = document.getElementById("reel");
+        var track = document.getElementById("reel-track");
+        var dots = Array.prototype.slice.call(reel.querySelectorAll(".reel__dots button"));
+        var label = document.getElementById("reel-label");
+        var count = track.children.length;
+        var ms = 5200, index = 0, timer = null;
+        reel.style.setProperty("--reel-ms", ms + "ms");
+        function go(i) {
+          index = (i + count) % count;
+          track.style.transform = "translateX(" + -index * 100 + "%)";
+          dots.forEach(function (d, k) {
+            d.classList.remove("is-on");
+            if (k === index) { void d.offsetWidth; d.classList.add("is-on"); }
+          });
+          label.textContent = dots[index].textContent.trim();
         }
-
         function schedule() {
-          timer = window.setTimeout(function () {
-            goNext();
-            schedule();
-          }, holdMs + fadeMs);
+          clearTimeout(timer);
+          if (isStatic || reel.classList.contains("is-paused")) return;
+          timer = setTimeout(function () { go(index + 1); schedule(); }, ms);
         }
-
-        schedule();
+        dots.forEach(function (d, k) { d.addEventListener("click", function () { go(k); schedule(); }); });
+        reel.addEventListener("mouseenter", function () { reel.classList.add("is-paused"); clearTimeout(timer); });
+        reel.addEventListener("mouseleave", function () { reel.classList.remove("is-paused"); schedule(); });
+        document.addEventListener("lightdori:langchange", function () { label.textContent = dots[index].textContent.trim(); });
+        if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) schedule();
+        go(0);
       })();
 
-      (function setupWorkCarousel() {
-        var panel = document.querySelector(".work__panel");
-        if (!panel) return;
-        var slides = Array.prototype.slice.call(panel.querySelectorAll(".work__slide"));
-        if (slides.length < 2) return;
-        var prev = document.querySelector(".work__nav--prev");
-        var next = document.querySelector(".work__nav--next");
-        var index = 0;
-
-        function show(nextIndex) {
-          slides[index].classList.remove("is-active");
-          slides[index].hidden = true;
-          index = (nextIndex + slides.length) % slides.length;
-          slides[index].hidden = false;
-          slides[index].classList.add("is-active");
+      // the product window: Sheet / Patch Document / Magic Sheet
+      (function setupProduct() {
+        var shots = document.querySelectorAll(".window__screen img");
+        var caps = document.querySelectorAll("[data-cap]");
+        var tabs = document.querySelectorAll("[data-shot]");
+        var shot = 0, auto = true;
+        function show(i) {
+          shot = i;
+          shots.forEach(function (n, k) { n.classList.toggle("is-on", k === i); });
+          caps.forEach(function (n, k) { n.classList.toggle("is-on", k === i); });
+          tabs.forEach(function (n, k) { n.classList.toggle("is-on", k === i); });
         }
+        tabs.forEach(function (b) { b.addEventListener("click", function () { auto = false; show(+b.dataset.shot); }); });
+        caps.forEach(function (c) { c.addEventListener("click", function () { auto = false; show(+c.dataset.cap); }); });
+        if (!isStatic) setInterval(function () { if (auto) show((shot + 1) % shots.length); }, 6000);
+      })();
 
-        if (prev) {
-          prev.addEventListener("click", function () {
-            show(index - 1);
-          });
+      // universe map tile
+      (function () {
+        var m = document.getElementById("umap");
+        var h = "";
+        for (var i = 0; i < 160; i++) {
+          var on = (i % 7 < 3 && i < 120) || (i > 130 && i % 5 === 0);
+          h += '<i class="' + (i === 44 || i === 45 ? "x" : on ? "on" : "") + '"></i>';
         }
-        if (next) {
-          next.addEventListener("click", function () {
-            show(index + 1);
-          });
-        }
-
-        document.addEventListener("keydown", function (event) {
-          var work = document.getElementById("work");
-          if (!work) return;
-          var rect = work.getBoundingClientRect();
-          var inView = rect.top < window.innerHeight && rect.bottom > 0;
-          if (!inView) return;
-          if (event.key === "ArrowLeft") show(index - 1);
-          if (event.key === "ArrowRight") show(index + 1);
-        });
+        m.innerHTML = h;
       })();
 
       document.getElementById("beta-form").addEventListener("submit", function (event) {
@@ -389,9 +367,7 @@
         if (!email) return;
         var lang = document.documentElement.getAttribute("data-lang") || "en";
         var subject = encodeURIComponent(window.lightdoriT("beta.mail.subject", lang));
-        var body = encodeURIComponent(
-          window.lightdoriT("beta.mail.body", lang).replace("{email}", email)
-        );
+        var body = encodeURIComponent(window.lightdoriT("beta.mail.body", lang).replace("{email}", email));
         window.location.href = "mailto:xkxh4789@gmail.com?subject=" + subject + "&body=" + body;
       });
     </script>
