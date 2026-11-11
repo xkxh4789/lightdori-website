@@ -40,11 +40,12 @@ window.LIGHTDORI_DOWNLOADS = {
 };
 ```
 
-Empty URL → that button goes to the beta section.
+Empty URL → that button goes to the beta section. `false` → the button is turned off and reads "Coming soon".
 
 ## Notes
 
 - Contact: `xkxh4789@gmail.com`
 - Pages: `index.html`, `manual.html`
 - Images: `assets/`
-- Beta form uses mailto (no backend)
+- Beta form: `beta.js` sends requests through Web3Forms to the address its access key was made for.
+  With an empty key it falls back to mailto.

@@ -9,7 +9,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20261111d" />
+    <link rel="stylesheet" href="./styles.css?v=20261112" />
   </head>
   <body class="page-manual">
     <!-- Generated from one source with manual-i18n.js; edit both together. -->
@@ -153,7 +153,7 @@
             </ul>
             <div class="manual__note manual__note--warn">
               <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
-              <p data-i18n="m.import.13">The Vectorworks plug-in runs on Windows for now. If Vectorworks blocks it, check LightDoriRealtime in the Vectorworks Plug-in Manager.</p>
+              <p data-i18n="m.import.13">The Vectorworks plug-in runs on Windows for now and is installed with LightDori. In Vectorworks 2026 or later it may be turned off the first time: turn LightDoriRealtime on in the Vectorworks Plug-in Manager, then restart Vectorworks.</p>
             </div>
             <h3 data-i18n="m.import.14">From a file</h3>
             <ol class="manual__steps">
@@ -351,13 +351,13 @@
           <div class="manual__section-body">
             <p class="manual__lead" data-i18n="m.cable.1">Plan DMX and power runs, and check that every fixture is reached.</p>
             <ul>
-              <li data-i18n="m.cable.2">The tabs at the top count fixtures with no cable yet, overlapping addresses and overloaded feeds.</li>
-              <li data-i18n-html="m.cable.3"><strong>Chain each position in address order</strong> runs the DMX for you, or draw cables yourself in <strong>Free layout</strong>.</li>
-              <li data-i18n="m.cable.4">In Free layout, add a panel or distro and connect the power.</li>
+              <li data-i18n="m.cable.2">The tabs at the top count fixtures no DMX cable reaches yet, overlapping addresses and circuits over capacity.</li>
+              <li data-i18n-html="m.cable.3"><strong>Chain each position in address order</strong> runs the DMX for you, one line per position.</li>
+              <li data-i18n-html="m.cable.4">Switch to <strong>Power</strong> to see circuits suggested from each fixture's wattage. Set the breaker and how full to load it at the top.</li>
             </ul>
             <figure class="manual__shot">
-              <img src="./assets/manual/en/cable.webp" data-i18n-src="m.shot.cable" alt="The cable view before any cable is drawn" data-i18n-alt="m.shot.cable.alt" loading="lazy" />
-              <figcaption data-i18n="m.shot.cable.cap">The demo rig before any cable is drawn: all 48 fixtures are still unconnected.</figcaption>
+              <img src="./assets/manual/en/cable.webp" data-i18n-src="m.shot.cable" alt="The cable view with each position chained in address order" data-i18n-alt="m.shot.cable.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.cable.cap">The demo rig with each position chained. The first fixture on each line (orange) still waits to be plugged into the console.</figcaption>
             </figure>
             <div class="manual__note manual__note--help">
               <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
@@ -458,7 +458,7 @@
             <h3 data-i18n="m.tips.1">Vectorworks</h3>
             <ul>
               <li data-i18n-html="m.tips.2"><strong>The panel keeps waiting for a drawing.</strong> Open the drawing in Vectorworks, save it once, and check that LightDori Realtime is running. If Vectorworks was open when LightDori installed the plug-in, restart Vectorworks.</li>
-              <li data-i18n-html="m.tips.3"><strong>Vectorworks blocks the plug-in.</strong> Check LightDoriRealtime in the Vectorworks Plug-in Manager.</li>
+              <li data-i18n-html="m.tips.3"><strong>The plug-in is turned off in Vectorworks.</strong> This can happen once in Vectorworks 2026 or later. Turn LightDoriRealtime on in the Vectorworks Plug-in Manager, then restart Vectorworks.</li>
               <li data-i18n-html="m.tips.4"><strong>Import and link is greyed out.</strong> Save the drawing in Vectorworks first.</li>
               <li data-i18n-html="m.tips.5"><strong>Where does the data go?</strong> LightDori and Vectorworks exchange files in <code>Documents\LightDoriExchange</code> on this computer. Nothing goes over the network.</li>
             </ul>
@@ -495,8 +495,8 @@
       </nav>
     </footer>
 
-    <script src="./i18n.js?v=20261111d"></script>
-    <script src="./manual-i18n.js?v=20261111d"></script>
+    <script src="./i18n.js?v=20261112"></script>
+    <script src="./manual-i18n.js?v=20261112"></script>
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
       window.lightdoriInitLang();

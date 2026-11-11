@@ -13,8 +13,16 @@ window.LIGHTDORI_I18N = {
     "nav.primary": "Primary",
     "download.note.hash":
       "Download URL looks like a SHA256 checksum. On the Release page, right-click the .exe file name and Copy link address.",
+    "download.soon": "Coming soon",
     "beta.mail.subject": "LightDori beta request",
-    "beta.mail.body": "Beta request from: {email}\n\nOS:\nWorkflow notes:\n",
+    "beta.err.name": "Add your name.",
+    "beta.err.email": "Check your email address.",
+    "beta.err.role": "Choose what you do.",
+    "beta.err.computer": "Choose your computer.",
+    "beta.err.consent": "Tick the privacy box to send.",
+    "beta.sending": "Sending.",
+    "beta.sent": "Got it. We'll email you a build when a seat opens up.",
+    "beta.failed": "That didn't go through. Try again in a moment, or email xkxh4789@gmail.com.",
     "foot.contact": "Contact",
     "lang.label": "Language",
     // Manual copy lives in manual.html; only strings built in JS need an English entry.
@@ -27,7 +35,7 @@ window.LIGHTDORI_I18N = {
     "foot.legal.aria": "Legal",
     "privacy.meta.title": "Privacy Policy — LightDori",
     "privacy.title": "Privacy Policy",
-    "privacy.updated": "Last updated: 13 August 2026",
+    "privacy.updated": "Last updated: 12 November 2026",
     "terms.meta.title": "Terms of Service — LightDori",
     "terms.title": "Terms of Service",
     "terms.updated": "Last updated: 13 August 2026",
@@ -174,11 +182,33 @@ window.LIGHTDORI_I18N = {
     "beta.eyebrow": "클로즈드 베타",
     "beta.title": "현장에서 일하는 사람들과<br />함께 만들어요.",
     "beta.lede": "조명 디자이너, 프로덕션 일렉트리션, 렌탈샵 분들을 모시고 있어요. 자리가 나는 대로 빌드를 보내 드릴게요.",
+    "download.soon": "준비 중이에요",
+    "beta.name": "이름",
     "beta.email": "이메일",
+    "beta.role": "하는 일",
+    "beta.choose": "골라 주세요",
+    "beta.role.ld": "조명 디자이너",
+    "beta.role.pe": "프로덕션 일렉트리션",
+    "beta.role.op": "프로그래머, 오퍼레이터",
+    "beta.role.shop": "렌탈샵",
+    "beta.role.student": "학생",
+    "beta.role.other": "기타",
+    "beta.computer": "쓰는 컴퓨터",
+    "beta.computer.both": "둘 다",
+    "beta.company": "소속이나 공연 <em>선택</em>",
+    "beta.message": "어디에 쓰고 싶은지 <em>선택</em>",
+    "beta.consent": "적은 내용을 베타 운영과 안내 연락에만 쓰는 데 동의해요. 자세한 내용은 <a href=\"./privacy.html#beta\">개인정보 처리방침</a>에 있어요.",
     "beta.submit": "베타 신청",
     "beta.or": "메일로 문의하기:",
     "beta.mail.subject": "LightDori 베타 신청",
-    "beta.mail.body": "베타 신청: {email}\n\nOS:\n워크플로 메모:\n",
+    "beta.err.name": "이름을 적어 주세요.",
+    "beta.err.email": "이메일 주소를 확인해 주세요.",
+    "beta.err.role": "하는 일을 골라 주세요.",
+    "beta.err.computer": "쓰는 컴퓨터를 골라 주세요.",
+    "beta.err.consent": "개인정보 동의에 체크해 주세요.",
+    "beta.sending": "보내는 중이에요.",
+    "beta.sent": "신청을 받았어요. 자리가 나면 메일로 빌드를 보내 드릴게요.",
+    "beta.failed": "보내지 못했어요. 잠시 뒤 다시 하거나 xkxh4789@gmail.com 으로 메일을 보내 주세요.",
     "foot.contact": "문의",
     "lang.label": "언어",
     "legal.eyebrow": "법적 고지",
@@ -189,7 +219,7 @@ window.LIGHTDORI_I18N = {
     "privacy.meta.desc":
       "LightDori가 수집하는 개인정보의 항목과 이용 목적, 보관과 국외 이전, 그리고 이용자의 권리 행사 방법을 안내합니다.",
     "privacy.title": "개인정보 처리방침",
-    "privacy.updated": "최종 개정일: 2026년 8월 13일",
+    "privacy.updated": "최종 개정일: 2026년 11월 12일",
     "privacy.body":
       "<h2>1. 수집하는 개인정보 항목</h2>" +
       "<p>LightDori는 계정과 공동 작업 기능을 제공하는 데 필요한 최소한의 정보만 수집합니다.</p>" +
@@ -198,10 +228,11 @@ window.LIGHTDORI_I18N = {
       "<li><strong>라이선스 정보</strong> — 계정에 연결된 라이선스 키와 활성화 상태</li>" +
       "<li><strong>공동 작업 데이터</strong> — 세션 이름, 참여자 정보, 이용자가 세션에 공유하기로 선택한 프로젝트 데이터와 편집 이력</li>" +
       "<li><strong>문의 내용</strong> — 이메일로 보내 주신 문의와 그에 대한 회신</li>" +
+      "<li id=\"beta\"><strong>베타 신청</strong> — 홈페이지 베타 신청서에 적으신 이름, 이메일 주소, 하는 일, 쓰는 컴퓨터, 남기신 내용</li>" +
       "</ul>" +
       "<p>행태정보 수집이나 광고 식별자 이용은 하지 않습니다. 이용자의 컴퓨터에 저장된 프로젝트 파일의 내용은 수집하지 않으며, 공동 작업 세션에 직접 공유하지 않는 한 파일은 이용자의 컴퓨터에만 남습니다.</p>" +
       "<h2>2. 이용 목적</h2>" +
-      "<p>계정 생성과 본인 확인, 공동 작업 세션 운영, 라이선스 유효성 확인, 문의 응대를 위해 이용합니다. 광고 목적으로 이용하거나 제3자에게 판매하지 않습니다.</p>" +
+      "<p>계정 생성과 본인 확인, 공동 작업 세션 운영, 라이선스 유효성 확인, 문의 응대, 베타 운영과 신청하신 분께 빌드를 보내 드리기 위해 이용합니다. 광고 목적으로 이용하거나 제3자에게 판매하지 않습니다.</p>" +
       "<h2>3. 업데이트 확인</h2>" +
       "<p>LightDori는 새 버전이 있는지 GitHub에 확인 요청을 보냅니다. 이 요청에는 앱 버전과 일반적인 웹 요청에 포함되는 네트워크 정보만 담기며, 계정 정보나 프로젝트 데이터는 포함되지 않습니다.</p>" +
       "<h2>4. 개인정보의 국외 이전</h2>" +
@@ -215,8 +246,9 @@ window.LIGHTDORI_I18N = {
       "<li><strong>보유 및 이용 기간:</strong> 계정이 유지되는 동안이며, 이후 5항에 따라 파기</li>" +
       "</ul>" +
       "<p>국외 이전을 거부하실 수 있습니다. 다만 거부하시면 계정과 공동 작업 기능은 제공해 드릴 수 없으며, 오프라인 기능은 그대로 이용하실 수 있습니다.</p>" +
+      "<p>홈페이지에서 보내신 베타 신청서는 신청서 전달 서비스 Web3Forms를 거쳐, 미국에 서버를 둔 Google(Gmail)의 운영자 메일함으로 전송됩니다. 베타 신청 버튼을 누르는 시점에 신청서에 적으신 내용만 전송되며, 베타 운영에만 이용합니다. 신청서를 쓰고 싶지 않으시면 이메일로 신청하실 수 있습니다.</p>" +
       "<h2>5. 보유 기간과 파기</h2>" +
-      "<p>계정 정보는 회원 탈퇴 시까지 보유하며 탈퇴 후 지체 없이 파기합니다. 공동 작업 이력은 해당 세션이 유지되는 동안 보관하고 세션 삭제 시 함께 파기합니다. 법령에서 일정 기간 보존을 요구하는 경우에는 해당 기록에 한해 법령이 정한 기간 동안 보관합니다.</p>" +
+      "<p>계정 정보는 회원 탈퇴 시까지 보유하며 탈퇴 후 지체 없이 파기합니다. 공동 작업 이력은 해당 세션이 유지되는 동안 보관하고 세션 삭제 시 함께 파기합니다. 법령에서 일정 기간 보존을 요구하는 경우에는 해당 기록에 한해 법령이 정한 기간 동안 보관합니다. 베타 신청 내용은 베타가 끝나면 파기하며, 요청하시면 그 전에라도 파기합니다.</p>" +
       "<h2>6. 이용자의 권리</h2>" +
       "<p>이용자는 언제든지 자신의 개인정보에 대한 열람, 정정, 삭제, 처리정지를 요구하실 수 있습니다. 아래 연락처로 요청하시면 지체 없이 처리해 드립니다. 개인정보 침해에 대한 신고나 상담이 필요하시면 개인정보침해신고센터(국번 없이 118) 또는 개인정보보호위원회에 문의하실 수 있습니다.</p>" +
       "<h2>7. 안전성 확보 조치</h2>" +

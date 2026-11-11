@@ -13,7 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20261020d" />
+    <link rel="stylesheet" href="./styles.css?v=20261112" />
   </head>
   <body class="page-legal">
     <header class="top" id="top">
@@ -36,7 +36,7 @@
     <main class="legal">
       <p class="eyebrow" data-i18n="legal.eyebrow">Legal</p>
       <h1 data-i18n="privacy.title">Privacy Policy</h1>
-      <p class="legal__updated" data-i18n="privacy.updated">Last updated: 13 August 2026</p>
+      <p class="legal__updated" data-i18n="privacy.updated">Last updated: 12 November 2026</p>
 
       <div class="legal__body" data-i18n-html="privacy.body">
         <h2>1. What we collect</h2>
@@ -48,6 +48,7 @@
           <li><strong>Licence information</strong> — the licence key attached to your account and its activation status.</li>
           <li><strong>Collaboration data</strong> — session names, membership, and the project data you choose to share with a session, along with its edit history.</li>
           <li><strong>Support correspondence</strong> — anything you send us by email.</li>
+          <li id="beta"><strong>Beta requests</strong> — the name, email address, role, computer, and any notes you enter in the beta form on this website.</li>
         </ul>
         <p>
           The app does not collect analytics, advertising identifiers, or the contents of
@@ -58,7 +59,8 @@
         <h2>2. Why we use it</h2>
         <p>
           To create and authenticate your account, to run collaboration sessions, to
-          validate licences, and to answer your support requests. We do not use your
+          validate licences, to answer your support requests, and to run the beta and send
+          builds to the people who asked for one. We do not use your
           information for advertising and we do not sell it to anyone.
         </p>
 
@@ -88,6 +90,13 @@
           You may refuse this transfer, but the account and collaboration features cannot
           be provided without it. LightDori's offline features remain available.
         </p>
+        <p>
+          Beta requests sent from this website are passed by Web3Forms, a form delivery
+          service, to our email inbox, which is hosted by Google (Gmail) in the United
+          States. They are sent at the moment you press Request access, contain only what
+          you entered in the form, and are used only to run the beta. If you would rather
+          not use the form, you can email us instead.
+        </p>
 
         <h2>5. How long we keep it</h2>
         <p>
@@ -95,6 +104,7 @@
           removed without undue delay. Collaboration history is kept for the life of the
           session and removed when the session is deleted. Where a law requires us to keep
           a record for longer, we keep only that record for the period the law requires.
+          Beta requests are deleted when the beta ends, or sooner if you ask us to.
         </p>
 
         <h2>6. Your rights</h2>
@@ -147,7 +157,7 @@
       </nav>
     </footer>
 
-    <script src="./i18n.js?v=20261020c"></script>
+    <script src="./i18n.js?v=20261112"></script>
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
       window.lightdoriInitLang();

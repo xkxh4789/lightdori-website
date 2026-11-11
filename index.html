@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20261111d" />
+    <link rel="stylesheet" href="./styles.css?v=20261112" />
     <script>
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
       if (location.search.indexOf("static") !== -1) document.documentElement.classList.add("is-static");
@@ -251,21 +251,67 @@
 
       <section class="section" id="beta">
         <div class="wrap beta reveal">
-          <div>
+          <div class="beta__intro">
             <p class="eyebrow" data-i18n="beta.eyebrow">Closed beta</p>
             <h2 data-i18n-html="beta.title">Built with the people<br />who light the shows.</h2>
-          </div>
-          <div>
-            <form class="beta__form" id="beta-form">
-              <input id="beta-email" type="email" name="email" placeholder="you@company.com" autocomplete="email" required data-i18n-aria="beta.email" aria-label="Email" />
-              <button class="btn" type="submit" data-i18n="beta.submit">Request access</button>
-            </form>
+            <p class="beta__lede" data-i18n="beta.lede">We're inviting lighting designers, production electricians and rental shops, and we'll send you a build as soon as a seat opens up.</p>
             <p class="beta__note">
-              <span data-i18n="beta.lede">We're inviting lighting designers, production electricians and rental shops, and we'll send you a build as soon as a seat opens up.</span>
               <span data-i18n="beta.or">Or email us:</span>
               <a href="mailto:xkxh4789@gmail.com?subject=LightDori%20beta%20request">xkxh4789@gmail.com</a>
             </p>
           </div>
+          <form class="beta__form" id="beta-form" novalidate>
+            <div class="beta__row">
+              <label class="beta__field">
+                <span data-i18n="beta.name">Name</span>
+                <input name="name" type="text" autocomplete="name" maxlength="80" required />
+              </label>
+              <label class="beta__field">
+                <span data-i18n="beta.email">Email</span>
+                <input name="email" type="email" autocomplete="email" maxlength="120" placeholder="you@company.com" required />
+              </label>
+            </div>
+            <div class="beta__row">
+              <label class="beta__field">
+                <span data-i18n="beta.role">What you do</span>
+                <select name="role" required>
+                  <option value="" data-i18n="beta.choose">Choose one</option>
+                  <option value="Lighting designer" data-i18n="beta.role.ld">Lighting designer</option>
+                  <option value="Production electrician" data-i18n="beta.role.pe">Production electrician</option>
+                  <option value="Programmer / operator" data-i18n="beta.role.op">Programmer or operator</option>
+                  <option value="Rental shop" data-i18n="beta.role.shop">Rental shop</option>
+                  <option value="Student" data-i18n="beta.role.student">Student</option>
+                  <option value="Other" data-i18n="beta.role.other">Other</option>
+                </select>
+              </label>
+              <label class="beta__field">
+                <span data-i18n="beta.computer">Your computer</span>
+                <select name="computer" required>
+                  <option value="" data-i18n="beta.choose">Choose one</option>
+                  <option value="Windows">Windows</option>
+                  <option value="macOS">macOS</option>
+                  <option value="Both" data-i18n="beta.computer.both">Both</option>
+                </select>
+              </label>
+            </div>
+            <label class="beta__field">
+              <span data-i18n-html="beta.company">Company or show <em>optional</em></span>
+              <input name="company" type="text" autocomplete="organization" maxlength="120" />
+            </label>
+            <label class="beta__field">
+              <span data-i18n-html="beta.message">What would you use it for? <em>optional</em></span>
+              <textarea name="message" rows="3" maxlength="1500"></textarea>
+            </label>
+            <input class="beta__trap" type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" />
+            <label class="beta__consent">
+              <input name="consent" type="checkbox" required />
+              <span data-i18n-html="beta.consent">I agree that LightDori may use these details only to run the beta and contact me about it, as set out in the <a href="./privacy.html#beta">Privacy Policy</a>.</span>
+            </label>
+            <div class="beta__send">
+              <button class="btn" type="submit" data-i18n="beta.submit">Request access</button>
+              <p class="beta__status" id="beta-status" role="status" aria-live="polite"></p>
+            </div>
+          </form>
         </div>
       </section>
     </main>
@@ -286,9 +332,10 @@
       <img alt="" />
     </dialog>
 
-    <script src="./downloads.js?v=20261020"></script>
-    <script src="./i18n.js?v=20261111d"></script>
+    <script src="./downloads.js?v=20261112"></script>
+    <script src="./i18n.js?v=20261112"></script>
     <script src="./demos.js?v=20261111c"></script>
+    <script src="./beta.js?v=20261112"></script>
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
       var isStatic = document.documentElement.classList.contains("is-static");
@@ -323,6 +370,16 @@
         var bad = false;
         [["download-win", cfg.windows], ["download-mac", cfg.mac]].forEach(function (pair) {
           var btn = document.getElementById(pair[0]);
+          if (btn && pair[1] === false) {  // turned off: no link, "Coming soon"
+            btn.removeAttribute("href");
+            btn.setAttribute("aria-disabled", "true");
+            btn.classList.add("is-off");
+            var meta = btn.querySelector("[data-i18n]");
+            if (meta) { meta.setAttribute("data-i18n", "download.soon"); meta.textContent = "Coming soon"; }
+            var arrow = btn.querySelector("em");
+            if (arrow) arrow.hidden = true;
+            return;
+          }
           var url = String(pair[1] || "").trim();
           if (/sha256:/i.test(url)) bad = true;
           if (btn && /^https?:\/\//i.test(url)) {
@@ -371,15 +428,6 @@
         go(0);
       })();
 
-      document.getElementById("beta-form").addEventListener("submit", function (event) {
-        event.preventDefault();
-        var email = document.getElementById("beta-email").value.trim();
-        if (!email) return;
-        var lang = document.documentElement.getAttribute("data-lang") || "en";
-        var subject = encodeURIComponent(window.lightdoriT("beta.mail.subject", lang));
-        var body = encodeURIComponent(window.lightdoriT("beta.mail.body", lang).replace("{email}", email));
-        window.location.href = "mailto:xkxh4789@gmail.com?subject=" + subject + "&body=" + body;
-      });
     </script>
   </body>
 </html>
