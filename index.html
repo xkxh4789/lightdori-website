@@ -3,11 +3,11 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title data-i18n="meta.title">LightDori — Lighting data, ready before the call</title>
+    <title data-i18n="meta.title">LightDori — From patch to blocking, ready before the call</title>
     <meta
       name="description"
       data-i18n-content="meta.desc"
-      content="LightDori is a desktop workspace for lighting patch sheets, print-ready paperwork, magic sheets and live Vectorworks sync — built for lighting designers and production electricians."
+      content="LightDori is a desktop workspace for lighting designers and production electricians: patch sheets, print-ready paperwork, magic sheets, gel colour, script cues and blocking, with live Vectorworks sync."
     />
     <link rel="icon" href="./assets/app-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -16,7 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./styles.css?v=20261020d" />
+    <link rel="stylesheet" href="./styles.css?v=20261111d" />
     <script>
       if ("scrollRestoration" in history) history.scrollRestoration = "manual";
       if (location.search.indexOf("static") !== -1) document.documentElement.classList.add("is-static");
@@ -45,11 +45,11 @@
         <div class="hero__copy">
           <p class="eyebrow" data-i18n="hero.eyebrow">Desktop app for Windows &amp; macOS</p>
           <h1 id="hero-title">
-            <span style="color:inherit" data-i18n="hero.title1">Lighting data,</span>
+            <span style="color:inherit" data-i18n="hero.title1">From patch to blocking,</span>
             <span data-i18n="hero.title2">ready before</span>
             <span data-i18n="hero.title3">the call.</span>
           </h1>
-          <p class="hero__lede" data-i18n="hero.lede">Patch sheets, paperwork and magic sheets from a single fixture list — kept in step with Vectorworks while you work.</p>
+          <p class="hero__lede" data-i18n="hero.lede">One fixture list becomes your sheet, paperwork, magic sheet, script cues and blocking chart, kept in step with Vectorworks while you work.</p>
           <div class="hero__actions">
             <a class="btn" href="#download">
               <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v11m0 0-4.5-4.5M12 14l4.5-4.5M4 17v3h16v-3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -57,7 +57,7 @@
             </a>
             <a class="btn btn--line" href="#features" data-i18n="hero.more">See the features</a>
           </div>
-          <p class="hero__works"><span data-i18n="hero.works">Works with</span><b>Vectorworks</b><b>ETC Eos</b><b>grandMA</b><b>GDTF</b><b>MVR</b><b>CSV · Excel</b></p>
+          <p class="hero__works"><span data-i18n="hero.works">Works with</span><b>Vectorworks</b><b>ETC Eos</b><b>grandMA</b><b>GDTF</b><b>MVR</b><b>CSV</b><b>Excel</b></p>
         </div>
 
         <div class="reel" id="reel" aria-roledescription="carousel" data-i18n-aria="reel.aria" aria-label="LightDori screens">
@@ -65,113 +65,147 @@
             <div class="reel__bar"><img src="./assets/app-icon.png" alt="" />LightDori<span id="reel-label">Sheet</span></div>
             <div class="reel__view">
               <div class="reel__track" id="reel-track">
-                <img src="./assets/shots/sheet.webp" alt="The Sheet with a show's fixtures" data-i18n-alt="reel.1.alt" />
-                <img src="./assets/shots/magic-sheet.webp" alt="A magic sheet laid out on the stage plan" data-i18n-alt="reel.2.alt" loading="lazy" />
-                <img src="./assets/shots/patch-document.webp" alt="A channel hookup in the Patch Document" data-i18n-alt="reel.3.alt" loading="lazy" />
-                <img src="./assets/shots/cue-sheet.webp" alt="Cue markers on a script with the cue sheet beside it" data-i18n-alt="reel.4.alt" loading="lazy" />
-                <img src="./assets/shots/vw-sync.webp" alt="The Vectorworks sync panel" data-i18n-alt="reel.5.alt" loading="lazy" />
-                <img src="./assets/shots/error-checking.webp" alt="Error checking over the Sheet" data-i18n-alt="reel.6.alt" loading="lazy" />
+                <img src="./assets/shots/en/sheet.webp" data-i18n-src="shot.sheet" alt="The Sheet with every row ticked for export" data-i18n-alt="reel.1.alt" />
+                <img src="./assets/shots/en/blocking.webp" data-i18n-src="shot.blocking" alt="Blocking on the stage plan beside the script" data-i18n-alt="reel.2.alt" loading="lazy" />
+                <img src="./assets/shots/en/color.webp" data-i18n-src="shot.color" alt="The colour library lighting a small 3D stage" data-i18n-alt="reel.3.alt" loading="lazy" />
+                <img src="./assets/shots/en/magic.webp" data-i18n-src="shot.magic" alt="A magic sheet ready to print" data-i18n-alt="reel.4.alt" loading="lazy" />
+                <img src="./assets/shots/en/patchdoc.webp" data-i18n-src="shot.patchdoc" alt="A channel hookup in the Patch Document" data-i18n-alt="reel.5.alt" loading="lazy" />
               </div>
             </div>
           </div>
           <div class="reel__dots" role="tablist">
             <button type="button" class="is-on"><span data-i18n="reel.1">Sheet</span></button>
-            <button type="button"><span data-i18n="reel.2">Magic Sheet</span></button>
-            <button type="button"><span data-i18n="reel.3">Patch Document</span></button>
-            <button type="button"><span data-i18n="reel.4">Script &amp; cues</span></button>
-            <button type="button"><span data-i18n="reel.5">Vectorworks</span></button>
-            <button type="button"><span data-i18n="reel.6">Error checking</span></button>
+            <button type="button"><span data-i18n="reel.2">Blocking</span></button>
+            <button type="button"><span data-i18n="reel.3">Colour</span></button>
+            <button type="button"><span data-i18n="reel.4">Magic Sheet</span></button>
+            <button type="button"><span data-i18n="reel.5">Patch Document</span></button>
           </div>
         </div>
       </section>
 
-      <section class="product" aria-label="Screens">
-        <div class="switch" role="tablist">
-          <button type="button" class="is-on" data-shot="0" data-i18n="product.1.tab">Sheet</button>
-          <button type="button" data-shot="1" data-i18n="product.2.tab">Patch Document</button>
-          <button type="button" data-shot="2" data-i18n="product.3.tab">Magic Sheet</button>
-        </div>
-        <div class="window reveal">
-          <div class="window__bar"><img src="./assets/app-icon.png" alt="" />LightDori<i></i></div>
-          <div class="window__screen">
-            <img class="is-on" src="./assets/shots/sheet.webp" alt="" loading="lazy" />
-            <img src="./assets/shots/patch-document.webp" alt="" loading="lazy" />
-            <img src="./assets/shots/magic-sheet.webp" alt="" loading="lazy" />
+      <div class="wrap" id="features">
+        <section class="chapter reveal" aria-labelledby="ch-sheet">
+          <div class="chapter__text">
+            <p class="chapter__num"><b>01</b><span data-i18n="ch.sheet.eyebrow">Sheet &amp; export</span></p>
+            <h2 id="ch-sheet" data-i18n="ch.sheet.title">Tick the rows, get the paperwork</h2>
+            <p class="chapter__lede" data-i18n="ch.sheet.lede">Pick fixtures in the Sheet and press Export. Channel, dimmer and address hookups, the instrument schedule and the focus chart come straight out.</p>
+            <ul class="facts">
+              <li><b data-i18n="ch.sheet.f1.t">A header filled from your credits</b><span data-i18n="ch.sheet.f1.b">Director, designer and venue go on top of every page.</span></li>
+              <li><b data-i18n="ch.sheet.f2.t">Three table styles, any paper</b><span data-i18n="ch.sheet.f2.b">Classic, Grid or Compact, on the page size you print.</span></li>
+              <li><b data-i18n="ch.sheet.f3.t">PDF, data, XML and MVR</b><span data-i18n="ch.sheet.f3.b">Every PDF you make waits in the Store.</span></li>
+            </ul>
           </div>
-        </div>
-        <div class="product__caption">
-          <div class="is-on" data-cap="0"><b data-i18n="product.1.tab">Sheet</b><span data-i18n="product.1.body">Every fixture in one table. Edit, filter, catch errors and compare revisions.</span></div>
-          <div data-cap="1"><b data-i18n="product.2.tab">Patch Document</b><span data-i18n="product.2.body">Channel and dimmer hookups, instrument schedules and focus charts, ready to print.</span></div>
-          <div data-cap="2"><b data-i18n="product.3.tab">Magic Sheet</b><span data-i18n="product.3.body">A cell for every system, with channels placed on the plan from your focus areas.</span></div>
-        </div>
-      </section>
+          <figure class="chapter__shot">
+            <div class="shot"><div class="shot__bar"><img src="./assets/app-icon.png" alt="" />LightDori<span data-i18n="shot.patchdoc.label">Patch Document</span></div><img src="./assets/shots/en/patchdoc.webp" data-i18n-src="shot.patchdoc" alt="A channel hookup preview" data-i18n-alt="ch.sheet.alt" loading="lazy" /></div>
+          </figure>
+        </section>
 
-      <section class="section" id="features">
+        <section class="chapter chapter--flip reveal" aria-labelledby="ch-blocking">
+          <div class="chapter__text">
+            <p class="chapter__num"><b>02</b><span data-i18n="ch.blocking.eyebrow">Blocking</span></p>
+            <h2 id="ch-blocking" data-i18n="ch.blocking.title">Where everyone goes, cue by cue</h2>
+            <p class="chapter__lede" data-i18n="ch.blocking.lede">The cues you mark on the script become the steps of the blocking. Put performers and set pieces on the stage plan, move them at each cue, and every move stays as an arrow.</p>
+            <ul class="facts">
+              <li><b data-i18n="ch.blocking.f1.t">Beats and follow spots</b><span data-i18n="ch.blocking.f1.b">Split a cue when things move more than once, and say whom each spot picks up.</span></li>
+              <li><b data-i18n="ch.blocking.f2.t">At a glance, who is on, the report</b><span data-i18n="ch.blocking.f2.b">See the busiest areas of the stage and how far each performer walks.</span></li>
+              <li><b data-i18n="ch.blocking.f3.t">An A4 chart and a phone image</b><span data-i18n="ch.blocking.f3.b">Print the blocking chart, or send one tall image to the company chat.</span></li>
+            </ul>
+          </div>
+          <figure class="chapter__shot">
+            <div class="shot"><div class="shot__bar"><img src="./assets/app-icon.png" alt="" />LightDori<span data-i18n="shot.blocking.label">Scripts / Cue Sheet</span></div><img src="./assets/shots/en/blocking.webp" data-i18n-src="shot.blocking" alt="Two follow spots on Romeo and Juliet in the blocking plan" data-i18n-alt="ch.blocking.alt" loading="lazy" /></div>
+            <div class="try" id="stage-demo">
+              <p class="try__label"><b data-i18n="try.label">Try it</b><span data-i18n="try.blocking">Pick a cue and watch everyone move</span></p>
+              <div class="stagedemo">
+                <div class="stagedemo__plan">
+                  <p class="stagedemo__now" aria-live="polite"></p>
+                  <svg role="img" data-i18n-aria="try.blocking.aria" aria-label="A stage plan with six performers and two follow spots"></svg>
+                </div>
+                <ol class="stagedemo__cues"></ol>
+              </div>
+            </div>
+            <div class="views">
+              <figure><img src="./assets/shots/en/blocking_grid.webp" data-i18n-src="shot.blocking_grid" alt="" loading="lazy" /><figcaption data-i18n="ch.blocking.v1">At a glance</figcaption></figure>
+              <figure><img src="./assets/shots/en/blocking_report.webp" data-i18n-src="shot.blocking_report" alt="" loading="lazy" /><figcaption data-i18n="ch.blocking.v2">Blocking report</figcaption></figure>
+            </div>
+          </figure>
+        </section>
+
+        <section class="chapter reveal" aria-labelledby="ch-color">
+          <div class="chapter__text">
+            <p class="chapter__num"><b>03</b><span data-i18n="ch.color.eyebrow">Colour</span></p>
+            <h2 id="ch-color" data-i18n="ch.color.title">See the light before you pick the gel</h2>
+            <p class="chapter__lede" data-i18n="ch.color.lede">Shine any of 526 LEE and Rosco filters on a small 3D stage. Bring the dimmer down and it warms the way a tungsten lamp does.</p>
+            <ul class="facts">
+              <li><b data-i18n="ch.color.f1.t">Transmission, shift and spectrum</b><span data-i18n="ch.color.f1.b">From the makers' own published data.</span></li>
+              <li><b data-i18n="ch.color.f2.t">The closest gel in the other brand</b><span data-i18n="ch.color.f2.b">LEE to Rosco and back, in one click.</span></li>
+              <li><b data-i18n="ch.color.f3.t">The same library in the Sheet</b><span data-i18n="ch.color.f3.b">Colour cells open it as their picker.</span></li>
+            </ul>
+          </div>
+          <figure class="chapter__shot">
+            <div class="shot"><div class="shot__bar"><img src="./assets/app-icon.png" alt="" />LightDori<span data-i18n="shot.color.label">Colour</span></div><img src="./assets/shots/en/color.webp" data-i18n-src="shot.color" alt="L079 Just Blue on the 3D stage with its spectrum" data-i18n-alt="ch.color.alt" loading="lazy" /></div>
+            <div class="try" id="gel-demo">
+              <p class="try__label"><b data-i18n="try.label">Try it</b><span data-i18n="try.color">Pick a gel, then bring the dimmer down</span></p>
+              <div class="geldemo">
+                <div class="geldemo__stage" aria-hidden="true"><i class="geldemo__glow"></i><i class="geldemo__pool"></i><i class="geldemo__ball"></i></div>
+                <div class="geldemo__panel">
+                  <p class="geldemo__name"><b data-gel="code">L201</b><span data-gel="name">Full C.T. Blue</span></p>
+                  <div class="geldemo__chips" role="group" data-i18n-aria="try.color.gels" aria-label="Gels"></div>
+                  <label class="geldemo__dimmer">
+                    <span><span data-i18n="try.color.dimmer">Dimmer</span> <b data-gel="level">100%</b><em><span data-i18n="try.color.lamp">Lamp about</span> <b data-gel="kelvin">3200K</b></em></span>
+                    <input type="range" min="30" max="100" step="1" value="100" />
+                  </label>
+                  <dl class="geldemo__facts">
+                    <div><dt data-i18n="try.color.light">Light</dt><dd data-gel="light">#C3E1FA</dd></div>
+                    <div><dt data-i18n="try.color.y">Light transmitted</dt><dd data-gel="y">35%</dd></div>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </figure>
+        </section>
+
+        <section class="chapter chapter--flip reveal" aria-labelledby="ch-magic">
+          <div class="chapter__text">
+            <p class="chapter__num"><b>04</b><span data-i18n="ch.magic.eyebrow">Magic Sheet</span></p>
+            <h2 id="ch-magic" data-i18n="ch.magic.title">Change the Sheet, the magic sheet follows</h2>
+            <p class="chapter__lede" data-i18n="ch.magic.lede">Channels fall into cells by purpose or position, laid out in the shape of the stage. Each bubble wears its gel colour and points where its light goes.</p>
+            <ul class="facts">
+              <li><b data-i18n="ch.magic.f1.t">Pick a layout, then adjust</b><span data-i18n="ch.magic.f1.b">Drag channels into place and turn them with the round handle.</span></li>
+              <li><b data-i18n="ch.magic.f2.t">Ground plan and gel legend</b><span data-i18n="ch.magic.f2.b">The plan sits in grey behind the cells.</span></li>
+              <li><b data-i18n="ch.magic.f3.t">A3 or A4, ready to print</b><span data-i18n="ch.magic.f3.b">With the same header as your paperwork.</span></li>
+            </ul>
+          </div>
+          <figure class="chapter__shot">
+            <div class="shot"><div class="shot__bar"><img src="./assets/app-icon.png" alt="" />LightDori<span data-i18n="shot.magic.label">Magic Sheet</span></div><img src="./assets/shots/en/magic.webp" data-i18n-src="shot.magic" alt="A magic sheet with five systems" data-i18n-alt="ch.magic.alt" loading="lazy" /></div>
+          </figure>
+        </section>
+      </div>
+
+      <section class="section more" id="more" aria-labelledby="more-title">
         <div class="wrap">
           <div class="section__head reveal">
             <div>
-              <p class="eyebrow" data-i18n="features.eyebrow">Features</p>
-              <h2 data-i18n-html="features.title">Everything the paperwork needs.<br />Nothing it doesn't.</h2>
+              <p class="eyebrow" data-i18n="more.eyebrow">And the rest</p>
+              <h2 id="more-title" data-i18n-html="more.title">Everything else the show needs,<br />in the same place.</h2>
             </div>
-            <p data-i18n="features.lede">One workspace in place of the spreadsheet, the PDF layout file and the magic sheet drawing — all reading the same data.</p>
+            <p data-i18n="more.lede">It all reads the same Sheet, so a change in one place reaches the rest.</p>
           </div>
-          <div class="bento">
-            <article class="tile t-a reveal">
-              <p class="eyebrow" data-i18n="f.sheet.eyebrow">Sheet</p>
-              <h3 data-i18n="f.sheet.title">A patch you can trust at 2 a.m.</h3>
-              <p data-i18n="f.sheet.body">Duplicate channels, address overflow and missing positions are flagged as you type. Revision Compare shows what changed since the last cue-to-cue.</p>
-              <div class="tile__shot"><img src="./assets/shots/sheet.webp" alt="" loading="lazy" /></div>
-            </article>
-            <article class="tile t-b reveal">
-              <p class="eyebrow" data-i18n="f.docs.eyebrow">Documents</p>
-              <h3 data-i18n="f.docs.title">Print-ready presets</h3>
-              <p data-i18n="f.docs.body">Three print styles, a header filled in from your credits, and zebra rows if you want them.</p>
-              <div class="chips" style="margin-top:6px"><span>Channel Hookup</span><span>Instrument Schedule</span><span class="is-new">Dimmer Hookup</span><span class="is-new">Address Hookup</span><span class="is-new">Focus Chart</span></div>
-              <div class="tile__shot tile__shot--doc"><img src="./assets/shots/patch-document.webp" alt="" loading="lazy" /></div>
-            </article>
-            <article class="tile t-c reveal">
-              <p class="eyebrow" data-i18n="f.magic.eyebrow">Magic Sheet</p>
-              <h3 data-i18n="f.magic.title">Drawn from your data</h3>
-              <p data-i18n="f.magic.body">Systems in their gel colours on your ground plan, each bubble pointing where its light goes.</p>
-              <div class="tile__shot"><img src="./assets/shots/magic-sheet.webp" alt="" loading="lazy" /></div>
-            </article>
-            <article class="tile t-d reveal">
-              <p class="eyebrow" data-i18n="f.script.eyebrow">Script</p>
-              <h3 data-i18n="f.script.title">Cues on the page</h3>
-              <p data-i18n="f.script.body">Mark lighting, sound and follow-spot cues on the script, and the cue sheet keeps up.</p>
-              <div class="flags" aria-hidden="true">
-                <i style="top:18px"></i><i style="top:34px;right:60px"></i><i style="top:50px"></i><i style="top:66px;right:90px"></i><i style="top:82px"></i><i style="top:98px;right:40px"></i>
-                <b style="top:28px;background:#2f6fde">Q 12</b><b style="top:60px;background:#16a34a">SQ 4</b><b style="top:92px;background:#d97706">FS 2</b>
-              </div>
-            </article>
-            <article class="tile t-e tile--dark reveal">
-              <p class="eyebrow" data-i18n="f.console.eyebrow">Console link</p>
-              <h3 data-i18n="f.console.title">Talks to the desk</h3>
-              <p data-i18n="f.console.body">Pull the patch and cue list from ETC Eos over OSC, or exchange the patch with grandMA over Telnet.</p>
-              <div class="console" aria-hidden="true">/eos/chan/101/param/pan<br />&nbsp;&nbsp;<em>→ 214.2</em><br />/eos/patch/101 1/001 <em>ok</em></div>
-            </article>
-            <article class="tile t-f reveal">
-              <p class="eyebrow" data-i18n="f.dmx.eyebrow">DMX</p>
-              <h3 data-i18n="f.dmx.title">Universe map and auto-patch</h3>
-              <p data-i18n="f.dmx.body">See every universe at a glance, spot conflicts, and patch a selection from any start address in one go.</p>
-              <div class="umap" aria-hidden="true" id="umap"></div>
-              <div class="chips" style="margin-top:12px"><span data-i18n="f.dmx.c1">Universe map</span><span data-i18n="f.dmx.c2">Auto-patch</span><span data-i18n="f.dmx.c3">Conflicts</span><span data-i18n="f.dmx.c4">Footprints</span></div>
-            </article>
-            <article class="tile t-g reveal">
-              <p class="eyebrow" data-i18n="f.mood.eyebrow">Moodboard</p>
-              <h3 data-i18n="f.mood.title">References, linked to scenes</h3>
-              <p data-i18n="f.mood.body">Build a board for each scene, pick colours from a photo and find the nearest Lee or Rosco gel.</p>
-              <div class="mood" aria-hidden="true">
-                <i style="background:linear-gradient(160deg,#1e3a5f,#0b1320 60%,#c2410c)"></i><i style="background:linear-gradient(200deg,#fde68a,#b45309 70%,#3f1d0b)"></i><i style="background:linear-gradient(180deg,#7dd3fc,#1d4ed8 65%,#0b0b0c)"></i>
-                <span><b style="background:#5C9AD8"></b>L201</span><span><b style="background:#F6C089"></b>R09</span><span><b style="background:#2F6FC2"></b>R80</span>
-              </div>
-              <div class="chips" style="margin-top:12px"><span data-i18n="f.mood.c1">Pages per scene</span><span data-i18n="f.mood.c2">Gels from photos</span><span data-i18n="f.mood.c3">PDF to the Store</span></div>
-            </article>
+          <div class="more__list stagger">
+            <div><h3 data-i18n="more.cable.t">Cable</h3><p data-i18n="more.cable.b">Run DMX and power, and see fixtures no cable reaches, overlapping addresses and overloaded feeds.</p></div>
+            <div><h3 data-i18n="more.gobo.t">Gobos &amp; wheels</h3><p data-i18n="more.gobo.b">Find the gobos your show uses, put them into fixtures and print each fixture type's wheel.</p></div>
+            <div><h3 data-i18n="more.vw.t">Vectorworks</h3><p data-i18n="more.vw.b">Keep the drawing and the Sheet in step, and see the rig with its own symbols in Plot view.</p></div>
+            <div><h3 data-i18n="more.console.t">Console link</h3><p data-i18n="more.console.b">Move the patch and cues to and from ETC Eos over OSC, or grandMA over Telnet.</p></div>
+            <div><h3 data-i18n="more.script.t">Script &amp; cue sheet</h3><p data-i18n="more.script.b">Mark Q, SQ and FS cues on the script lines and the cue sheet fills in. Musical numbers carry their recording.</p></div>
+            <div><h3 data-i18n="more.mood.t">Moodboard</h3><p data-i18n="more.mood.b">Collect references on a page per scene and find the gels closest to a photo.</p></div>
+            <div><h3 data-i18n="more.dmx.t">Universe map</h3><p data-i18n="more.dmx.b">See every universe at a glance and patch a selection from any start address in one go.</p></div>
+            <div><h3 data-i18n="more.workflow.t">Workflow</h3><p data-i18n="more.workflow.b">See which documents no longer match the Sheet, and bind your PDFs into one show packet.</p></div>
+            <div><h3 data-i18n="more.collab.t">Collaboration</h3><p data-i18n="more.collab.b">Start a session from the open Sheet and invite your team to work on the same show.</p></div>
+            <div><h3 data-i18n="more.gdtf.t">GDTF &amp; calendar</h3><p data-i18n="more.gdtf.b">Fetch, inspect and make fixture files, and keep the production dates in one place.</p></div>
           </div>
         </div>
       </section>
 
-      <section class="section" id="workflow" style="padding-top:40px">
+      <section class="section" id="workflow">
         <div class="wrap">
           <div class="section__head reveal">
             <div>
@@ -183,7 +217,7 @@
           <div class="flow reveal">
             <div><b>01</b><h3 data-i18n="workflow.1.title">Import</h3><p data-i18n="workflow.1.body">Vectorworks, MVR, CSV or Excel. Merging into an existing sheet keeps your columns intact.</p></div>
             <div><b>02</b><h3 data-i18n="workflow.2.title">Patch &amp; check</h3><p data-i18n="workflow.2.body">Edit in the Sheet, auto-patch universes and clear the error list.</p></div>
-            <div><b>03</b><h3 data-i18n="workflow.3.title">Document</h3><p data-i18n="workflow.3.body">Hookups, schedules and magic sheets go straight to your PDF Store.</p></div>
+            <div><b>03</b><h3 data-i18n="workflow.3.title">Document</h3><p data-i18n="workflow.3.body">Hookups, magic sheets, cue sheets and blocking charts go straight to your PDF Store.</p></div>
             <div><b>04</b><h3 data-i18n="workflow.4.title">Hand off</h3><p data-i18n="workflow.4.body">Send to the console, compare revisions and keep Vectorworks in step.</p></div>
           </div>
         </div>
@@ -247,8 +281,14 @@
       </nav>
     </footer>
 
+    <dialog class="zoom" id="zoom" data-i18n-aria="zoom.title" aria-label="Screenshot, full size">
+      <form method="dialog"><button class="zoom__close" data-i18n-aria="zoom.close" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button></form>
+      <img alt="" />
+    </dialog>
+
     <script src="./downloads.js?v=20261020"></script>
-    <script src="./i18n.js?v=20261020e"></script>
+    <script src="./i18n.js?v=20261111d"></script>
+    <script src="./demos.js?v=20261111c"></script>
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
       var isStatic = document.documentElement.classList.contains("is-static");
@@ -263,7 +303,7 @@
 
       // sections rise in as they enter the screen
       (function () {
-        var nodes = document.querySelectorAll(".reveal");
+        var nodes = document.querySelectorAll(".reveal, .stagger");
         if (!("IntersectionObserver" in window) || isStatic) {
           nodes.forEach(function (n) { n.classList.add("is-in"); });
           return;
@@ -329,34 +369,6 @@
         document.addEventListener("lightdori:langchange", function () { label.textContent = dots[index].textContent.trim(); });
         if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) schedule();
         go(0);
-      })();
-
-      // the product window: Sheet / Patch Document / Magic Sheet
-      (function setupProduct() {
-        var shots = document.querySelectorAll(".window__screen img");
-        var caps = document.querySelectorAll("[data-cap]");
-        var tabs = document.querySelectorAll("[data-shot]");
-        var shot = 0, auto = true;
-        function show(i) {
-          shot = i;
-          shots.forEach(function (n, k) { n.classList.toggle("is-on", k === i); });
-          caps.forEach(function (n, k) { n.classList.toggle("is-on", k === i); });
-          tabs.forEach(function (n, k) { n.classList.toggle("is-on", k === i); });
-        }
-        tabs.forEach(function (b) { b.addEventListener("click", function () { auto = false; show(+b.dataset.shot); }); });
-        caps.forEach(function (c) { c.addEventListener("click", function () { auto = false; show(+c.dataset.cap); }); });
-        if (!isStatic) setInterval(function () { if (auto) show((shot + 1) % shots.length); }, 6000);
-      })();
-
-      // universe map tile
-      (function () {
-        var m = document.getElementById("umap");
-        var h = "";
-        for (var i = 0; i < 160; i++) {
-          var on = (i % 7 < 3 && i < 120) || (i > 130 && i % 5 === 0);
-          h += '<i class="' + (i === 44 || i === 45 ? "x" : on ? "on" : "") + '"></i>';
-        }
-        m.innerHTML = h;
       })();
 
       document.getElementById("beta-form").addEventListener("submit", function (event) {

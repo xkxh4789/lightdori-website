@@ -4,12 +4,12 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title data-i18n="manual.meta.title">Manual — LightDori</title>
-    <meta name="description" data-i18n-content="manual.meta.desc" content="LightDori user manual: the Sheet, patch documents, Magic Sheet, script and cue sheet, Moodboard, Vectorworks sync, console connection and troubleshooting." />
+    <meta name="description" data-i18n-content="manual.meta.desc" content="LightDori user manual: install, start a show, connect Vectorworks, tidy the Sheet and print your first documents. Then magic sheet, cues, blocking, colour, cable and console." />
     <link rel="icon" href="./assets/app-icon.png" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@400;500;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="./styles.css?v=20261020d" />
+    <link rel="stylesheet" href="./styles.css?v=20261111d" />
   </head>
   <body class="page-manual">
     <!-- Generated from one source with manual-i18n.js; edit both together. -->
@@ -34,20 +34,28 @@
       <aside class="manual__toc" data-i18n-aria="manual.toc.aria" aria-label="Manual contents">
         <p class="eyebrow" data-i18n="manual.toc.eyebrow">Contents</p>
         <ol>
-          <li><a href="#overview" data-i18n="m.overview.toc">What LightDori does</a></li>
-          <li><a href="#start" data-i18n="m.start.toc">Getting started</a></li>
-          <li><a href="#sheet" data-i18n="m.sheet.toc">Sheet</a></li>
-          <li><a href="#patch" data-i18n="m.patch.toc">Patch Document</a></li>
+          <li class="manual__toc-part" data-i18n="m.part1">Part 1 · Your first day</li>
+          <li><a href="#overview" data-i18n="m.overview.toc">What you will end up with</a></li>
+          <li><a href="#install" data-i18n="m.install.toc">Install and sign in</a></li>
+          <li><a href="#new-show" data-i18n="m.new-show.toc">Start a new show</a></li>
+          <li><a href="#import" data-i18n="m.import.toc">Bring in your fixtures</a></li>
+          <li><a href="#sheet" data-i18n="m.sheet.toc">Tidy the Sheet</a></li>
+          <li><a href="#documents" data-i18n="m.documents.toc">Print your documents</a></li>
+          <li><a href="#save" data-i18n="m.save.toc">Save and come back</a></li>
+          <li class="manual__toc-part" data-i18n="m.part2">Part 2 · What to try next</li>
           <li><a href="#magic" data-i18n="m.magic.toc">Magic Sheet</a></li>
-          <li><a href="#cue" data-i18n="m.cue.toc">Script &amp; cue sheet</a></li>
+          <li><a href="#cues" data-i18n="m.cues.toc">Script and cue sheet</a></li>
+          <li><a href="#blocking" data-i18n="m.blocking.toc">Blocking</a></li>
+          <li><a href="#color" data-i18n="m.color.toc">Colour</a></li>
+          <li><a href="#gobo" data-i18n="m.gobo.toc">Gobo</a></li>
+          <li><a href="#cable" data-i18n="m.cable.toc">Cable</a></li>
+          <li><a href="#console" data-i18n="m.console.toc">Console</a></li>
           <li><a href="#mood" data-i18n="m.mood.toc">Moodboard</a></li>
-          <li><a href="#library" data-i18n="m.library.toc">Colour, gobo &amp; fixture libraries</a></li>
-          <li><a href="#workflow" data-i18n="m.workflow.toc">Workflow &amp; PDF Store</a></li>
-          <li><a href="#vw" data-i18n="m.vw.toc">Vectorworks sync</a></li>
-          <li><a href="#console" data-i18n="m.console.toc">Console connection</a></li>
-          <li><a href="#export" data-i18n="m.export.toc">Import &amp; export</a></li>
-          <li><a href="#settings" data-i18n="m.settings.toc">Settings</a></li>
-          <li><a href="#account" data-i18n="m.account.toc">Account &amp; collaboration</a></li>
+          <li><a href="#workflow" data-i18n="m.workflow.toc">Workflow</a></li>
+          <li><a href="#collab" data-i18n="m.collab.toc">Working together</a></li>
+          <li><a href="#more" data-i18n="m.more.toc">GDTF and calendar</a></li>
+          <li class="manual__toc-part" data-i18n="m.part3">Part 3 · Settings and help</li>
+          <li><a href="#settings" data-i18n="m.settings.toc">Settings and account</a></li>
           <li><a href="#tips" data-i18n="m.tips.toc">Troubleshooting</a></li>
         </ol>
         <p class="manual__toc-tools"><button type="button" class="manual__toc-toggle" id="toc-toggle" data-i18n="manual.toc.collapseAll">Collapse all</button></p>
@@ -57,359 +65,419 @@
         <header class="manual__hero">
           <p class="eyebrow" data-i18n="manual.hero.eyebrow">User manual</p>
           <h1 data-i18n="manual.hero.title">LightDori guide</h1>
-          <p class="manual__lede" data-i18n="manual.hero.lede">From your first patch list to the console handoff. Written for lighting designers, production electricians and shop teams — no LightDori experience assumed.</p>
+          <p class="manual__lede" data-i18n="manual.hero.lede">Install LightDori and follow along from the top. By the end you will have a clean Sheet, Vectorworks connected and your first documents printed. Part 2 then introduces the rest, one short chapter each.</p>
         </header>
+        <p class="manual__part" data-i18n="m.part1">Part 1 · Your first day</p>
         <details class="manual__section" id="overview" open>
-          <summary class="manual__summary"><h2 data-i18n="m.overview.title">1. What LightDori does</h2></summary>
+          <summary class="manual__summary"><h2 data-i18n="m.overview.title">1. What you will end up with</h2></summary>
           <div class="manual__section-body">
-            <p class="manual__lead" data-i18n="m.overview.1">LightDori is a desktop workspace for lighting production data. You keep one fixture list, and LightDori turns it into the patch, the paperwork, the magic sheet and the exports each department needs.</p>
-            <p data-i18n="m.overview.2">It runs on Windows and macOS, works offline, and is built for theatre, touring and rental-shop work.</p>
-            <h3 data-i18n="m.overview.3">The core loop</h3>
-            <ol class="manual__steps">
-              <li data-i18n-html="m.overview.4">Build or import the fixture list in the <strong>Sheet</strong>.</li>
-              <li data-i18n="m.overview.5">Patch universes and addresses, and clear the error list.</li>
-              <li data-i18n-html="m.overview.6">Print a <strong>patch document</strong> and a <strong>magic sheet</strong> to the PDF Store.</li>
-              <li data-i18n-html="m.overview.7">Keep <strong>Vectorworks</strong> in step, and hand the data to the <strong>console</strong>.</li>
-            </ol>
-            <h3 data-i18n="m.overview.8">What is in the app</h3>
+            <p class="manual__lead" data-i18n="m.overview.1">LightDori keeps one fixture list for the show, the Sheet, and makes everything else from it: paperwork, the magic sheet, the cue sheet, and the data your console and Vectorworks need.</p>
+            <h3 data-i18n="m.overview.2">By the end of Part 1</h3>
             <ul>
-              <li data-i18n-html="m.overview.9"><strong>Sheet</strong> — the fixture table, with filters, presets, error checking, work notes, DMX tools and revision compare.</li>
-              <li data-i18n-html="m.overview.10"><strong>Patch Document</strong> — hookups, schedules and focus charts laid out for print.</li>
-              <li data-i18n-html="m.overview.11"><strong>Magic Sheet</strong> — one cell per system, channels placed on the stage plan.</li>
-              <li data-i18n-html="m.overview.12"><strong>Scripts / Cue Sheet</strong> — cue markers on the script and the cue sheet that follows them.</li>
-              <li data-i18n-html="m.overview.13"><strong>Moodboard</strong> — reference boards, page per scene.</li>
-              <li data-i18n-html="m.overview.14"><strong>Colour, Gobo, GDTF, Cable, Calendar, Workflow</strong> — libraries and planning tools.</li>
-              <li data-i18n-html="m.overview.15"><strong>Console</strong> and <strong>PDF Store</strong> on the left rail.</li>
+              <li data-i18n-html="m.overview.3"><strong>A clean Sheet</strong>: every fixture is in, with no duplicate channels or addresses.</li>
+              <li data-i18n-html="m.overview.4"><strong>Vectorworks connected</strong>: the drawing and the Sheet stay in step while you work.</li>
+              <li data-i18n-html="m.overview.5"><strong>Your first documents</strong>: a channel hookup and an instrument schedule, waiting in the Store.</li>
             </ul>
-          </div>
-        </details>
-        <details class="manual__section" id="start" open>
-          <summary class="manual__summary"><h2 data-i18n="m.start.title">2. Getting started</h2></summary>
-          <div class="manual__section-body">
-            <h3 data-i18n="m.start.1">Signing in</h3>
-            <p data-i18n-html="m.start.2">LightDori asks for your account the first time it opens. Enter your email and password and press <strong>Sign In</strong>, or choose <strong>Create an Account</strong>. Tick <strong>Remember me</strong> to stay signed in on that computer.</p>
             <div class="manual__note">
               <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
-              <p data-i18n="m.start.3">Your licence is confirmed online, but LightDori keeps working offline for about a week after the last successful check.</p>
+              <p data-i18n="m.overview.6">The screenshots use a demo show: a scene from Romeo and Juliet with 48 fixtures. With your own show the screens look the same.</p>
             </div>
-            <h3 data-i18n="m.start.4">The hub</h3>
-            <p data-i18n-html="m.start.5">After signing in you land on the hub: <strong>Open file</strong> for an existing <code>.ld</code> project or a data file, <strong>New file</strong> for the guided setup, your <strong>Recent</strong> files on the right, and news from us below them.</p>
+            <h3 data-i18n="m.overview.7">Help is one click away</h3>
+            <p data-i18n-html="m.overview.8">Every screen has <strong>Help</strong> in the left bar. It explains that screen in short steps, and <strong>Show me on screen</strong> points at each part of it.</p>
+          </div>
+        </details>
+        <details class="manual__section" id="install" open>
+          <summary class="manual__summary"><h2 data-i18n="m.install.title">2. Install and sign in</h2></summary>
+          <div class="manual__section-body">
+            <ol class="manual__steps">
+              <li data-i18n-html="m.install.1">Download the installer from the <a href="./index.html#download">download section</a>: <code>.exe</code> for Windows, <code>.dmg</code> for macOS.</li>
+              <li data-i18n="m.install.2">Install it and open LightDori.</li>
+              <li data-i18n-html="m.install.3">Sign in with your email and password. Tick <strong>Remember me</strong> to stay signed in on this computer.</li>
+            </ol>
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n="m.install.4">Your licence is checked online, but LightDori keeps working offline for about a week after the last check.</p>
+            </div>
+            <h3 data-i18n="m.install.5">The Hub</h3>
+            <p data-i18n-html="m.install.6">After signing in you land on the Hub. <strong>Open file</strong> opens a show you already have, <strong>New file</strong> starts a new one, and <strong>Recent</strong> on the right lists the shows you opened last. The language is chosen at the top right.</p>
             <figure class="manual__shot">
-              <img src="./assets/manual/hub.webp" alt="The LightDori hub" data-i18n-alt="m.start.6" loading="lazy" />
-              <figcaption data-i18n="m.start.7">The hub — open a show, start a new one, or pick up a recent file.</figcaption>
+              <img src="./assets/manual/en/hub.webp" data-i18n-src="m.shot.hub" alt="The LightDori Hub" data-i18n-alt="m.shot.hub.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.hub.cap">The Hub: carry on with the last show, open a file or start a new one.</figcaption>
             </figure>
-            <h3 data-i18n="m.start.8">The project overview</h3>
-            <p data-i18n-html="m.start.9">A project opens on its overview. Click the title to rename the show and fill in the credits (venue, director, lighting design and so on) — the patch documents and the magic sheet use them for their header block. Drop the show poster on <strong>cover image</strong> and a plot or ground plan on <strong>drawing</strong>.</p>
-            <p data-i18n="m.start.10">The large cards open the main workspaces — Sheet, Scripts / Cue Sheet, Moodboard, Magic Sheet — and the list beside them opens Colour, Gobo, GDTF, Cable, Calendar and Workflow. Each open project gets its own tab at the top of the window.</p>
+          </div>
+        </details>
+        <details class="manual__section" id="new-show" open>
+          <summary class="manual__summary"><h2 data-i18n="m.new-show.title">3. Start a new show</h2></summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="m.new-show.1">A show in LightDori is one file. Only its name is needed to start; everything else can wait.</p>
+            <ol class="manual__steps">
+              <li data-i18n-html="m.new-show.2">In the Hub, press <strong>New file</strong>.</li>
+              <li data-i18n-html="m.new-show.3">Type the show's name. <strong>Add venue and credits</strong> lets you fill in the venue, director and designer now; they go on top of every printed document.</li>
+              <li data-i18n-html="m.new-show.4">Under <strong>Where are the fixtures?</strong>, choose where your rig is. The table below helps.</li>
+              <li data-i18n-html="m.new-show.5">If you have a light plot or ground plan as a PDF, DXF or image, drop it under <strong>Do you have a drawing?</strong>. It shows on the overview and behind the magic sheet.</li>
+              <li data-i18n-html="m.new-show.6">Press <strong>Create show</strong>. The Sheet opens.</li>
+            </ol>
             <figure class="manual__shot">
-              <img src="./assets/manual/workspace-home.webp" alt="The project overview" data-i18n-alt="m.start.11" loading="lazy" />
-              <figcaption data-i18n="m.start.12">The overview — credits on the left, workspaces in the middle, libraries on the right.</figcaption>
+              <img src="./assets/manual/en/new-show.webp" data-i18n-src="m.shot.new-show" alt="The New show guide with a Vectorworks drawing chosen" data-i18n-alt="m.shot.new-show.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.new-show.cap">New show: the name, where the fixtures are and, on the right, what happens next.</figcaption>
             </figure>
-            <h3 data-i18n="m.start.13">The left rail</h3>
+            <div class="manual__table-wrap"><table class="manual__table"><thead><tr><th data-i18n="m.new-show.7">Choice</th><th data-i18n="m.new-show.8">When to choose it</th></tr></thead><tbody><tr><td data-i18n="m.new-show.9">In a Vectorworks drawing</td><td data-i18n="m.new-show.10">Your plot is in Vectorworks. The Sheet fills in from it and stays in sync. Carry on with chapter 4.</td></tr><tr><td data-i18n="m.new-show.11">In a file I already have</td><td data-i18n="m.new-show.12">You have a CSV, Excel, MVR, ETC ASCII or XML file. Columns are matched for you.</td></tr><tr><td data-i18n="m.new-show.13">Nowhere yet</td><td data-i18n="m.new-show.14">Start with an empty Sheet and add fixtures as you go.</td></tr><tr><td data-i18n="m.new-show.15">I just want to look around</td><td data-i18n="m.new-show.16">Opens a 48-fixture sample rig to practise on. Not for a real show.</td></tr></tbody></table></div>
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n-html="m.new-show.17">No show of your own yet? Choose <strong>I just want to look around</strong> and follow the rest of Part 1 with the sample rig.</p>
+            </div>
+          </div>
+        </details>
+        <details class="manual__section" id="import" open>
+          <summary class="manual__summary"><h2 data-i18n="m.import.title">4. Bring in your fixtures</h2></summary>
+          <div class="manual__section-body">
+            <h3 data-i18n="m.import.1">From Vectorworks</h3>
+            <p data-i18n-html="m.import.2">LightDori talks to Vectorworks through its own plug-in, <strong>LightDori Realtime</strong>. LightDori installs it for you when it starts. If Vectorworks was open at that moment, restart Vectorworks once.</p>
+            <ol class="manual__steps">
+              <li data-i18n="m.import.3">Open the show's drawing in Vectorworks and save it once.</li>
+              <li data-i18n-html="m.import.4">Run the <strong>LightDori Realtime</strong> plug-in in Vectorworks.</li>
+              <li data-i18n-html="m.import.5">In LightDori, press <strong>Vectorworks</strong> at the top right of the Sheet.</li>
+              <li data-i18n-html="m.import.6">Press <strong>Turn on manual sync</strong>. The panel lists the fixtures in the drawing.</li>
+              <li data-i18n-html="m.import.7">Press <strong>Import and link</strong>. The fixtures arrive in the Sheet, and the show is now linked to that drawing.</li>
+              <li data-i18n-html="m.import.8">Switch the panel to <strong>Live Sync</strong>. From now on, a change on either side shows up on the other a moment later.</li>
+            </ol>
+            <figure class="manual__shot">
+              <img src="./assets/manual/en/vw-panel.webp" data-i18n-src="m.shot.vw-panel" alt="The Vectorworks panel waiting for a drawing" data-i18n-alt="m.shot.vw-panel.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.vw-panel.cap">The Vectorworks panel before a drawing is open. Once Vectorworks has the drawing open, its fixtures are listed here.</figcaption>
+            </figure>
+            <h3 data-i18n="m.import.9">Manual or live</h3>
             <ul>
-              <li data-i18n-html="m.start.14"><strong>Home, Help, Alerts</strong> — back to the overview, help for the screen you are on, and warnings about your data.</li>
-              <li data-i18n-html="m.start.15"><strong>Collab, Profile, Settings</strong> — shared sessions, your account and preferences.</li>
-              <li data-i18n-html="m.start.16"><strong>Console, Store, Album, Snap</strong> — the console link, the PDF Store, and screen captures.</li>
+              <li data-i18n-html="m.import.10"><strong>Manual</strong>: LightDori compares the Sheet with the drawing and shows where they differ. Pick a side for each, then press <strong>Import to Sheet</strong> or <strong>Send to Vectorworks</strong>.</li>
+              <li data-i18n-html="m.import.11"><strong>Live Sync</strong>: changes travel both ways on their own. A change that would clear a value waits under <strong>Needs confirmation</strong>.</li>
+              <li data-i18n-html="m.import.12"><strong>Choose fields to exchange</strong> sets which columns travel. Fields you leave out are kept separately on each side.</li>
             </ul>
-            <h3 data-i18n="m.start.17">Saving</h3>
-            <p data-i18n-html="m.start.18">A project is one <code>.ld</code> file. <kbd>Ctrl</kbd> + <kbd>S</kbd> saves, <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>S</kbd> saves a copy, <kbd>Ctrl</kbd> + <kbd>O</kbd> opens (use <kbd>Cmd</kbd> on macOS).</p>
             <div class="manual__note manual__note--warn">
               <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
-              <p data-i18n="m.start.19">Auto save is available in Settings, but save by hand before big imports, merges and exports.</p>
+              <p data-i18n="m.import.13">The Vectorworks plug-in runs on Windows for now. If Vectorworks blocks it, check LightDoriRealtime in the Vectorworks Plug-in Manager.</p>
+            </div>
+            <h3 data-i18n="m.import.14">From a file</h3>
+            <ol class="manual__steps">
+              <li data-i18n-html="m.import.15">On an empty Sheet, press <strong>Import fixtures</strong>, or drop the file on the window.</li>
+              <li data-i18n-html="m.import.16">Choose a CSV, Excel, MVR, ETC ASCII (<code>.asc</code>) or XML file. Excel reads the first worksheet.</li>
+              <li data-i18n="m.import.17">Columns are matched for you. Check the result in the Sheet.</li>
+            </ol>
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n="m.import.18">Importing into a Sheet that already has fixtures asks first whether to replace them.</p>
             </div>
           </div>
         </details>
         <details class="manual__section" id="sheet" open>
-          <summary class="manual__summary"><h2 data-i18n="m.sheet.title">3. Sheet</h2></summary>
+          <summary class="manual__summary"><h2 data-i18n="m.sheet.title">5. Tidy the Sheet</h2></summary>
           <div class="manual__section-body">
-            <p class="manual__lead" data-i18n="m.sheet.1">The Sheet is the fixture table everything else reads from: the patch documents, the magic sheet, the Vectorworks exchange and the console.</p>
-            <p data-i18n="m.sheet.2">Columns come from what you imported, so a sheet from an MVR looks different from one built from a shop spreadsheet. Typical columns are Channel, Position, Unit Number, Purpose, Device Type, Wattage, Colour, Focus, Dimmer, Universe and Address. Position tabs along the top show one position at a time.</p>
-            <figure class="manual__shot">
-              <img src="./assets/manual/sheet.webp" alt="The Sheet" data-i18n-alt="m.sheet.3" loading="lazy" />
-              <figcaption data-i18n="m.sheet.4">The Sheet — the tool dock floats at the bottom; Vectorworks and search sit at the top right.</figcaption>
-            </figure>
-            <h3 data-i18n="m.sheet.5">The tool dock</h3>
+            <p class="manual__lead" data-i18n="m.sheet.1">The Sheet is the show's fixture list. Everything you print later reads from it, so this is where you fix things.</p>
+            <h3 data-i18n="m.sheet.2">Find and change values</h3>
             <ul>
-              <li data-i18n-html="m.sheet.6"><strong>Filter</strong> and <strong>Sort</strong> — show matching rows only, order by any column.</li>
-              <li data-i18n-html="m.sheet.7"><strong>Presets</strong> — save the current columns, filters and sort order and come back to them.</li>
-              <li data-i18n-html="m.sheet.8"><strong>Error checking</strong> — duplicate channels, addresses and dimmers, address overflow, missing channel, position, instrument type or address. Each check is Off, Warn or Error.</li>
-              <li data-i18n-html="m.sheet.9"><strong>Work notes</strong> — a note per fixture, with a done tick.</li>
-              <li data-i18n-html="m.sheet.10"><strong>Edit</strong> — unlocks the table; <strong>Add fixture</strong> and <strong>Delete selected rows</strong> work while it is on.</li>
-              <li data-i18n-html="m.sheet.11"><strong>Undo / Redo</strong>, <strong>Universe map</strong>, <strong>Auto universe</strong>, <strong>Revision compare</strong> and <strong>Live fixture summary</strong>.</li>
-              <li data-i18n-html="m.sheet.12"><strong>Export</strong> — data file, patch document PDF, XML or MVR. The badge counts the ticked rows.</li>
+              <li data-i18n-html="m.sheet.3">Type in <strong>Search fixtures</strong> at the top right, or use <strong>Filter</strong> and <strong>Sort</strong> in the toolbar at the bottom.</li>
+              <li data-i18n-html="m.sheet.4">Press <strong>Edit</strong>, then double-click a cell and type. Colour and gobo cells open a picker. Press <strong>Done</strong> when you finish.</li>
+              <li data-i18n-html="m.sheet.5">Click a row to select it, <kbd>Ctrl</kbd>-click to add rows, <kbd>Shift</kbd>-click for a range.</li>
+              <li data-i18n="m.sheet.6">Universe, Address and Absolute Address are one patch: change one and the others follow.</li>
+              <li data-i18n-html="m.sheet.7">While editing, <strong>Add fixture</strong> adds a row.</li>
             </ul>
-            <div class="manual__note">
-              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
-              <p data-i18n-html="m.sheet.13">When the window is narrow, the tools that do not fit move into the <strong>⋯</strong> menu at the end of the dock.</p>
-            </div>
-            <h3 data-i18n="m.sheet.14">Selecting, ticking and editing</h3>
+            <h3 data-i18n="m.sheet.8">Clear the issues</h3>
+            <p data-i18n-html="m.sheet.9">When something is wrong, a red button with the number of issues appears left of <strong>Export</strong>. Press it to open <strong>Error checking</strong>.</p>
+            <figure class="manual__shot">
+              <img src="./assets/manual/en/error-checking.webp" data-i18n-src="m.shot.error-checking" alt="Error checking with three kinds of duplicates found" data-i18n-alt="m.shot.error-checking.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.error-checking.cap">Left: what to check and how strictly. Right: what was found in this Sheet.</figcaption>
+            </figure>
             <ul>
-              <li data-i18n-html="m.sheet.15">Click a row to select it; <kbd>Ctrl</kbd> adds rows, <kbd>Shift</kbd> selects a range.</li>
-              <li data-i18n="m.sheet.16">The checkbox decides what goes into an export. The header checkbox ticks every visible row, so filter first.</li>
-              <li data-i18n-html="m.sheet.17">With <strong>Edit</strong> on, double-click a cell to edit it; <kbd>Enter</kbd> commits, <kbd>Esc</kbd> cancels. Colour and gobo cells open a picker instead.</li>
-              <li data-i18n="m.sheet.18">Universe, Address and Absolute Address are one DMX patch: change one and the others follow, as in Vectorworks.</li>
+              <li data-i18n="m.sheet.10">The checks cover duplicate channels, addresses and dimmers, addresses past 512, and a missing channel, position or instrument type.</li>
+              <li data-i18n-html="m.sheet.11">Set each check to Off, Warn or Error, then press <strong>Save checks</strong>.</li>
+              <li data-i18n="m.sheet.12">Fix the rows in the Sheet. When nothing is left, the button goes away.</li>
             </ul>
-            <h3 data-i18n="m.sheet.19">Adding fixtures</h3>
-            <p data-i18n-html="m.sheet.20">Turn on <strong>Edit</strong> and press <strong>Add fixture</strong>. Fill in <strong>Fixture</strong> (channel, purpose, position, unit, colour, dimmer) and <strong>DMX patch</strong> (universe and address — type <code>5</code> or <code>2.005</code>); everything else is under <strong>More fields</strong>.</p>
-            <h3 data-i18n="m.sheet.21">Universe map and Auto universe</h3>
-            <p data-i18n-html="m.sheet.22"><strong>Auto universe</strong> patches a run of fixtures: choose the target (selected, visible, unpatched or all rows), a start universe, a start address and an offset, then <strong>Apply</strong>. Check the result in <strong>Universe map</strong> — used, free, fixtures and conflicts per universe, with every channel drawn on a 512 grid.</p>
+            <h3 data-i18n="m.sheet.13">Lay out DMX</h3>
+            <p data-i18n-html="m.sheet.14"><strong>Universe map</strong> shows every address of each universe as a grid: used, free, and conflicts in red. <strong>Auto universe</strong> patches the fixtures you choose from a start universe and address.</p>
             <figure class="manual__shot">
-              <img src="./assets/manual/universe-map.webp" alt="The universe map" data-i18n-alt="m.sheet.23" loading="lazy" />
-              <figcaption data-i18n="m.sheet.24">Universe map — check it before anything goes to a console.</figcaption>
+              <img src="./assets/manual/en/universe-map.webp" data-i18n-src="m.shot.universe-map" alt="Universe map with one conflict" data-i18n-alt="m.shot.universe-map.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.universe-map.cap">Address 4 is used by two fixtures, so it shows in red.</figcaption>
             </figure>
-            <figure class="manual__shot">
-              <img src="./assets/manual/error-checking.webp" alt="Error checking" data-i18n-alt="m.sheet.25" loading="lazy" />
-              <figcaption data-i18n="m.sheet.26">Error checking — the checks on the left, what they found on the right.</figcaption>
-            </figure>
-            <h3 data-i18n="m.sheet.27">Revision compare</h3>
-            <p data-i18n-html="m.sheet.28"><strong>Set current as baseline</strong> before a cue-to-cue or a production meeting. Later, Revision compare lists every changed, added and removed fixture, with each changed field shown before and after.</p>
           </div>
         </details>
-        <details class="manual__section" id="patch" open>
-          <summary class="manual__summary"><h2 data-i18n="m.patch.title">4. Patch Document</h2></summary>
+        <details class="manual__section" id="documents" open>
+          <summary class="manual__summary"><h2 data-i18n="m.documents.title">6. Print your documents</h2></summary>
           <div class="manual__section-body">
-            <p class="manual__lead" data-i18n="m.patch.1">The paperwork the shop and the booth hold: a hookup, a schedule or a focus chart, printed straight to the PDF Store.</p>
+            <p class="manual__lead" data-i18n="m.documents.1">Tick the rows, choose what to make, and the PDF lands in the Store.</p>
             <ol class="manual__steps">
-              <li data-i18n="m.patch.2">Tick the rows you want in the Sheet (filter first for one position).</li>
-              <li data-i18n-html="m.patch.3">Choose <strong>Export → Patch document PDF</strong>.</li>
-              <li data-i18n-html="m.patch.4">Pick a <strong>Schedule preset</strong>, or choose and order the columns yourself.</li>
-              <li data-i18n-html="m.patch.5">Set the page and the header, press <strong>Refresh</strong> to update the preview.</li>
-              <li data-i18n-html="m.patch.6">Press <strong>Export PDF</strong>. The document folds into the Store.</li>
+              <li data-i18n="m.documents.2">Tick the rows to print. The checkbox in the header ticks every visible row, so filter first if you want one position.</li>
+              <li data-i18n-html="m.documents.3">Press <strong>Export</strong> at the bottom right and choose <strong>Patch document PDF</strong>.</li>
+              <li data-i18n-html="m.documents.4">Pick a <strong>Schedule preset</strong> and the columns you want.</li>
+              <li data-i18n-html="m.documents.5">Set the paper under <strong>Page</strong> and the show details under <strong>Header</strong>. Press <strong>Refresh</strong> to update the preview.</li>
+              <li data-i18n-html="m.documents.6">Press <strong>Export PDF</strong>. The file goes to the Store.</li>
             </ol>
             <figure class="manual__shot">
-              <img src="./assets/manual/patch-document.webp" alt="The Patch Document" data-i18n-alt="m.patch.7" loading="lazy" />
-              <figcaption data-i18n="m.patch.8">Columns and page settings on the left; the preview is the printed PDF itself.</figcaption>
+              <img src="./assets/manual/en/export-menu.webp" data-i18n-src="m.shot.export-menu" alt="The Export menu in the Sheet" data-i18n-alt="m.shot.export-menu.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.export-menu.cap">Export: a data file, a patch document PDF, XML or MVR. Only ticked rows go out.</figcaption>
             </figure>
-            <h3 data-i18n="m.patch.9">Schedule presets</h3>
-            <div class="manual__table-wrap"><table class="manual__table"><thead><tr><th data-i18n="m.patch.10">Preset</th><th data-i18n="m.patch.11">What it prints</th></tr></thead><tbody><tr><td data-i18n="m.patch.12">Channel Hookup</td><td data-i18n="m.patch.13">One list in channel order.</td></tr><tr><td data-i18n="m.patch.14">Instrument Schedule</td><td data-i18n="m.patch.15">A table per position, sorted by unit number.</td></tr><tr><td data-i18n="m.patch.16">Dimmer Hookup</td><td data-i18n="m.patch.17">One list in dimmer order (DMX address when the sheet has no dimmers), then channel.</td></tr><tr><td data-i18n="m.patch.18">Address Hookup</td><td data-i18n="m.patch.19">A table per DMX universe, in address order.</td></tr><tr><td data-i18n="m.patch.20">Focus Chart</td><td data-i18n="m.patch.21">A table per position with unit, channel, purpose, focus, colour and gobos.</td></tr><tr><td data-i18n="m.patch.22">Custom</td><td data-i18n="m.patch.23">The columns you chose, in the sheet's order.</td></tr></tbody></table></div>
-            <h3 data-i18n="m.patch.24">Page and style</h3>
-            <ul>
-              <li data-i18n-html="m.patch.25"><strong>Paper</strong> A4, Letter, A3 or Legal, portrait or landscape.</li>
-              <li data-i18n-html="m.patch.26"><strong>Style</strong> — Classic, Grid or Compact. Number columns are centred.</li>
-              <li data-i18n-html="m.patch.27"><strong>Zebra rows</strong> and a heavier <strong>row separator</strong> every few rows; <strong>font size</strong> 7–14 pt.</li>
-            </ul>
-            <h3 data-i18n="m.patch.28">The header block</h3>
-            <p data-i18n="m.patch.29">Show title and document title in the middle; director, venue and city on the left; page and date, then designer, phone and email on the right — filled from the project credits. Add a logo, a note, or switch the header and the summary line off.</p>
+            <figure class="manual__shot">
+              <img src="./assets/manual/en/patch-document.webp" data-i18n-src="m.shot.patch-document" alt="A channel hookup in the patch document" data-i18n-alt="m.shot.patch-document.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.patch-document.cap">Columns on the left, the printed page on the right.</figcaption>
+            </figure>
+            <div class="manual__table-wrap"><table class="manual__table"><thead><tr><th data-i18n="m.documents.7">Preset</th><th data-i18n="m.documents.8">What it prints</th></tr></thead><tbody><tr><td data-i18n="m.documents.9">Channel Hookup</td><td data-i18n="m.documents.10">One list in channel order.</td></tr><tr><td data-i18n="m.documents.11">Instrument Schedule</td><td data-i18n="m.documents.12">A table per position, by unit number.</td></tr><tr><td data-i18n="m.documents.13">Dimmer Hookup</td><td data-i18n="m.documents.14">One list in dimmer order, or DMX address order when the Sheet has no dimmers.</td></tr><tr><td data-i18n="m.documents.15">Address Hookup</td><td data-i18n="m.documents.16">A table per universe, in address order.</td></tr><tr><td data-i18n="m.documents.17">Focus Chart</td><td data-i18n="m.documents.18">A table per position with unit, channel, purpose, focus, colour and gobos.</td></tr><tr><td data-i18n="m.documents.19">Custom</td><td data-i18n="m.documents.20">The columns you chose, in the Sheet's order.</td></tr></tbody></table></div>
+            <p data-i18n="m.documents.21">Style: Classic, Grid or Compact. Paper: A4, Letter, A3 or Legal, portrait or landscape.</p>
+            <h3 data-i18n="m.documents.22">The Store</h3>
+            <p data-i18n-html="m.documents.23">Every PDF goes to <strong>Store</strong> in the left bar. Open one to page through it, rename it or download it. <strong>Merge</strong> joins several into one file.</p>
+            <figure class="manual__shot">
+              <img src="./assets/manual/en/pdf-store.webp" data-i18n-src="m.shot.pdf-store" alt="The PDF Store with four documents" data-i18n-alt="m.shot.pdf-store.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.pdf-store.cap">Four documents printed from the demo show.</figcaption>
+            </figure>
+            <h3 data-i18n="m.documents.24">Lists with photos</h3>
+            <p data-i18n-html="m.documents.25">At the top of the Sheet, switch to <strong>Equipment</strong>, <strong>Color</strong>, <strong>Gobo</strong> or <strong>Accessories</strong> to count what the show needs. Click a picture frame to add a photo, and <strong>Export</strong> there makes the <strong>List Document</strong>.</p>
             <div class="manual__note">
               <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
-              <p data-i18n-html="m.patch.30">The preview waits for <strong>Refresh</strong>; the button lights up when your settings are newer than the preview.</p>
+              <p data-i18n="m.documents.26">An export came out empty? No rows were ticked.</p>
             </div>
           </div>
         </details>
-        <details class="manual__section" id="magic" open>
-          <summary class="manual__summary"><h2 data-i18n="m.magic.title">5. Magic Sheet</h2></summary>
+        <details class="manual__section" id="save" open>
+          <summary class="manual__summary"><h2 data-i18n="m.save.title">7. Save and come back</h2></summary>
           <div class="manual__section-body">
-            <p class="manual__lead" data-i18n="m.magic.1">A magic sheet is a picture of the rig: one cell per system, channels placed on the stage plan and pointing where their light goes. The canvas is the printed page.</p>
-            <figure class="manual__shot">
-              <img src="./assets/manual/magic-sheet.webp" alt="The Magic Sheet" data-i18n-alt="m.magic.2" loading="lazy" />
-              <figcaption data-i18n="m.magic.3">Systems on the left, the printed page in the middle, the inspector on the right.</figcaption>
-            </figure>
-            <h3 data-i18n="m.magic.4">How it is built</h3>
             <ul>
-              <li data-i18n-html="m.magic.5">Cells come from <strong>Group by</strong> — Purpose by default, or Position, Colour, Instrument or Focus — in channel order.</li>
-              <li data-i18n="m.magic.6">Each cell's title bar takes the gel's colour; scrollers and LEDs get a spectrum.</li>
-              <li data-i18n-html="m.magic.7">Channels are placed from the sheet: <strong>Focus</strong> areas (DSL, CS, USR… or A1, A2…), then plot <strong>X / Y</strong>, then the system's kind — shins and booms in two columns, back light pointing down, box booms angled in.</li>
-              <li data-i18n="m.magic.8">The page header, the type and the footer are the patch documents' own (Classic, Grid or Compact).</li>
+              <li data-i18n-html="m.save.1">Press <kbd>Ctrl</kbd> + <kbd>S</kbd> (<kbd>Cmd</kbd> on macOS), or choose <strong>Save Project</strong> from <strong>···</strong> next to LD at the top left.</li>
+              <li data-i18n-html="m.save.2">Everything goes into one <code>.ld</code> file: fixtures, photos, the script, the cue sheet, the blocking and recordings.</li>
+              <li data-i18n-html="m.save.3">To open it again, pick it from <strong>Recent</strong> in the Hub, or drop the file on the window.</li>
             </ul>
-            <h3 data-i18n="m.magic.9">Editing</h3>
-            <ul>
-              <li data-i18n-html="m.magic.10">Drag a channel to move it, or nudge it with the arrow keys. With the <strong>Aim</strong> tool (<kbd>A</kbd>), drag from a channel to point it.</li>
-              <li data-i18n="m.magic.11">Click a cell to set its name, gel, master and sub channel, layout (Auto, Sides, Wash, Row, Arc), bubble shape and size, and the direction of all its channels.</li>
-              <li data-i18n-html="m.magic.12"><strong>Back to auto</strong> and <strong>Place all again</strong> undo hand placement.</li>
-              <li data-i18n="m.magic.13">Drag systems in the list to reorder the cells; the eye takes a system off the pages.</li>
-            </ul>
-            <h3 data-i18n="m.magic.14">Stage plan and pages</h3>
-            <p data-i18n-html="m.magic.15">Every cell shows a generic plan until you load your own: <strong>Ground plan</strong> takes an image or the first page of a PDF and draws it in grey, with strength, scale and position controls. Set the paper, orientation and cells per page in the inspector with nothing selected; <strong>Export PDF</strong> prints every page to the Store.</p>
-          </div>
-        </details>
-        <details class="manual__section" id="cue" open>
-          <summary class="manual__summary"><h2 data-i18n="m.cue.title">6. Script &amp; cue sheet</h2></summary>
-          <div class="manual__section-body">
-            <p class="manual__lead" data-i18n="m.cue.1">Put the script on one side and the cue sheet on the other, and mark cues where they happen on the page.</p>
-            <figure class="manual__shot">
-              <img src="./assets/manual/cue-sheet.webp" alt="Script and cue sheet" data-i18n-alt="m.cue.2" loading="lazy" />
-              <figcaption data-i18n="m.cue.3">Markers on the script, the cue sheet beside it.</figcaption>
-            </figure>
-            <ul>
-              <li data-i18n-html="m.cue.4">Import a script as PDF, Word (<code>.docx</code>) or text. Markers snap to the line you click.</li>
-              <li data-i18n-html="m.cue.5">Choose the marker type — <strong>Q</strong> lighting, <strong>SQ</strong> sound, <strong>FS</strong> follow spot, <strong>S</strong> scene — and click the page.</li>
-              <li data-i18n-html="m.cue.6">New cues get point numbers (Q1.5) between existing ones; <strong>Renumber</strong> numbers them in order instead.</li>
-              <li data-i18n-html="m.cue.7">Click a marker to edit its number, type and note; drag it to move; <kbd>Del</kbd> removes it.</li>
-              <li data-i18n-html="m.cue.8">The cue sheet follows the markers and each row shows its marker. Switch between <strong>Cue Sheet</strong> and <strong>Scenes</strong>, table and card views.</li>
-            </ul>
-            <p data-i18n-html="m.cue.9"><strong>Cue document</strong> prints the cue sheet with the patch documents' layout tool; <strong>Export data</strong> writes an ETC ASCII (<code>.asc</code>) file for an Eos-family console.</p>
-          </div>
-        </details>
-        <details class="manual__section" id="mood" open>
-          <summary class="manual__summary"><h2 data-i18n="m.mood.title">7. Moodboard</h2></summary>
-          <div class="manual__section-body">
-            <p class="manual__lead" data-i18n="m.mood.1">Reference boards for the visual conversation, one page per scene if you like.</p>
-            <figure class="manual__shot">
-              <img src="./assets/manual/moodboard.webp" alt="Starting a moodboard" data-i18n-alt="m.mood.2" loading="lazy" />
-              <figcaption data-i18n="m.mood.3">A new board starts from a layout — or skip and start blank.</figcaption>
-            </figure>
-            <ul>
-              <li data-i18n="m.mood.4">Pages sit in the column on the left; link a page to a script scene and it carries the scene label.</li>
-              <li data-i18n-html="m.mood.5">The dock at the bottom holds the tools; its <strong>Library</strong> slides up with elements, text styles, uploads, the palette and templates.</li>
-              <li data-i18n="m.mood.6">The inspector on the right follows the selection: photo adjustments and filters, text, shapes, drawing, arrange and layers.</li>
-              <li data-i18n="m.mood.7">Pick a colour from a photo and LightDori shows the closest Lee and Rosco gels.</li>
-              <li data-i18n="m.mood.8">Export the page as PNG, or every page as a PDF to the Store.</li>
-            </ul>
-          </div>
-        </details>
-        <details class="manual__section" id="library" open>
-          <summary class="manual__summary"><h2 data-i18n="m.library.title">8. Colour, gobo &amp; fixture libraries</h2></summary>
-          <div class="manual__section-body">
-            <h3 data-i18n="m.library.1">Colour</h3>
-            <p data-i18n="m.library.2">Search Lee and Rosco gels by code, name or hex, or show only the colours in use. A swatch shows its data and the nearest colours from the other brand — handy when a shop is out of stock.</p>
-            <h3 data-i18n="m.library.3">Gobo</h3>
-            <p data-i18n="m.library.4">Browse gobo folders, preview the patterns and assign them to fixture slots. Assigned gobos show as thumbnails in the sheet and print in the patch document.</p>
-            <h3 data-i18n="m.library.5">GDTF, Cable, Calendar</h3>
-            <p data-i18n="m.library.6">Check modes, channel layouts and 3D models in the GDTF catalogue or your own files; plan power and DMX runs on the cable canvas; keep load-in, focus, tech and strike dates in the calendar.</p>
-          </div>
-        </details>
-        <details class="manual__section" id="workflow" open>
-          <summary class="manual__summary"><h2 data-i18n="m.workflow.title">9. Workflow &amp; PDF Store</h2></summary>
-          <div class="manual__section-body">
-            <p data-i18n-html="m.workflow.1">Every PDF you export lands in the <strong>Store</strong> on the left rail instead of a folder. Click a thumbnail to page through it, download or delete it; double-click the name to rename it.</p>
-            <figure class="manual__shot">
-              <img src="./assets/manual/pdf-store.webp" alt="The PDF Store" data-i18n-alt="m.workflow.2" loading="lazy" />
-              <figcaption data-i18n="m.workflow.3">The Store — everything exported for this project.</figcaption>
-            </figure>
-            <p data-i18n-html="m.workflow.4"><strong>Merge</strong> builds one production pack: press Merge, click the PDFs in order, then confirm. The <strong>Workflow</strong> canvas maps the paperwork — each node is a document and shows whether it has been produced yet.</p>
-          </div>
-        </details>
-        <details class="manual__section" id="vw" open>
-          <summary class="manual__summary"><h2 data-i18n="m.vw.title">10. Vectorworks sync</h2></summary>
-          <div class="manual__section-body">
-            <p class="manual__lead" data-i18n="m.vw.1">LightDori and Vectorworks keep one fixture list in step through a shared exchange file — no network, no copy and paste.</p>
-            <div class="manual__table-wrap"><table class="manual__table"><thead><tr><th data-i18n="m.vw.2">System</th><th data-i18n="m.vw.3">Exchange file</th></tr></thead><tbody><tr><td>Windows</td><td><code>%USERPROFILE%\Documents\LightDoriExchange\ld_vw_exchange.json</code></td></tr><tr><td>macOS</td><td><code>~/Documents/LightDoriExchange/ld_vw_exchange.json</code></td></tr></tbody></table></div>
-            <figure class="manual__shot">
-              <img src="./assets/manual/vw-sync.webp" alt="The Vectorworks sync panel" data-i18n-alt="m.vw.4" loading="lazy" />
-              <figcaption data-i18n="m.vw.5">The sync panel — status on the left, the drawing&#x27;s fixtures by position on the right.</figcaption>
-            </figure>
-            <h3 data-i18n="m.vw.6">First import</h3>
-            <ol class="manual__steps">
-              <li data-i18n-html="m.vw.7">Open <strong>Vectorworks</strong> from the top right of the Sheet.</li>
-              <li data-i18n-html="m.vw.8">Press <strong>Review and import</strong>.</li>
-              <li data-i18n-html="m.vw.9">Choose <strong>Merge</strong> (update matching fixtures, add new ones) or <strong>Replace Sheet</strong>, and tick the fields to bring in.</li>
-              <li data-i18n-html="m.vw.10">Press <strong>Import</strong>. Fields land in the sheet's own columns — a Device Type column never splits in two.</li>
-            </ol>
-            <h3 data-i18n="m.vw.11">Live sync</h3>
-            <p data-i18n-html="m.vw.12">Turn <strong>Live sync</strong> on and edits travel both ways a moment after you make them. <strong>Send changes to Vectorworks</strong> pushes the sheet by hand. Universe, Dmx Address, Absolute Address and Universe/Address are one patch on both sides: change any of them and the drawing keeps the new patch.</p>
+            <h3 data-i18n="m.save.4">Mark a version</h3>
+            <p data-i18n-html="m.save.5">Before a production meeting or a cue-to-cue, open <strong>Revision compare</strong> and set the current Sheet as the baseline. Later it lists every fixture changed, added or removed since then, with each field before and after.</p>
             <div class="manual__note manual__note--warn">
               <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
-              <p data-i18n="m.vw.13">Fixtures are matched by a hidden unique ID. A fixture that arrives without one is skipped — re-export it from Vectorworks.</p>
+              <p data-i18n="m.save.6">Auto save can be turned on in Settings, but save by hand before big imports, merges and exports.</p>
             </div>
-            <h3 data-i18n="m.vw.14">When it does not work</h3>
+            <div class="manual__note">
+              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
+              <p data-i18n="m.save.7">That is Part 1. Your Sheet is clean, Vectorworks is connected and your documents are in the Store. Part 2 shows what else LightDori can do.</p>
+            </div>
+          </div>
+        </details>
+        <p class="manual__part" data-i18n="m.part2">Part 2 · What to try next</p>
+        <details class="manual__section" id="magic" open>
+          <summary class="manual__summary"><h2 data-i18n="m.magic.title">8. Magic Sheet</h2></summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="m.magic.1">One cell per system, channels laid out in the shape of the stage, ready to print. It follows the Sheet.</p>
             <ul>
-              <li data-i18n-html="m.vw.15"><strong>Connection says Compatibility</strong> — the LightDori plug-in is not running in Vectorworks. Install it and restart Vectorworks.</li>
-              <li data-i18n-html="m.vw.16"><strong>“Exchange file not found”</strong> — nothing has been written yet. Export once from Vectorworks.</li>
-              <li data-i18n-html="m.vw.17"><strong>A change does not show in the drawing</strong> — restart Vectorworks after updating LightDori so it loads the new plug-in script.</li>
+              <li data-i18n-html="m.magic.2">Open <strong>Magic Sheet</strong> from Home. Choose <strong>Group by</strong> and a layout, and the channels are placed for you.</li>
+              <li data-i18n-html="m.magic.3">Drag a channel to move it. With Aim (<kbd>A</kbd>), drag from a channel to point it.</li>
+              <li data-i18n="m.magic.4">Bubbles take the gel's colour, and a ground plan can sit in grey behind the cells.</li>
+              <li data-i18n-html="m.magic.5">Set the paper and press <strong>Export PDF</strong>.</li>
             </ul>
+            <figure class="manual__shot">
+              <img src="./assets/shots/en/magic.webp" data-i18n-src="m.shot.magic" alt="A magic sheet with five systems" data-i18n-alt="m.shot.magic.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.magic.cap">The demo show's magic sheet.</figcaption>
+            </figure>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.magic.6">Open <strong>Magic Sheet</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
+            </div>
+          </div>
+        </details>
+        <details class="manual__section" id="cues" open>
+          <summary class="manual__summary"><h2 data-i18n="m.cues.title">9. Script and cue sheet</h2></summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="m.cues.1">Put cues on the lines of the script and the cue sheet fills itself in.</p>
+            <ul>
+              <li data-i18n-html="m.cues.2">Open <strong>Scripts / Cue Sheet</strong> from Home and press <strong>Import script</strong> to bring in a PDF, DOCX or TXT file.</li>
+              <li data-i18n-html="m.cues.3">Pick a cue type, Q (lighting), SQ (sound), FS (follow spot) or S (scene), or press <kbd>1</kbd> to <kbd>4</kbd>. Then click the line.</li>
+              <li data-i18n-html="m.cues.4">For a musical number, choose ♪ (<kbd>5</kbd>) and click its first and last lines. Add the song's recording and the tempo is found for you.</li>
+              <li data-i18n-html="m.cues.5"><strong>Export</strong> prints the script with its flags, the cue sheet, or a CSV or Excel file.</li>
+            </ul>
+            <figure class="manual__shot">
+              <img src="./assets/manual/en/cue-sheet.webp" data-i18n-src="m.shot.cue-sheet" alt="Cue flags on the script beside the cue sheet" data-i18n-alt="m.shot.cue-sheet.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.cue-sheet.cap">Cue flags on the script, the cue sheet on the right.</figcaption>
+            </figure>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.cues.6">Open <strong>Scripts / Cue Sheet</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
+            </div>
+          </div>
+        </details>
+        <details class="manual__section" id="blocking" open>
+          <summary class="manual__summary"><h2 data-i18n="m.blocking.title">10. Blocking</h2></summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="m.blocking.1">Every cue on the script becomes a step of the blocking. Place performers and set pieces on the stage plan and move them cue by cue.</p>
+            <ul>
+              <li data-i18n-html="m.blocking.2">In Scripts / Cue Sheet, open the <strong>Blocking</strong> tab beside the cue sheet.</li>
+              <li data-i18n="m.blocking.3">Pick a cue and drag a performer to where they go. The move stays as an arrow; when one cue holds several moves, split it into beats.</li>
+              <li data-i18n="m.blocking.4">Set which follow spot picks up whom.</li>
+              <li data-i18n-html="m.blocking.5"><strong>At a glance</strong>, the entrance and exit track and the <strong>Blocking report</strong> show the whole show. Print an A4 blocking sheet, or one long image for phones.</li>
+            </ul>
+            <figure class="manual__shot">
+              <img src="./assets/shots/en/blocking.webp" data-i18n-src="m.shot.blocking" alt="Two follow spots on Romeo and Juliet on the stage plan" data-i18n-alt="m.shot.blocking.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.blocking.cap">FS2: two follow spots on Romeo and Juliet.</figcaption>
+            </figure>
+          </div>
+        </details>
+        <details class="manual__section" id="color" open>
+          <summary class="manual__summary"><h2 data-i18n="m.color.title">11. Colour</h2></summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="m.color.1">526 LEE and Rosco filters, shown as light on a small 3D stage.</p>
+            <ul>
+              <li data-i18n-html="m.color.2">Open <strong>Color</strong> from Home. Search by code, name or hex, or show only the colours the Sheet uses.</li>
+              <li data-i18n="m.color.3">Dim the lamp and the light warms like tungsten. Transmission, the colour temperature shift and the spectrum are shown.</li>
+              <li data-i18n="m.color.4">Each filter lists the closest match from the other brand.</li>
+              <li data-i18n="m.color.5">In the Sheet, double-click a Color cell while editing to pick from the same library.</li>
+            </ul>
+            <figure class="manual__shot">
+              <img src="./assets/shots/en/color.webp" data-i18n-src="m.shot.color" alt="L079 Just Blue on the 3D stage with its spectrum" data-i18n-alt="m.shot.color.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.color.cap">L079 Just Blue on the stage, with its spectrum.</figcaption>
+            </figure>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.color.6">Open <strong>Color</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
+            </div>
+          </div>
+        </details>
+        <details class="manual__section" id="gobo" open>
+          <summary class="manual__summary"><h2 data-i18n="m.gobo.title">12. Gobo</h2></summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="m.gobo.1">The gobos your show uses, a library to search, and gobo wheel documents.</p>
+            <ul>
+              <li data-i18n-html="m.gobo.2"><strong>In this show</strong> lists the gobos your fixtures already use. Search the whole library by name or number, or browse by maker.</li>
+              <li data-i18n="m.gobo.3">Pick a gobo, choose Gobo 1 or Gobo 2, tick the fixtures and put it in.</li>
+              <li data-i18n="m.gobo.4">Give a long gobo name a short one; the Sheet, lists and documents use it.</li>
+              <li data-i18n="m.gobo.5">For moving lights, print a gobo wheel document for each fixture type.</li>
+            </ul>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.gobo.6">Open <strong>Gobo</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
+            </div>
+          </div>
+        </details>
+        <details class="manual__section" id="cable" open>
+          <summary class="manual__summary"><h2 data-i18n="m.cable.title">13. Cable</h2></summary>
+          <div class="manual__section-body">
+            <p class="manual__lead" data-i18n="m.cable.1">Plan DMX and power runs, and check that every fixture is reached.</p>
+            <ul>
+              <li data-i18n="m.cable.2">The tabs at the top count fixtures with no cable yet, overlapping addresses and overloaded feeds.</li>
+              <li data-i18n-html="m.cable.3"><strong>Chain each position in address order</strong> runs the DMX for you, or draw cables yourself in <strong>Free layout</strong>.</li>
+              <li data-i18n="m.cable.4">In Free layout, add a panel or distro and connect the power.</li>
+            </ul>
+            <figure class="manual__shot">
+              <img src="./assets/manual/en/cable.webp" data-i18n-src="m.shot.cable" alt="The cable view before any cable is drawn" data-i18n-alt="m.shot.cable.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.cable.cap">The demo rig before any cable is drawn: all 48 fixtures are still unconnected.</figcaption>
+            </figure>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.cable.5">Open <strong>Cable</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
+            </div>
           </div>
         </details>
         <details class="manual__section" id="console" open>
-          <summary class="manual__summary"><h2 data-i18n="m.console.title">11. Console connection</h2></summary>
+          <summary class="manual__summary"><h2 data-i18n="m.console.title">14. Console</h2></summary>
           <div class="manual__section-body">
-            <p data-i18n="m.console.1">Connect over the network to pull a patch from the console, push one to it, or read the cue list.</p>
-            <div class="manual__table-wrap"><table class="manual__table"><thead><tr><th data-i18n="m.console.2">Console</th><th data-i18n="m.console.3">Protocol</th><th data-i18n="m.console.4">Ports</th><th data-i18n="m.console.5">Notes</th></tr></thead><tbody><tr><td>ETC Eos / Ion / Nomad</td><td>OSC</td><td>8000 / 8001</td><td data-i18n="m.console.6">Pull patch and cue data</td></tr><tr><td>grandMA2</td><td>Telnet</td><td>30000</td><td data-i18n="m.console.7">Pull and push patch</td></tr><tr><td>grandMA3</td><td>OSC</td><td>8000 / 8001</td><td data-i18n="m.console.8">Patch pull not available</td></tr></tbody></table></div>
-            <h3 data-i18n="m.console.9">Setting up an Eos console</h3>
+            <p class="manual__lead" data-i18n="m.console.1">Connect over the network to pull a patch from the console, send one to it, or read its cue list.</p>
+            <div class="manual__table-wrap"><table class="manual__table"><thead><tr><th data-i18n="m.console.2">Console</th><th data-i18n="m.console.3">Protocol</th><th data-i18n="m.console.4">Ports</th><th data-i18n="m.console.5">What works</th></tr></thead><tbody><tr><td data-i18n="m.console.6">ETC Eos / Ion / Nomad</td><td data-i18n="m.console.7">OSC</td><td data-i18n="m.console.8">8000 / 8001</td><td data-i18n="m.console.9">Pull the patch and cues</td></tr><tr><td data-i18n="m.console.10">grandMA2</td><td data-i18n="m.console.11">Telnet</td><td data-i18n="m.console.12">30000</td><td data-i18n="m.console.13">Pull and push the patch</td></tr><tr><td data-i18n="m.console.14">grandMA3</td><td data-i18n="m.console.15">OSC</td><td data-i18n="m.console.16">8000 / 8001</td><td data-i18n="m.console.17">Cues; pulling the patch is not available</td></tr></tbody></table></div>
             <ol class="manual__steps">
-              <li data-i18n-html="m.console.10">Open <strong>Setup → System → Show Control → OSC</strong>.</li>
-              <li data-i18n-html="m.console.11">Enable <strong>OSC RX</strong> and <strong>OSC TX</strong>.</li>
-              <li data-i18n-html="m.console.12">Set <strong>OSC UDP RX Port</strong> to 8000 and <strong>OSC UDP TX Port</strong> to 8001, and note the console's IP address.</li>
+              <li data-i18n-html="m.console.18">On an Eos console, open <strong>Setup → System → Show Control → OSC</strong>, turn on <strong>OSC RX</strong> and <strong>OSC TX</strong>, and set the UDP RX port to 8000 and the TX port to 8001.</li>
+              <li data-i18n-html="m.console.19">On a grandMA2, open <strong>Setup → Console → Global Settings</strong> and set Telnet to <strong>Login Enabled</strong>.</li>
+              <li data-i18n-html="m.console.20">In LightDori, open <strong>Console</strong> in the left bar, choose the console type, enter its IP and press <strong>Connect</strong>.</li>
             </ol>
-            <figure class="manual__figure">
-              <img src="./assets/eos-osc-ports.png" alt="Eos OSC settings" data-i18n-alt="m.console.13" loading="lazy" />
-              <figcaption data-i18n="m.console.14">Eos — OSC RX / TX on, UDP RX 8000, UDP TX 8001.</figcaption>
-            </figure>
-            <h3 data-i18n="m.console.15">Setting up a grandMA console</h3>
-            <p data-i18n-html="m.console.16">Open <strong>Setup → Console → Global Settings</strong> and set <strong>Telnet</strong> to <strong>Login Enabled</strong>.</p>
-            <figure class="manual__figure">
-              <img src="./assets/ma-telnet-login.png" alt="grandMA telnet setting" data-i18n-alt="m.console.17" loading="lazy" />
-              <figcaption data-i18n="m.console.18">grandMA — Telnet set to Login Enabled.</figcaption>
-            </figure>
-            <h3 data-i18n="m.console.19">Connecting from LightDori</h3>
-            <p data-i18n-html="m.console.20">Open <strong>Console</strong> from the left rail, choose the console type, enter its IP, keep the default ports and press <strong>Connect</strong>. The <strong>Patch</strong> tab pulls or sends the patch, <strong>Cue Sheet</strong> lists sequences and cues, and <strong>Command</strong> sends raw commands.</p>
             <figure class="manual__shot">
-              <img src="./assets/manual/console-panel.webp" alt="The console panel" data-i18n-alt="m.console.21" loading="lazy" />
-              <figcaption data-i18n="m.console.22">Connection settings on the left, Patch, Cue Sheet and Command tabs on the right.</figcaption>
+              <img src="./assets/manual/en/console.webp" data-i18n-src="m.shot.console" alt="The console connection screen" data-i18n-alt="m.shot.console.alt" loading="lazy" />
+              <figcaption data-i18n="m.shot.console.cap">Connection settings on the left; once connected, the patch and cues show on the right.</figcaption>
             </figure>
             <div class="manual__note manual__note--warn">
               <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
-              <p data-i18n-html="m.console.23">Pushing a patch to Eos is not supported yet — pull from Eos, and use the ASCII (<code>.asc</code>) export to go the other way.</p>
+              <p data-i18n="m.console.21">Sending a patch to Eos is not supported yet. Pull from Eos instead.</p>
+            </div>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.console.22">Open <strong>Console</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
             </div>
           </div>
         </details>
-        <details class="manual__section" id="export" open>
-          <summary class="manual__summary"><h2 data-i18n="m.export.title">12. Import &amp; export</h2></summary>
+        <details class="manual__section" id="mood" open>
+          <summary class="manual__summary"><h2 data-i18n="m.mood.title">15. Moodboard</h2></summary>
           <div class="manual__section-body">
-            <p data-i18n="m.export.1">Drag a file onto the window, or use the file menu.</p>
-            <h3 data-i18n="m.export.2">What you can bring in</h3>
             <ul>
-              <li data-i18n-html="m.export.3"><strong>CSV, Excel</strong> (<code>.xlsx</code>, <code>.xls</code>, <code>.xlsm</code>) — the first worksheet.</li>
-              <li data-i18n-html="m.export.4"><strong>JSON, XML</strong> — including grandMA2 XML and LightDori exports.</li>
-              <li data-i18n-html="m.export.5"><strong>MVR</strong> — fixtures with their GDTF definitions.</li>
-              <li data-i18n-html="m.export.6"><strong>ASCII</strong> (<code>.asc</code>) — Eos show files; choose patch, cue data or both.</li>
-              <li data-i18n-html="m.export.7"><strong>LightDori project</strong> (<code>.ld</code>).</li>
+              <li data-i18n="m.mood.1">Collect images, notes, colours and drawings on pages, one per scene if you like.</li>
+              <li data-i18n="m.mood.2">Pick a layout with frames and drop images into them.</li>
+              <li data-i18n-html="m.mood.3">Select a photo and use <strong>Colour from this photo</strong> to get the closest gels.</li>
+              <li data-i18n="m.mood.4">S cues on the script link pages to scenes.</li>
             </ul>
-            <div class="manual__note manual__note--warn">
-              <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
-              <p data-i18n="m.export.8">Importing over a sheet that already has fixtures asks first whether to replace it.</p>
-            </div>
-            <h3 data-i18n="m.export.9">What you can send out</h3>
-            <ul>
-              <li data-i18n-html="m.export.10"><strong>CSV, Excel, XML, text</strong> for other software.</li>
-              <li data-i18n-html="m.export.11"><strong>MVR</strong> back to Vectorworks — original 3D and GDTF assets are kept.</li>
-              <li data-i18n-html="m.export.12"><strong>PDF</strong> — patch documents, magic sheets, cue documents and moodboards, to the Store.</li>
-            </ul>
-            <figure class="manual__shot">
-              <img src="./assets/manual/export-menu.webp" alt="The export menu" data-i18n-alt="m.export.13" loading="lazy" />
-              <figcaption data-i18n="m.export.14">Export from the Sheet: data file, patch document, XML or MVR.</figcaption>
-            </figure>
-            <div class="manual__note">
-              <span class="manual__note-label" data-i18n="manual.ui.tip">Tip</span>
-              <p data-i18n="m.export.15">Exports include only ticked rows. If an export comes out empty, nothing was ticked.</p>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.mood.5">Open <strong>Moodboard</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
             </div>
           </div>
         </details>
+        <details class="manual__section" id="workflow" open>
+          <summary class="manual__summary"><h2 data-i18n="m.workflow.title">16. Workflow</h2></summary>
+          <div class="manual__section-body">
+            <ul>
+              <li data-i18n-html="m.workflow.1"><strong>Steps</strong> follows the show from fixtures to hand-off, each step with its state.</li>
+              <li data-i18n-html="m.workflow.2"><strong>Paperwork</strong> shows whether each document still matches the Sheet. Open one to print it again.</li>
+              <li data-i18n-html="m.workflow.3">Choose PDFs and their order, then press <strong>Build show packet</strong> to bind them into one file in the Store.</li>
+            </ul>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.workflow.4">Open <strong>Workflow</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
+            </div>
+          </div>
+        </details>
+        <details class="manual__section" id="collab" open>
+          <summary class="manual__summary"><h2 data-i18n="m.collab.title">17. Working together</h2></summary>
+          <div class="manual__section-body">
+            <ul>
+              <li data-i18n-html="m.collab.1"><strong>Collab</strong> in the left bar starts a session from the open Sheet and invites people by email.</li>
+              <li data-i18n="m.collab.2">People join as owner, editor or viewer.</li>
+              <li data-i18n="m.collab.3">While the session is open, the activity log shows who changed what, and earlier versions can be restored.</li>
+            </ul>
+          </div>
+        </details>
+        <details class="manual__section" id="more" open>
+          <summary class="manual__summary"><h2 data-i18n="m.more.title">18. GDTF and calendar</h2></summary>
+          <div class="manual__section-body">
+            <ul>
+              <li data-i18n-html="m.more.1"><strong>GDTF</strong>: download the shared library, look inside a fixture (info, DMX, wheels, 3D), or make a new fixture file with <strong>Create GDTF</strong>.</li>
+              <li data-i18n-html="m.more.2"><strong>Calendar</strong>: keep the load-in, focus, tech and opening dates in one place.</li>
+            </ul>
+            <div class="manual__note manual__note--help">
+              <span class="manual__note-label" data-i18n="manual.ui.inapp">In the app</span>
+              <p data-i18n-html="m.more.3">Open <strong>GDTF</strong> in the app and press <strong>Help</strong> in the left bar for every step, and <strong>Show me on screen</strong> to have each part pointed out.</p>
+            </div>
+          </div>
+        </details>
+        <p class="manual__part" data-i18n="m.part3">Part 3 · Settings and help</p>
         <details class="manual__section" id="settings" open>
-          <summary class="manual__summary"><h2 data-i18n="m.settings.title">13. Settings</h2></summary>
+          <summary class="manual__summary"><h2 data-i18n="m.settings.title">19. Settings and account</h2></summary>
           <div class="manual__section-body">
             <ul>
-              <li data-i18n-html="m.settings.1"><strong>Theme</strong> — light or dark.</li>
-              <li data-i18n-html="m.settings.2"><strong>Auto save</strong> and its interval (1–60 minutes).</li>
-              <li data-i18n-html="m.settings.3"><strong>Tooltips</strong>, <strong>confirm before deleting</strong>, and <strong>remember window size and position</strong>.</li>
+              <li data-i18n-html="m.settings.1"><strong>Settings</strong>: light or dark theme, auto save and its interval, tooltips, confirm before deleting, and remember the window size. Press <strong>Save settings</strong> to keep your changes.</li>
+              <li data-i18n-html="m.settings.2"><strong>Profile</strong>: your display name and photo, your licence, and signing out.</li>
+              <li data-i18n="m.settings.3">The language is chosen in the Hub.</li>
             </ul>
-            <div class="manual__note manual__note--warn">
-              <span class="manual__note-label" data-i18n="manual.ui.caution">Please note</span>
-              <p data-i18n-html="m.settings.4">Nothing sticks until you press <strong>Save settings</strong>.</p>
-            </div>
-          </div>
-        </details>
-        <details class="manual__section" id="account" open>
-          <summary class="manual__summary"><h2 data-i18n="m.account.title">14. Account &amp; collaboration</h2></summary>
-          <div class="manual__section-body">
-            <p data-i18n-html="m.account.1"><strong>Profile</strong> on the left rail changes your display name and photo, shows your licence, and signs you out. Licence keys look like <code>ABCD-1234-EFGH-5678</code>.</p>
-            <p data-i18n-html="m.account.2"><strong>Collab</strong> creates shared sessions and invites people by email as owner, editor or viewer. While a session is active the project lives with the session, and earlier versions can be restored from its history.</p>
           </div>
         </details>
         <details class="manual__section" id="tips" open>
-          <summary class="manual__summary"><h2 data-i18n="m.tips.title">15. Troubleshooting</h2></summary>
+          <summary class="manual__summary"><h2 data-i18n="m.tips.title">20. Troubleshooting</h2></summary>
           <div class="manual__section-body">
+            <h3 data-i18n="m.tips.1">Vectorworks</h3>
             <ul>
-              <li data-i18n-html="m.tips.1"><strong>An export is empty.</strong> No rows were ticked.</li>
-              <li data-i18n-html="m.tips.2"><strong>Two fixtures share an address.</strong> Open Universe map or Error checking.</li>
-              <li data-i18n-html="m.tips.3"><strong>A CSV will not open.</strong> Save it as UTF-8 or Excel.</li>
-              <li data-i18n-html="m.tips.4"><strong>The preview looks old.</strong> Press Refresh.</li>
-              <li data-i18n-html="m.tips.5"><strong>Columns run off the page.</strong> Use landscape, a smaller font, or fewer columns.</li>
-              <li data-i18n-html="m.tips.6"><strong>The console will not connect.</strong> Same network, the right IP, OSC or Telnet enabled on the console.</li>
-              <li data-i18n-html="m.tips.7"><strong>Something looks stale after an update.</strong> Quit LightDori completely and open it again.</li>
+              <li data-i18n-html="m.tips.2"><strong>The panel keeps waiting for a drawing.</strong> Open the drawing in Vectorworks, save it once, and check that LightDori Realtime is running. If Vectorworks was open when LightDori installed the plug-in, restart Vectorworks.</li>
+              <li data-i18n-html="m.tips.3"><strong>Vectorworks blocks the plug-in.</strong> Check LightDoriRealtime in the Vectorworks Plug-in Manager.</li>
+              <li data-i18n-html="m.tips.4"><strong>Import and link is greyed out.</strong> Save the drawing in Vectorworks first.</li>
+              <li data-i18n-html="m.tips.5"><strong>Where does the data go?</strong> LightDori and Vectorworks exchange files in <code>Documents\LightDoriExchange</code> on this computer. Nothing goes over the network.</li>
+            </ul>
+            <h3 data-i18n="m.tips.6">Sheet and documents</h3>
+            <ul>
+              <li data-i18n-html="m.tips.7"><strong>An export is empty.</strong> No rows were ticked.</li>
+              <li data-i18n-html="m.tips.8"><strong>Two fixtures share an address.</strong> Open Universe map or Error checking.</li>
+              <li data-i18n-html="m.tips.9"><strong>A CSV will not open.</strong> Save it as UTF-8 or as an Excel file.</li>
+              <li data-i18n-html="m.tips.10"><strong>The preview looks old.</strong> Press Refresh.</li>
+              <li data-i18n-html="m.tips.11"><strong>Columns run off the page.</strong> Use landscape, a smaller font or fewer columns.</li>
+            </ul>
+            <h3 data-i18n="m.tips.12">Other</h3>
+            <ul>
+              <li data-i18n-html="m.tips.13"><strong>The console will not connect.</strong> Check that both are on the same network, the IP is right, and OSC or Telnet is on at the console.</li>
+              <li data-i18n-html="m.tips.14"><strong>Something looks stale after an update.</strong> Quit LightDori completely and open it again.</li>
             </ul>
             <div class="manual__note">
               <span class="manual__note-label" data-i18n="manual.ui.help">Still stuck?</span>
-              <p data-i18n-html="m.tips.8">Email <a href="mailto:xkxh4789@gmail.com">xkxh4789@gmail.com</a> with your operating system, what you were doing and the exact wording of any message. Screenshots help a lot.</p>
+              <p data-i18n-html="m.tips.15">Email <a href="mailto:xkxh4789@gmail.com">xkxh4789@gmail.com</a> with your operating system, what you were doing and the exact wording of any message. Screenshots help a lot.</p>
             </div>
           </div>
         </details>
@@ -427,8 +495,8 @@
       </nav>
     </footer>
 
-    <script src="./i18n.js?v=20261020c"></script>
-    <script src="./manual-i18n.js?v=20261020c"></script>
+    <script src="./i18n.js?v=20261111d"></script>
+    <script src="./manual-i18n.js?v=20261111d"></script>
     <script>
       document.getElementById("year").textContent = String(new Date().getFullYear());
       window.lightdoriInitLang();
