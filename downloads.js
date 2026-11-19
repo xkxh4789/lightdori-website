@@ -15,8 +15,7 @@
  */
 window.LIGHTDORI_DOWNLOADS = {
   // Paste the Windows .exe download URL here (must start with https://)
-  windows: "https://github.com/xkxh4789/Lightdori-release/releases/download/Latest/LightDori_Setup_1.0.0_win64.exe",
-  // Paste the macOS .dmg / .zip download URL here.
+  windows: "https://github.com/xkxh4789/Lightdori-release/releases/download/Latest/LightDori_Setup_1.0.1_win64.exe",  // Paste the macOS .dmg / .zip download URL here.
   // false = the button stays on the page but is turned off and reads "Coming soon".
   mac: false,
   note: "",
